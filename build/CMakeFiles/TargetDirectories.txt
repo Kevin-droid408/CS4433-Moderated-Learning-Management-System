@@ -1,0 +1,3 @@
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/build/CMakeFiles/ModeratedLMS.dir
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/build/CMakeFiles/edit_cache.dir
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/build/CMakeFiles/rebuild_cache.dir
