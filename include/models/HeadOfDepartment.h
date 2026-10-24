@@ -6,13 +6,13 @@
 #include <string>
 
 class HeadOfDepartment : public User {
-public:
-    HeadOfDepartment(int userId,
-                     const string& fullName,
-                     const string& email,
-                     const string& passwordHash);
+    public:
+        HeadOfDepartment(int userId,
+                        const string& fullName,
+                        const string& email,
+                        const string& passwordHash);
 
-    string getRole() const override;
+        string getRole() const override;
 };
 
 #endif

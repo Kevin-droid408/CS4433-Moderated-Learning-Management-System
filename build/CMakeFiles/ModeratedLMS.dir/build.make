@@ -176,6 +176,96 @@ CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\models\UserFactory.cpp -o CMakeFiles\ModeratedLMS.dir\src\models\UserFactory.cpp.s
 
+CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj: CMakeFiles/ModeratedLMS.dir/flags.make
+CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj: CMakeFiles/ModeratedLMS.dir/includes_CXX.rsp
+CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Course.cpp
+CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj: CMakeFiles/ModeratedLMS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj -MF CMakeFiles\ModeratedLMS.dir\src\models\Course.cpp.obj.d -o CMakeFiles\ModeratedLMS.dir\src\models\Course.cpp.obj -c C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\models\Course.cpp
+
+CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\models\Course.cpp > CMakeFiles\ModeratedLMS.dir\src\models\Course.cpp.i
+
+CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\models\Course.cpp -o CMakeFiles\ModeratedLMS.dir\src\models\Course.cpp.s
+
+CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj: CMakeFiles/ModeratedLMS.dir/flags.make
+CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj: CMakeFiles/ModeratedLMS.dir/includes_CXX.rsp
+CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Assignment.cpp
+CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj: CMakeFiles/ModeratedLMS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj -MF CMakeFiles\ModeratedLMS.dir\src\models\Assignment.cpp.obj.d -o CMakeFiles\ModeratedLMS.dir\src\models\Assignment.cpp.obj -c C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\models\Assignment.cpp
+
+CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\models\Assignment.cpp > CMakeFiles\ModeratedLMS.dir\src\models\Assignment.cpp.i
+
+CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\models\Assignment.cpp -o CMakeFiles\ModeratedLMS.dir\src\models\Assignment.cpp.s
+
+CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj: CMakeFiles/ModeratedLMS.dir/flags.make
+CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj: CMakeFiles/ModeratedLMS.dir/includes_CXX.rsp
+CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Submission.cpp
+CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj: CMakeFiles/ModeratedLMS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj -MF CMakeFiles\ModeratedLMS.dir\src\models\Submission.cpp.obj.d -o CMakeFiles\ModeratedLMS.dir\src\models\Submission.cpp.obj -c C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\models\Submission.cpp
+
+CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\models\Submission.cpp > CMakeFiles\ModeratedLMS.dir\src\models\Submission.cpp.i
+
+CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\models\Submission.cpp -o CMakeFiles\ModeratedLMS.dir\src\models\Submission.cpp.s
+
+CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj: CMakeFiles/ModeratedLMS.dir/flags.make
+CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj: CMakeFiles/ModeratedLMS.dir/includes_CXX.rsp
+CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp
+CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj: CMakeFiles/ModeratedLMS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj -MF CMakeFiles\ModeratedLMS.dir\src\services\ThreeDayGraduatedLatePenaltyPolicy.cpp.obj.d -o CMakeFiles\ModeratedLMS.dir\src\services\ThreeDayGraduatedLatePenaltyPolicy.cpp.obj -c C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\services\ThreeDayGraduatedLatePenaltyPolicy.cpp
+
+CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\services\ThreeDayGraduatedLatePenaltyPolicy.cpp > CMakeFiles\ModeratedLMS.dir\src\services\ThreeDayGraduatedLatePenaltyPolicy.cpp.i
+
+CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\services\ThreeDayGraduatedLatePenaltyPolicy.cpp -o CMakeFiles\ModeratedLMS.dir\src\services\ThreeDayGraduatedLatePenaltyPolicy.cpp.s
+
+CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj: CMakeFiles/ModeratedLMS.dir/flags.make
+CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj: CMakeFiles/ModeratedLMS.dir/includes_CXX.rsp
+CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/Database.cpp
+CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj: CMakeFiles/ModeratedLMS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj -MF CMakeFiles\ModeratedLMS.dir\src\repositories\Database.cpp.obj.d -o CMakeFiles\ModeratedLMS.dir\src\repositories\Database.cpp.obj -c C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\repositories\Database.cpp
+
+CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\repositories\Database.cpp > CMakeFiles\ModeratedLMS.dir\src\repositories\Database.cpp.i
+
+CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\repositories\Database.cpp -o CMakeFiles\ModeratedLMS.dir\src\repositories\Database.cpp.s
+
+CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj: CMakeFiles/ModeratedLMS.dir/flags.make
+CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj: CMakeFiles/ModeratedLMS.dir/includes_CXX.rsp
+CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/CourseRepository.cpp
+CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj: CMakeFiles/ModeratedLMS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj -MF CMakeFiles\ModeratedLMS.dir\src\repositories\CourseRepository.cpp.obj.d -o CMakeFiles\ModeratedLMS.dir\src\repositories\CourseRepository.cpp.obj -c C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\repositories\CourseRepository.cpp
+
+CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\repositories\CourseRepository.cpp > CMakeFiles\ModeratedLMS.dir\src\repositories\CourseRepository.cpp.i
+
+CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\repositories\CourseRepository.cpp -o CMakeFiles\ModeratedLMS.dir\src\repositories\CourseRepository.cpp.s
+
 # Object files for target ModeratedLMS
 ModeratedLMS_OBJECTS = \
 "CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj" \
@@ -184,7 +274,13 @@ ModeratedLMS_OBJECTS = \
 "CMakeFiles/ModeratedLMS.dir/src/models/Lecturer.cpp.obj" \
 "CMakeFiles/ModeratedLMS.dir/src/models/HeadOfDepartment.cpp.obj" \
 "CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.obj" \
-"CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.obj"
+"CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.obj" \
+"CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj" \
+"CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj" \
+"CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj" \
+"CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj" \
+"CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj" \
+"CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj"
 
 # External object files for target ModeratedLMS
 ModeratedLMS_EXTERNAL_OBJECTS =
@@ -196,12 +292,19 @@ ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/models/Lecturer.cpp.obj
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/models/HeadOfDepartment.cpp.obj
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.obj
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.obj
+ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj
+ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj
+ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj
+ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
+ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj
+ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/build.make
+ModeratedLMS.exe: C:/msys64/ucrt64/lib/libsqlite3.dll.a
 ModeratedLMS.exe: C:/msys64/ucrt64/lib/libsqlite3.dll.a
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/linkLibs.rsp
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/objects1.rsp
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ModeratedLMS.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable ModeratedLMS.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ModeratedLMS.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

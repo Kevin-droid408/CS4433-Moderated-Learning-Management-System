@@ -6,13 +6,13 @@
 #include <string>
 
 class Student : public User {
-public:
-    Student(int userId,
-            const string& fullName,
-            const string& email,
-            const string& passwordHash);
+    public:
+        Student(int userId,
+                const string& fullName,
+                const string& email,
+                const string& passwordHash);
 
-    std::string getRole() const override;
+        string getRole() const override;
 };
 
 #endif

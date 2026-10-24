@@ -176,6 +176,54 @@ src/models/Administrator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.s
 .PHONY : src/models/Administrator.cpp.s
 
+src/models/Assignment.obj: src/models/Assignment.cpp.obj
+.PHONY : src/models/Assignment.obj
+
+# target to build an object file
+src/models/Assignment.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj
+.PHONY : src/models/Assignment.cpp.obj
+
+src/models/Assignment.i: src/models/Assignment.cpp.i
+.PHONY : src/models/Assignment.i
+
+# target to preprocess a source file
+src/models/Assignment.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.i
+.PHONY : src/models/Assignment.cpp.i
+
+src/models/Assignment.s: src/models/Assignment.cpp.s
+.PHONY : src/models/Assignment.s
+
+# target to generate assembly for a file
+src/models/Assignment.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.s
+.PHONY : src/models/Assignment.cpp.s
+
+src/models/Course.obj: src/models/Course.cpp.obj
+.PHONY : src/models/Course.obj
+
+# target to build an object file
+src/models/Course.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj
+.PHONY : src/models/Course.cpp.obj
+
+src/models/Course.i: src/models/Course.cpp.i
+.PHONY : src/models/Course.i
+
+# target to preprocess a source file
+src/models/Course.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.i
+.PHONY : src/models/Course.cpp.i
+
+src/models/Course.s: src/models/Course.cpp.s
+.PHONY : src/models/Course.s
+
+# target to generate assembly for a file
+src/models/Course.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.s
+.PHONY : src/models/Course.cpp.s
+
 src/models/HeadOfDepartment.obj: src/models/HeadOfDepartment.cpp.obj
 .PHONY : src/models/HeadOfDepartment.obj
 
@@ -248,6 +296,30 @@ src/models/Student.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Student.cpp.s
 .PHONY : src/models/Student.cpp.s
 
+src/models/Submission.obj: src/models/Submission.cpp.obj
+.PHONY : src/models/Submission.obj
+
+# target to build an object file
+src/models/Submission.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj
+.PHONY : src/models/Submission.cpp.obj
+
+src/models/Submission.i: src/models/Submission.cpp.i
+.PHONY : src/models/Submission.i
+
+# target to preprocess a source file
+src/models/Submission.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.i
+.PHONY : src/models/Submission.cpp.i
+
+src/models/Submission.s: src/models/Submission.cpp.s
+.PHONY : src/models/Submission.s
+
+# target to generate assembly for a file
+src/models/Submission.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.s
+.PHONY : src/models/Submission.cpp.s
+
 src/models/User.obj: src/models/User.cpp.obj
 .PHONY : src/models/User.obj
 
@@ -296,6 +368,78 @@ src/models/UserFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.s
 .PHONY : src/models/UserFactory.cpp.s
 
+src/repositories/CourseRepository.obj: src/repositories/CourseRepository.cpp.obj
+.PHONY : src/repositories/CourseRepository.obj
+
+# target to build an object file
+src/repositories/CourseRepository.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj
+.PHONY : src/repositories/CourseRepository.cpp.obj
+
+src/repositories/CourseRepository.i: src/repositories/CourseRepository.cpp.i
+.PHONY : src/repositories/CourseRepository.i
+
+# target to preprocess a source file
+src/repositories/CourseRepository.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.i
+.PHONY : src/repositories/CourseRepository.cpp.i
+
+src/repositories/CourseRepository.s: src/repositories/CourseRepository.cpp.s
+.PHONY : src/repositories/CourseRepository.s
+
+# target to generate assembly for a file
+src/repositories/CourseRepository.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.s
+.PHONY : src/repositories/CourseRepository.cpp.s
+
+src/repositories/Database.obj: src/repositories/Database.cpp.obj
+.PHONY : src/repositories/Database.obj
+
+# target to build an object file
+src/repositories/Database.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj
+.PHONY : src/repositories/Database.cpp.obj
+
+src/repositories/Database.i: src/repositories/Database.cpp.i
+.PHONY : src/repositories/Database.i
+
+# target to preprocess a source file
+src/repositories/Database.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.i
+.PHONY : src/repositories/Database.cpp.i
+
+src/repositories/Database.s: src/repositories/Database.cpp.s
+.PHONY : src/repositories/Database.s
+
+# target to generate assembly for a file
+src/repositories/Database.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.s
+.PHONY : src/repositories/Database.cpp.s
+
+src/services/ThreeDayGraduatedLatePenaltyPolicy.obj: src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
+.PHONY : src/services/ThreeDayGraduatedLatePenaltyPolicy.obj
+
+# target to build an object file
+src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
+.PHONY : src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
+
+src/services/ThreeDayGraduatedLatePenaltyPolicy.i: src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i
+.PHONY : src/services/ThreeDayGraduatedLatePenaltyPolicy.i
+
+# target to preprocess a source file
+src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i
+.PHONY : src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i
+
+src/services/ThreeDayGraduatedLatePenaltyPolicy.s: src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s
+.PHONY : src/services/ThreeDayGraduatedLatePenaltyPolicy.s
+
+# target to generate assembly for a file
+src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s
+.PHONY : src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -311,6 +455,12 @@ help:
 	@echo ... src/models/Administrator.obj
 	@echo ... src/models/Administrator.i
 	@echo ... src/models/Administrator.s
+	@echo ... src/models/Assignment.obj
+	@echo ... src/models/Assignment.i
+	@echo ... src/models/Assignment.s
+	@echo ... src/models/Course.obj
+	@echo ... src/models/Course.i
+	@echo ... src/models/Course.s
 	@echo ... src/models/HeadOfDepartment.obj
 	@echo ... src/models/HeadOfDepartment.i
 	@echo ... src/models/HeadOfDepartment.s
@@ -320,12 +470,24 @@ help:
 	@echo ... src/models/Student.obj
 	@echo ... src/models/Student.i
 	@echo ... src/models/Student.s
+	@echo ... src/models/Submission.obj
+	@echo ... src/models/Submission.i
+	@echo ... src/models/Submission.s
 	@echo ... src/models/User.obj
 	@echo ... src/models/User.i
 	@echo ... src/models/User.s
 	@echo ... src/models/UserFactory.obj
 	@echo ... src/models/UserFactory.i
 	@echo ... src/models/UserFactory.s
+	@echo ... src/repositories/CourseRepository.obj
+	@echo ... src/repositories/CourseRepository.i
+	@echo ... src/repositories/CourseRepository.s
+	@echo ... src/repositories/Database.obj
+	@echo ... src/repositories/Database.i
+	@echo ... src/repositories/Database.s
+	@echo ... src/services/ThreeDayGraduatedLatePenaltyPolicy.obj
+	@echo ... src/services/ThreeDayGraduatedLatePenaltyPolicy.i
+	@echo ... src/services/ThreeDayGraduatedLatePenaltyPolicy.s
 .PHONY : help
 
 

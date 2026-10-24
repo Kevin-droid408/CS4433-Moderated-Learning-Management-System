@@ -10,11 +10,17 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/main.cpp" "CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj.d"
   "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Administrator.cpp" "CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.obj.d"
+  "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Assignment.cpp" "CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj.d"
+  "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Course.cpp" "CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj.d"
   "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/HeadOfDepartment.cpp" "CMakeFiles/ModeratedLMS.dir/src/models/HeadOfDepartment.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/models/HeadOfDepartment.cpp.obj.d"
   "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Lecturer.cpp" "CMakeFiles/ModeratedLMS.dir/src/models/Lecturer.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/models/Lecturer.cpp.obj.d"
   "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Student.cpp" "CMakeFiles/ModeratedLMS.dir/src/models/Student.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/models/Student.cpp.obj.d"
+  "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Submission.cpp" "CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj.d"
   "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/User.cpp" "CMakeFiles/ModeratedLMS.dir/src/models/User.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/models/User.cpp.obj.d"
   "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/UserFactory.cpp" "CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.obj.d"
+  "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/CourseRepository.cpp" "CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj.d"
+  "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/Database.cpp" "CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj.d"
+  "C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp" "CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj" "gcc" "CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

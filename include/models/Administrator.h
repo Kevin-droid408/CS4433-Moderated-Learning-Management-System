@@ -6,13 +6,13 @@
 #include <string>
 
 class Administrator : public User {
-public:
-    Administrator(int userId,
-                  const string& fullName,
-                  const string& email,
-                  const string& passwordHash);
+    public:
+        Administrator(int userId,
+                    const string& fullName,
+                    const string& email,
+                    const string& passwordHash);
 
-    string getRole() const override;
+        string getRole() const override;
 };
 
 #endif

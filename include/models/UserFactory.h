@@ -8,13 +8,13 @@
 #include <string>
 
 class UserFactory {
-public:
-    static unique_ptr<User> createUser(
-        const string& role,
-        int userId,
-        const string& fullName,
-        const string& email,
-        const string& passwordHash);
+    public:
+        static unique_ptr<User> createUser(
+            const string& role,
+            int userId,
+            const string& fullName,
+            const string& email,
+            const string& passwordHash);
 };
 
 #endif
