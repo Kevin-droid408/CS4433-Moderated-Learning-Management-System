@@ -102,24 +102,20 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
- C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/CourseRepository.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/UserRepository.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h \
- C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Course.h \
- C:/msys64/ucrt64/include/c++/15.2.0/vector \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/memory \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
- C:/msys64/ucrt64/include/c++/15.2.0/iostream \
- C:/msys64/ucrt64/include/c++/15.2.0/ostream \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h \
- C:/msys64/ucrt64/include/c++/15.2.0/ios \
- C:/msys64/ucrt64/include/c++/15.2.0/exception \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h \
  C:/msys64/ucrt64/include/c++/15.2.0/typeinfo \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/ios_base.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h \
  C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
@@ -136,6 +132,31 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/sched.h \
  C:/msys64/ucrt64/include/pthread_unistd.h \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/exception \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/optional \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/CourseRepository.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Course.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/vector \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/AuthenticationService.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/iostream \
+ C:/msys64/ucrt64/include/c++/15.2.0/ostream \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/ios \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/ios_base.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.tcc \
  C:/msys64/ucrt64/include/c++/15.2.0/system_error \
@@ -154,4 +175,5 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.tcc \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys64/ucrt64/include/c++/15.2.0/istream \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc \
+ C:/msys64/ucrt64/include/c++/15.2.0/limits

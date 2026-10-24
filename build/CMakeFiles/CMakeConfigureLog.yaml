@@ -2381,3 +2381,59 @@ events:
         - "C:/Program Files/CMake/bin"
         - "/bin"
 ...
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPkgConfig.cmake:761 (find_library)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPkgConfig.cmake:811 (_pkg_find_libs)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPkgConfig.cmake:1149 (_pkg_recalculate)"
+      - "C:/Program Files/CMake/share/cmake-4.4/Modules/FindPkgConfig.cmake:1166 (_pkg_check_modules_internal)"
+      - "CMakeLists.txt:58 (pkg_check_modules)"
+    mode: "library"
+    variable: "pkgcfg_lib_SODIUM_sodium"
+    description: "Path to a library."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "sodium"
+    candidate_directories:
+      - "C:/msys64/ucrt64/lib/"
+    found: "C:/msys64/ucrt64/lib/libsodium.dll.a"
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\.vscode\\extensions\\vadimcn.vscode-lldb-1.12.3\\bin"
+        - "C:\\WINDOWS\\system32"
+        - "C:\\WINDOWS"
+        - "C:\\WINDOWS\\System32\\Wbem"
+        - "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\WINDOWS\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Launcher\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\msys64\\ucrt64\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\GitHubDesktop\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/ModeratedLMS"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/ModeratedLMS"
+      CMAKE_SYSTEM_LIBRARY_PATH:
+        - "C:/Program Files (x86)/ModeratedLMS/bin"
+        - "C:/Program Files/CMake/bin"
+        - "/bin"
+...

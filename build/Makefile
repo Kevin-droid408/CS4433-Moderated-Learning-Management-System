@@ -368,6 +368,30 @@ src/models/UserFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.s
 .PHONY : src/models/UserFactory.cpp.s
 
+src/repositories/AssignmentRepository.obj: src/repositories/AssignmentRepository.cpp.obj
+.PHONY : src/repositories/AssignmentRepository.obj
+
+# target to build an object file
+src/repositories/AssignmentRepository.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.obj
+.PHONY : src/repositories/AssignmentRepository.cpp.obj
+
+src/repositories/AssignmentRepository.i: src/repositories/AssignmentRepository.cpp.i
+.PHONY : src/repositories/AssignmentRepository.i
+
+# target to preprocess a source file
+src/repositories/AssignmentRepository.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.i
+.PHONY : src/repositories/AssignmentRepository.cpp.i
+
+src/repositories/AssignmentRepository.s: src/repositories/AssignmentRepository.cpp.s
+.PHONY : src/repositories/AssignmentRepository.s
+
+# target to generate assembly for a file
+src/repositories/AssignmentRepository.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.s
+.PHONY : src/repositories/AssignmentRepository.cpp.s
+
 src/repositories/CourseRepository.obj: src/repositories/CourseRepository.cpp.obj
 .PHONY : src/repositories/CourseRepository.obj
 
@@ -415,6 +439,102 @@ src/repositories/Database.s: src/repositories/Database.cpp.s
 src/repositories/Database.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.s
 .PHONY : src/repositories/Database.cpp.s
+
+src/repositories/DepartmentRepository.obj: src/repositories/DepartmentRepository.cpp.obj
+.PHONY : src/repositories/DepartmentRepository.obj
+
+# target to build an object file
+src/repositories/DepartmentRepository.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.obj
+.PHONY : src/repositories/DepartmentRepository.cpp.obj
+
+src/repositories/DepartmentRepository.i: src/repositories/DepartmentRepository.cpp.i
+.PHONY : src/repositories/DepartmentRepository.i
+
+# target to preprocess a source file
+src/repositories/DepartmentRepository.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.i
+.PHONY : src/repositories/DepartmentRepository.cpp.i
+
+src/repositories/DepartmentRepository.s: src/repositories/DepartmentRepository.cpp.s
+.PHONY : src/repositories/DepartmentRepository.s
+
+# target to generate assembly for a file
+src/repositories/DepartmentRepository.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.s
+.PHONY : src/repositories/DepartmentRepository.cpp.s
+
+src/repositories/UserRepository.obj: src/repositories/UserRepository.cpp.obj
+.PHONY : src/repositories/UserRepository.obj
+
+# target to build an object file
+src/repositories/UserRepository.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.obj
+.PHONY : src/repositories/UserRepository.cpp.obj
+
+src/repositories/UserRepository.i: src/repositories/UserRepository.cpp.i
+.PHONY : src/repositories/UserRepository.i
+
+# target to preprocess a source file
+src/repositories/UserRepository.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.i
+.PHONY : src/repositories/UserRepository.cpp.i
+
+src/repositories/UserRepository.s: src/repositories/UserRepository.cpp.s
+.PHONY : src/repositories/UserRepository.s
+
+# target to generate assembly for a file
+src/repositories/UserRepository.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.s
+.PHONY : src/repositories/UserRepository.cpp.s
+
+src/services/AuthenticationService.obj: src/services/AuthenticationService.cpp.obj
+.PHONY : src/services/AuthenticationService.obj
+
+# target to build an object file
+src/services/AuthenticationService.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/AuthenticationService.cpp.obj
+.PHONY : src/services/AuthenticationService.cpp.obj
+
+src/services/AuthenticationService.i: src/services/AuthenticationService.cpp.i
+.PHONY : src/services/AuthenticationService.i
+
+# target to preprocess a source file
+src/services/AuthenticationService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/AuthenticationService.cpp.i
+.PHONY : src/services/AuthenticationService.cpp.i
+
+src/services/AuthenticationService.s: src/services/AuthenticationService.cpp.s
+.PHONY : src/services/AuthenticationService.s
+
+# target to generate assembly for a file
+src/services/AuthenticationService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/AuthenticationService.cpp.s
+.PHONY : src/services/AuthenticationService.cpp.s
+
+src/services/PasswordService.obj: src/services/PasswordService.cpp.obj
+.PHONY : src/services/PasswordService.obj
+
+# target to build an object file
+src/services/PasswordService.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/PasswordService.cpp.obj
+.PHONY : src/services/PasswordService.cpp.obj
+
+src/services/PasswordService.i: src/services/PasswordService.cpp.i
+.PHONY : src/services/PasswordService.i
+
+# target to preprocess a source file
+src/services/PasswordService.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/PasswordService.cpp.i
+.PHONY : src/services/PasswordService.cpp.i
+
+src/services/PasswordService.s: src/services/PasswordService.cpp.s
+.PHONY : src/services/PasswordService.s
+
+# target to generate assembly for a file
+src/services/PasswordService.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/PasswordService.cpp.s
+.PHONY : src/services/PasswordService.cpp.s
 
 src/services/ThreeDayGraduatedLatePenaltyPolicy.obj: src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
 .PHONY : src/services/ThreeDayGraduatedLatePenaltyPolicy.obj
@@ -479,12 +599,27 @@ help:
 	@echo ... src/models/UserFactory.obj
 	@echo ... src/models/UserFactory.i
 	@echo ... src/models/UserFactory.s
+	@echo ... src/repositories/AssignmentRepository.obj
+	@echo ... src/repositories/AssignmentRepository.i
+	@echo ... src/repositories/AssignmentRepository.s
 	@echo ... src/repositories/CourseRepository.obj
 	@echo ... src/repositories/CourseRepository.i
 	@echo ... src/repositories/CourseRepository.s
 	@echo ... src/repositories/Database.obj
 	@echo ... src/repositories/Database.i
 	@echo ... src/repositories/Database.s
+	@echo ... src/repositories/DepartmentRepository.obj
+	@echo ... src/repositories/DepartmentRepository.i
+	@echo ... src/repositories/DepartmentRepository.s
+	@echo ... src/repositories/UserRepository.obj
+	@echo ... src/repositories/UserRepository.i
+	@echo ... src/repositories/UserRepository.s
+	@echo ... src/services/AuthenticationService.obj
+	@echo ... src/services/AuthenticationService.i
+	@echo ... src/services/AuthenticationService.s
+	@echo ... src/services/PasswordService.obj
+	@echo ... src/services/PasswordService.i
+	@echo ... src/services/PasswordService.s
 	@echo ... src/services/ThreeDayGraduatedLatePenaltyPolicy.obj
 	@echo ... src/services/ThreeDayGraduatedLatePenaltyPolicy.i
 	@echo ... src/services/ThreeDayGraduatedLatePenaltyPolicy.s

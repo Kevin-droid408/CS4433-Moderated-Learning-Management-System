@@ -3,8 +3,11 @@
 
 CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/main.cpp \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Course.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/CourseRepository.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/UserRepository.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/AuthenticationService.h \
   C:/msys64/ucrt64/include/_mingw.h \
   C:/msys64/ucrt64/include/_mingw_mac.h \
   C:/msys64/ucrt64/include/_mingw_off_t.h \
@@ -12,10 +15,15 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: C:/Users/Administrator/CS4433-Mode
   C:/msys64/ucrt64/include/_mingw_stat64.h \
   C:/msys64/ucrt64/include/_mingw_stdarg.h \
   C:/msys64/ucrt64/include/_timeval.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h \
   C:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bit \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h \
@@ -26,6 +34,7 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: C:/Users/Administrator/CS4433-Mode
   C:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
@@ -54,6 +63,9 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: C:/Users/Administrator/CS4433-Mode
   C:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
@@ -63,12 +75,15 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: C:/Users/Administrator/CS4433-Mode
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf_iterator.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
   C:/msys64/ucrt64/include/c++/15.2.0/bits/utility.h \
@@ -86,8 +101,10 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: C:/Users/Administrator/CS4433-Mode
   C:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h \
   C:/msys64/ucrt64/include/c++/15.2.0/debug/debug.h \
   C:/msys64/ucrt64/include/c++/15.2.0/exception \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h \
   C:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
@@ -96,8 +113,13 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: C:/Users/Administrator/CS4433-Mode
   C:/msys64/ucrt64/include/c++/15.2.0/iosfwd \
   C:/msys64/ucrt64/include/c++/15.2.0/iostream \
   C:/msys64/ucrt64/include/c++/15.2.0/istream \
+  C:/msys64/ucrt64/include/c++/15.2.0/limits \
+  C:/msys64/ucrt64/include/c++/15.2.0/memory \
   C:/msys64/ucrt64/include/c++/15.2.0/new \
+  C:/msys64/ucrt64/include/c++/15.2.0/optional \
   C:/msys64/ucrt64/include/c++/15.2.0/ostream \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
   C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
   C:/msys64/ucrt64/include/c++/15.2.0/stdexcept \
   C:/msys64/ucrt64/include/c++/15.2.0/stdlib.h \
@@ -1426,6 +1448,611 @@ CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj: C:/Users/Administ
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h
 
+CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/DepartmentRepository.cpp \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/DepartmentRepository.h \
+  C:/msys64/ucrt64/include/_mingw.h \
+  C:/msys64/ucrt64/include/_mingw_mac.h \
+  C:/msys64/ucrt64/include/_mingw_off_t.h \
+  C:/msys64/ucrt64/include/_mingw_secapi.h \
+  C:/msys64/ucrt64/include/_mingw_stat64.h \
+  C:/msys64/ucrt64/include/_mingw_stdarg.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bit \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/char_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/charconv.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/concept_check.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/invoke.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/localefwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/move.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/new_allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream_insert.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/postypes.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/predefined_ops.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/utility.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/version.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/cctype \
+  C:/msys64/ucrt64/include/c++/15.2.0/cerrno \
+  C:/msys64/ucrt64/include/c++/15.2.0/clocale \
+  C:/msys64/ucrt64/include/c++/15.2.0/concepts \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstddef \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstdio \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstdlib \
+  C:/msys64/ucrt64/include/c++/15.2.0/cwchar \
+  C:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/debug/debug.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/exception \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/initializer_list \
+  C:/msys64/ucrt64/include/c++/15.2.0/iosfwd \
+  C:/msys64/ucrt64/include/c++/15.2.0/new \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/stdexcept \
+  C:/msys64/ucrt64/include/c++/15.2.0/stdlib.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/string \
+  C:/msys64/ucrt64/include/c++/15.2.0/string_view \
+  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
+  C:/msys64/ucrt64/include/c++/15.2.0/type_traits \
+  C:/msys64/ucrt64/include/c++/15.2.0/typeinfo \
+  C:/msys64/ucrt64/include/c++/15.2.0/vector \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/msys64/ucrt64/include/corecrt.h \
+  C:/msys64/ucrt64/include/corecrt_stdio_config.h \
+  C:/msys64/ucrt64/include/corecrt_wctype.h \
+  C:/msys64/ucrt64/include/corecrt_wstdlib.h \
+  C:/msys64/ucrt64/include/crtdefs.h \
+  C:/msys64/ucrt64/include/ctype.h \
+  C:/msys64/ucrt64/include/errno.h \
+  C:/msys64/ucrt64/include/limits.h \
+  C:/msys64/ucrt64/include/locale.h \
+  C:/msys64/ucrt64/include/malloc.h \
+  C:/msys64/ucrt64/include/sdks/_mingw_ddk.h \
+  C:/msys64/ucrt64/include/sec_api/stdio_s.h \
+  C:/msys64/ucrt64/include/sec_api/stdlib_s.h \
+  C:/msys64/ucrt64/include/sec_api/wchar_s.h \
+  C:/msys64/ucrt64/include/sqlite3.h \
+  C:/msys64/ucrt64/include/stdarg.h \
+  C:/msys64/ucrt64/include/stddef.h \
+  C:/msys64/ucrt64/include/stdio.h \
+  C:/msys64/ucrt64/include/stdlib.h \
+  C:/msys64/ucrt64/include/swprintf.inl \
+  C:/msys64/ucrt64/include/vadefs.h \
+  C:/msys64/ucrt64/include/wchar.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h
+
+CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/UserRepository.cpp \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/UserFactory.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/UserRepository.h \
+  C:/msys64/ucrt64/include/_mingw.h \
+  C:/msys64/ucrt64/include/_mingw_mac.h \
+  C:/msys64/ucrt64/include/_mingw_off_t.h \
+  C:/msys64/ucrt64/include/_mingw_secapi.h \
+  C:/msys64/ucrt64/include/_mingw_stat64.h \
+  C:/msys64/ucrt64/include/_mingw_stdarg.h \
+  C:/msys64/ucrt64/include/_timeval.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bit \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/char_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/charconv.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/concept_check.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/invoke.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/localefwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/move.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/new_allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream_insert.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/postypes.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/predefined_ops.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/utility.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/version.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/cctype \
+  C:/msys64/ucrt64/include/c++/15.2.0/cerrno \
+  C:/msys64/ucrt64/include/c++/15.2.0/clocale \
+  C:/msys64/ucrt64/include/c++/15.2.0/concepts \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstddef \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstdio \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstdlib \
+  C:/msys64/ucrt64/include/c++/15.2.0/cwchar \
+  C:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/debug/debug.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/exception \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/initializer_list \
+  C:/msys64/ucrt64/include/c++/15.2.0/iosfwd \
+  C:/msys64/ucrt64/include/c++/15.2.0/memory \
+  C:/msys64/ucrt64/include/c++/15.2.0/new \
+  C:/msys64/ucrt64/include/c++/15.2.0/optional \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/stdexcept \
+  C:/msys64/ucrt64/include/c++/15.2.0/stdlib.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/string \
+  C:/msys64/ucrt64/include/c++/15.2.0/string_view \
+  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
+  C:/msys64/ucrt64/include/c++/15.2.0/type_traits \
+  C:/msys64/ucrt64/include/c++/15.2.0/typeinfo \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/msys64/ucrt64/include/corecrt.h \
+  C:/msys64/ucrt64/include/corecrt_startup.h \
+  C:/msys64/ucrt64/include/corecrt_stdio_config.h \
+  C:/msys64/ucrt64/include/corecrt_wctype.h \
+  C:/msys64/ucrt64/include/corecrt_wstdlib.h \
+  C:/msys64/ucrt64/include/crtdefs.h \
+  C:/msys64/ucrt64/include/ctype.h \
+  C:/msys64/ucrt64/include/errno.h \
+  C:/msys64/ucrt64/include/limits.h \
+  C:/msys64/ucrt64/include/locale.h \
+  C:/msys64/ucrt64/include/malloc.h \
+  C:/msys64/ucrt64/include/process.h \
+  C:/msys64/ucrt64/include/pthread.h \
+  C:/msys64/ucrt64/include/pthread_compat.h \
+  C:/msys64/ucrt64/include/pthread_signal.h \
+  C:/msys64/ucrt64/include/pthread_time.h \
+  C:/msys64/ucrt64/include/pthread_unistd.h \
+  C:/msys64/ucrt64/include/sched.h \
+  C:/msys64/ucrt64/include/sdks/_mingw_ddk.h \
+  C:/msys64/ucrt64/include/sec_api/stdio_s.h \
+  C:/msys64/ucrt64/include/sec_api/stdlib_s.h \
+  C:/msys64/ucrt64/include/sec_api/sys/timeb_s.h \
+  C:/msys64/ucrt64/include/sec_api/wchar_s.h \
+  C:/msys64/ucrt64/include/signal.h \
+  C:/msys64/ucrt64/include/sqlite3.h \
+  C:/msys64/ucrt64/include/stdarg.h \
+  C:/msys64/ucrt64/include/stddef.h \
+  C:/msys64/ucrt64/include/stdio.h \
+  C:/msys64/ucrt64/include/stdlib.h \
+  C:/msys64/ucrt64/include/swprintf.inl \
+  C:/msys64/ucrt64/include/sys/timeb.h \
+  C:/msys64/ucrt64/include/sys/types.h \
+  C:/msys64/ucrt64/include/time.h \
+  C:/msys64/ucrt64/include/vadefs.h \
+  C:/msys64/ucrt64/include/wchar.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h
+
+CMakeFiles/ModeratedLMS.dir/src/services/AuthenticationService.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/services/AuthenticationService.cpp \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/UserRepository.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/AuthenticationService.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/PasswordService.h \
+  C:/msys64/ucrt64/include/_mingw.h \
+  C:/msys64/ucrt64/include/_mingw_mac.h \
+  C:/msys64/ucrt64/include/_mingw_off_t.h \
+  C:/msys64/ucrt64/include/_mingw_secapi.h \
+  C:/msys64/ucrt64/include/_mingw_stat64.h \
+  C:/msys64/ucrt64/include/_mingw_stdarg.h \
+  C:/msys64/ucrt64/include/_timeval.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bit \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/char_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/charconv.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/concept_check.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/invoke.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/localefwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/move.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/new_allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream_insert.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/postypes.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/predefined_ops.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_relops.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/utility.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/version.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/cctype \
+  C:/msys64/ucrt64/include/c++/15.2.0/cerrno \
+  C:/msys64/ucrt64/include/c++/15.2.0/clocale \
+  C:/msys64/ucrt64/include/c++/15.2.0/concepts \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstddef \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstdio \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstdlib \
+  C:/msys64/ucrt64/include/c++/15.2.0/cwchar \
+  C:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/debug/debug.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/exception \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/initializer_list \
+  C:/msys64/ucrt64/include/c++/15.2.0/iosfwd \
+  C:/msys64/ucrt64/include/c++/15.2.0/memory \
+  C:/msys64/ucrt64/include/c++/15.2.0/new \
+  C:/msys64/ucrt64/include/c++/15.2.0/optional \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/stdlib.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/string \
+  C:/msys64/ucrt64/include/c++/15.2.0/string_view \
+  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
+  C:/msys64/ucrt64/include/c++/15.2.0/type_traits \
+  C:/msys64/ucrt64/include/c++/15.2.0/typeinfo \
+  C:/msys64/ucrt64/include/c++/15.2.0/utility \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/msys64/ucrt64/include/corecrt.h \
+  C:/msys64/ucrt64/include/corecrt_startup.h \
+  C:/msys64/ucrt64/include/corecrt_stdio_config.h \
+  C:/msys64/ucrt64/include/corecrt_wctype.h \
+  C:/msys64/ucrt64/include/corecrt_wstdlib.h \
+  C:/msys64/ucrt64/include/crtdefs.h \
+  C:/msys64/ucrt64/include/ctype.h \
+  C:/msys64/ucrt64/include/errno.h \
+  C:/msys64/ucrt64/include/limits.h \
+  C:/msys64/ucrt64/include/locale.h \
+  C:/msys64/ucrt64/include/malloc.h \
+  C:/msys64/ucrt64/include/process.h \
+  C:/msys64/ucrt64/include/pthread.h \
+  C:/msys64/ucrt64/include/pthread_compat.h \
+  C:/msys64/ucrt64/include/pthread_signal.h \
+  C:/msys64/ucrt64/include/pthread_time.h \
+  C:/msys64/ucrt64/include/pthread_unistd.h \
+  C:/msys64/ucrt64/include/sched.h \
+  C:/msys64/ucrt64/include/sdks/_mingw_ddk.h \
+  C:/msys64/ucrt64/include/sec_api/stdio_s.h \
+  C:/msys64/ucrt64/include/sec_api/stdlib_s.h \
+  C:/msys64/ucrt64/include/sec_api/sys/timeb_s.h \
+  C:/msys64/ucrt64/include/sec_api/wchar_s.h \
+  C:/msys64/ucrt64/include/signal.h \
+  C:/msys64/ucrt64/include/sqlite3.h \
+  C:/msys64/ucrt64/include/stdarg.h \
+  C:/msys64/ucrt64/include/stddef.h \
+  C:/msys64/ucrt64/include/stdio.h \
+  C:/msys64/ucrt64/include/stdlib.h \
+  C:/msys64/ucrt64/include/swprintf.inl \
+  C:/msys64/ucrt64/include/sys/timeb.h \
+  C:/msys64/ucrt64/include/sys/types.h \
+  C:/msys64/ucrt64/include/time.h \
+  C:/msys64/ucrt64/include/vadefs.h \
+  C:/msys64/ucrt64/include/wchar.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h
+
+CMakeFiles/ModeratedLMS.dir/src/services/PasswordService.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/services/PasswordService.cpp \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/PasswordService.h \
+  C:/msys64/ucrt64/include/_mingw.h \
+  C:/msys64/ucrt64/include/_mingw_mac.h \
+  C:/msys64/ucrt64/include/_mingw_off_t.h \
+  C:/msys64/ucrt64/include/_mingw_secapi.h \
+  C:/msys64/ucrt64/include/_mingw_stat64.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/backward/binders.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bit \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/char_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/charconv.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/concept_check.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/functional_hash.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/invoke.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/localefwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/move.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/nested_exception.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/new_allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream_insert.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/postypes.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/predefined_ops.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/ptr_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/utility.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/bits/version.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/cctype \
+  C:/msys64/ucrt64/include/c++/15.2.0/cerrno \
+  C:/msys64/ucrt64/include/c++/15.2.0/clocale \
+  C:/msys64/ucrt64/include/c++/15.2.0/concepts \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstddef \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstdio \
+  C:/msys64/ucrt64/include/c++/15.2.0/cstdlib \
+  C:/msys64/ucrt64/include/c++/15.2.0/cwchar \
+  C:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/debug/debug.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/exception \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/numeric_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/initializer_list \
+  C:/msys64/ucrt64/include/c++/15.2.0/iosfwd \
+  C:/msys64/ucrt64/include/c++/15.2.0/new \
+  C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/stdexcept \
+  C:/msys64/ucrt64/include/c++/15.2.0/stdlib.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/string \
+  C:/msys64/ucrt64/include/c++/15.2.0/string_view \
+  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
+  C:/msys64/ucrt64/include/c++/15.2.0/type_traits \
+  C:/msys64/ucrt64/include/c++/15.2.0/typeinfo \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/msys64/ucrt64/include/corecrt.h \
+  C:/msys64/ucrt64/include/corecrt_stdio_config.h \
+  C:/msys64/ucrt64/include/corecrt_wctype.h \
+  C:/msys64/ucrt64/include/corecrt_wstdlib.h \
+  C:/msys64/ucrt64/include/crtdefs.h \
+  C:/msys64/ucrt64/include/ctype.h \
+  C:/msys64/ucrt64/include/errno.h \
+  C:/msys64/ucrt64/include/limits.h \
+  C:/msys64/ucrt64/include/locale.h \
+  C:/msys64/ucrt64/include/malloc.h \
+  C:/msys64/ucrt64/include/sdks/_mingw_ddk.h \
+  C:/msys64/ucrt64/include/sec_api/stdio_s.h \
+  C:/msys64/ucrt64/include/sec_api/stdlib_s.h \
+  C:/msys64/ucrt64/include/sec_api/wchar_s.h \
+  C:/msys64/ucrt64/include/sodium.h \
+  C:/msys64/ucrt64/include/sodium/core.h \
+  C:/msys64/ucrt64/include/sodium/crypto_aead_aegis128l.h \
+  C:/msys64/ucrt64/include/sodium/crypto_aead_aegis256.h \
+  C:/msys64/ucrt64/include/sodium/crypto_aead_aes256gcm.h \
+  C:/msys64/ucrt64/include/sodium/crypto_aead_chacha20poly1305.h \
+  C:/msys64/ucrt64/include/sodium/crypto_aead_xchacha20poly1305.h \
+  C:/msys64/ucrt64/include/sodium/crypto_auth.h \
+  C:/msys64/ucrt64/include/sodium/crypto_auth_hmacsha256.h \
+  C:/msys64/ucrt64/include/sodium/crypto_auth_hmacsha512.h \
+  C:/msys64/ucrt64/include/sodium/crypto_auth_hmacsha512256.h \
+  C:/msys64/ucrt64/include/sodium/crypto_box.h \
+  C:/msys64/ucrt64/include/sodium/crypto_box_curve25519xchacha20poly1305.h \
+  C:/msys64/ucrt64/include/sodium/crypto_box_curve25519xsalsa20poly1305.h \
+  C:/msys64/ucrt64/include/sodium/crypto_core_ed25519.h \
+  C:/msys64/ucrt64/include/sodium/crypto_core_hchacha20.h \
+  C:/msys64/ucrt64/include/sodium/crypto_core_hsalsa20.h \
+  C:/msys64/ucrt64/include/sodium/crypto_core_ristretto255.h \
+  C:/msys64/ucrt64/include/sodium/crypto_core_salsa20.h \
+  C:/msys64/ucrt64/include/sodium/crypto_core_salsa2012.h \
+  C:/msys64/ucrt64/include/sodium/crypto_core_salsa208.h \
+  C:/msys64/ucrt64/include/sodium/crypto_generichash.h \
+  C:/msys64/ucrt64/include/sodium/crypto_generichash_blake2b.h \
+  C:/msys64/ucrt64/include/sodium/crypto_hash.h \
+  C:/msys64/ucrt64/include/sodium/crypto_hash_sha256.h \
+  C:/msys64/ucrt64/include/sodium/crypto_hash_sha512.h \
+  C:/msys64/ucrt64/include/sodium/crypto_kdf.h \
+  C:/msys64/ucrt64/include/sodium/crypto_kdf_blake2b.h \
+  C:/msys64/ucrt64/include/sodium/crypto_kdf_hkdf_sha256.h \
+  C:/msys64/ucrt64/include/sodium/crypto_kdf_hkdf_sha512.h \
+  C:/msys64/ucrt64/include/sodium/crypto_kx.h \
+  C:/msys64/ucrt64/include/sodium/crypto_onetimeauth.h \
+  C:/msys64/ucrt64/include/sodium/crypto_onetimeauth_poly1305.h \
+  C:/msys64/ucrt64/include/sodium/crypto_pwhash.h \
+  C:/msys64/ucrt64/include/sodium/crypto_pwhash_argon2i.h \
+  C:/msys64/ucrt64/include/sodium/crypto_pwhash_argon2id.h \
+  C:/msys64/ucrt64/include/sodium/crypto_pwhash_scryptsalsa208sha256.h \
+  C:/msys64/ucrt64/include/sodium/crypto_scalarmult.h \
+  C:/msys64/ucrt64/include/sodium/crypto_scalarmult_curve25519.h \
+  C:/msys64/ucrt64/include/sodium/crypto_scalarmult_ed25519.h \
+  C:/msys64/ucrt64/include/sodium/crypto_scalarmult_ristretto255.h \
+  C:/msys64/ucrt64/include/sodium/crypto_secretbox.h \
+  C:/msys64/ucrt64/include/sodium/crypto_secretbox_xchacha20poly1305.h \
+  C:/msys64/ucrt64/include/sodium/crypto_secretbox_xsalsa20poly1305.h \
+  C:/msys64/ucrt64/include/sodium/crypto_secretstream_xchacha20poly1305.h \
+  C:/msys64/ucrt64/include/sodium/crypto_shorthash.h \
+  C:/msys64/ucrt64/include/sodium/crypto_shorthash_siphash24.h \
+  C:/msys64/ucrt64/include/sodium/crypto_sign.h \
+  C:/msys64/ucrt64/include/sodium/crypto_sign_ed25519.h \
+  C:/msys64/ucrt64/include/sodium/crypto_stream.h \
+  C:/msys64/ucrt64/include/sodium/crypto_stream_chacha20.h \
+  C:/msys64/ucrt64/include/sodium/crypto_stream_salsa20.h \
+  C:/msys64/ucrt64/include/sodium/crypto_stream_salsa2012.h \
+  C:/msys64/ucrt64/include/sodium/crypto_stream_salsa208.h \
+  C:/msys64/ucrt64/include/sodium/crypto_stream_xchacha20.h \
+  C:/msys64/ucrt64/include/sodium/crypto_stream_xsalsa20.h \
+  C:/msys64/ucrt64/include/sodium/crypto_verify_16.h \
+  C:/msys64/ucrt64/include/sodium/crypto_verify_32.h \
+  C:/msys64/ucrt64/include/sodium/crypto_verify_64.h \
+  C:/msys64/ucrt64/include/sodium/export.h \
+  C:/msys64/ucrt64/include/sodium/randombytes.h \
+  C:/msys64/ucrt64/include/sodium/randombytes_internal_random.h \
+  C:/msys64/ucrt64/include/sodium/randombytes_sysrandom.h \
+  C:/msys64/ucrt64/include/sodium/runtime.h \
+  C:/msys64/ucrt64/include/sodium/utils.h \
+  C:/msys64/ucrt64/include/sodium/version.h \
+  C:/msys64/ucrt64/include/stddef.h \
+  C:/msys64/ucrt64/include/stdint.h \
+  C:/msys64/ucrt64/include/stdio.h \
+  C:/msys64/ucrt64/include/stdlib.h \
+  C:/msys64/ucrt64/include/swprintf.inl \
+  C:/msys64/ucrt64/include/sys/types.h \
+  C:/msys64/ucrt64/include/vadefs.h \
+  C:/msys64/ucrt64/include/wchar.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h
+
 CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/LatePenaltyPolicy.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/ThreeDayGraduatedLatePenaltyPolicy.h \
@@ -1537,7 +2164,13 @@ CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h
 
 
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h:
+
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h:
+
+C:/msys64/ucrt64/include/sodium.h:
 
 C:/msys64/ucrt64/include/_timeval.h:
 
@@ -1545,27 +2178,35 @@ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/model
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/main.cpp:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h:
-
-C:/msys64/ucrt64/include/_mingw_secapi.h:
-
 C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf.tcc:
 
 C:/msys64/ucrt64/include/_mingw.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Course.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_inline.h:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/AuthenticationService.h:
+
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/CourseRepository.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.h:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/UserRepository.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_auth_hmacsha256.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/localefwd.h:
 
-C:/msys64/ucrt64/include/_mingw_mac.h:
+C:/msys64/ucrt64/include/sodium/crypto_stream_xsalsa20.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h:
+C:/msys64/ucrt64/include/_mingw_mac.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/sstream:
 
 C:/msys64/ucrt64/include/_mingw_off_t.h:
+
+C:/msys64/ucrt64/include/_mingw_secapi.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/istream:
 
@@ -1577,21 +2218,39 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.tcc:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/LatePenaltyPolicy.h:
 
+C:/msys64/ucrt64/include/_mingw_stdarg.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h:
 
-C:/msys64/ucrt64/include/_mingw_stdarg.h:
+C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bit:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Assignment.cpp:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/bits/refwrap.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/clocale:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.tcc:
 
@@ -1599,11 +2258,15 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h:
 
+C:/msys64/ucrt64/include/sodium/crypto_scalarmult_ed25519.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/new_allocator.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_string.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h:
+
+C:/msys64/ucrt64/include/stdint.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/ext/string_conversions.h:
 
@@ -1611,17 +2274,17 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/char_traits.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/charconv.h:
 
+C:/msys64/ucrt64/include/sodium/crypto_generichash_blake2b.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/postypes.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/ios_base.h:
 
+C:/msys64/ucrt64/include/sodium/crypto_aead_xchacha20poly1305.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_base.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/concept_check.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h:
 
@@ -1629,15 +2292,19 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.h:
 
+C:/msys64/ucrt64/include/sodium/crypto_generichash.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h:
+C:/msys64/ucrt64/include/sodium/crypto_hash.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h:
 
@@ -1651,17 +2318,19 @@ C:/msys64/ucrt64/include/c++/15.2.0/string:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/hash_bytes.h:
 
+C:/msys64/ucrt64/include/sodium/crypto_pwhash_scryptsalsa208sha256.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_aead_aegis128l.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/invoke.h:
 
 C:/msys64/ucrt64/include/stdarg.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/clocale:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/memoryfwd.h:
+C:/msys64/ucrt64/include/sodium/crypto_box.h:
 
 C:/msys64/ucrt64/include/sys/timeb.h:
 
@@ -1677,29 +2346,55 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream_insert.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/range_access.h:
-
 C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h:
+
+C:/msys64/ucrt64/include/sodium/randombytes.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Course.cpp:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_algobase.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h:
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_construct.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/debug/assertions.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_function.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_secretstream_xchacha20poly1305.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_core_ristretto255.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_iterator_base_types.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_pair.h:
 
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_uninitialized.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_verify_64.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/streambuf_iterator.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/string_view.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/stringfwd.h:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Submission.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator.h:
 
@@ -1723,6 +2418,10 @@ C:/msys64/ucrt64/include/c++/15.2.0/cstddef:
 
 C:/msys64/ucrt64/include/c++/15.2.0/cstdio:
 
+C:/msys64/ucrt64/include/sodium/crypto_hash_sha256.h:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/DepartmentRepository.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/cstdlib:
 
 C:/msys64/ucrt64/include/c++/15.2.0/cwchar:
@@ -1735,7 +2434,13 @@ C:/msys64/ucrt64/include/c++/15.2.0/ext/concurrence.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/exception:
 
+C:/msys64/ucrt64/include/c++/15.2.0/bits/codecvt.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/ext/alloc_traits.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_core_hsalsa20.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/ext/atomicity.h:
 
@@ -1751,11 +2456,23 @@ C:/msys64/ucrt64/include/c++/15.2.0/iosfwd:
 
 C:/msys64/ucrt64/include/c++/15.2.0/iostream:
 
-C:/msys64/ucrt64/include/c++/15.2.0/new:
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/DepartmentRepository.cpp:
+
+C:/msys64/ucrt64/include/c++/15.2.0/limits:
+
+C:/msys64/ucrt64/include/c++/15.2.0/ostream:
 
 C:/msys64/ucrt64/include/c++/15.2.0/memory:
 
-C:/msys64/ucrt64/include/c++/15.2.0/ostream:
+C:/msys64/ucrt64/include/c++/15.2.0/new:
+
+C:/msys64/ucrt64/include/c++/15.2.0/optional:
+
+C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h:
 
@@ -1771,11 +2488,17 @@ C:/msys64/ucrt64/include/c++/15.2.0/system_error:
 
 C:/msys64/ucrt64/include/c++/15.2.0/tuple:
 
+C:/msys64/ucrt64/include/sodium/crypto_stream_chacha20.h:
+
 C:/msys64/ucrt64/include/c++/15.2.0/type_traits:
+
+C:/msys64/ucrt64/include/sodium/randombytes_sysrandom.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/typeinfo:
 
 C:/msys64/ucrt64/include/c++/15.2.0/vector:
+
+C:/msys64/ucrt64/include/sodium/runtime.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Lecturer.h:
 
@@ -1793,19 +2516,17 @@ C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_inline.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h:
-
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h:
 
+C:/msys64/ucrt64/include/sodium/crypto_core_salsa20.h:
+
 C:/msys64/ucrt64/include/corecrt_startup.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_auth_hmacsha512256.h:
 
 C:/msys64/ucrt64/include/ctype.h:
 
@@ -1823,17 +2544,23 @@ C:/msys64/ucrt64/include/limits.h:
 
 C:/msys64/ucrt64/include/locale.h:
 
+C:/msys64/ucrt64/include/sodium/crypto_stream_salsa2012.h:
+
 C:/msys64/ucrt64/include/malloc.h:
 
 C:/msys64/ucrt64/include/process.h:
 
 C:/msys64/ucrt64/include/pthread.h:
 
+C:/msys64/ucrt64/include/sodium/crypto_aead_aes256gcm.h:
+
 C:/msys64/ucrt64/include/pthread_compat.h:
 
 C:/msys64/ucrt64/include/pthread_signal.h:
 
 C:/msys64/ucrt64/include/pthread_time.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_stream.h:
 
 C:/msys64/ucrt64/include/pthread_unistd.h:
 
@@ -1859,6 +2586,8 @@ C:/msys64/ucrt64/include/stddef.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp:
 
+C:/msys64/ucrt64/include/sodium/crypto_kdf_hkdf_sha256.h:
+
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Administrator.h:
 
 C:/msys64/ucrt64/include/stdio.h:
@@ -1875,10 +2604,6 @@ C:/msys64/ucrt64/include/wchar.h:
 
 C:/msys64/ucrt64/include/wctype.h:
 
-C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h:
-
-C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h:
-
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm_malloc.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h:
@@ -1888,10 +2613,6 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h:
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Administrator.cpp:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h:
-
-C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Assignment.cpp:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Assignment.h:
 
@@ -1905,41 +2626,15 @@ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/St
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Submission.cpp:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/unique_ptr.h:
-
-C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Submission.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/optional:
+C:/msys64/ucrt64/include/sodium/crypto_shorthash.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/UserFactory.cpp:
-
-C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_lockfree_defines.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_atomic.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/shared_ptr_base.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_raw_storage_iter.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/codecvt.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/ext/aligned_buffer.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/CourseRepository.cpp:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/fstream.tcc:
+
+C:/msys64/ucrt64/include/sodium/crypto_kdf.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/sstream.tcc:
 
@@ -1948,5 +2643,95 @@ C:/msys64/ucrt64/include/c++/15.2.0/fstream:
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/UserRepository.cpp:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/services/AuthenticationService.cpp:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/PasswordService.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_relops.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/utility:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/services/PasswordService.cpp:
+
+C:/msys64/ucrt64/include/sodium/core.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_aead_aegis256.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_aead_chacha20poly1305.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_auth.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_auth_hmacsha512.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_box_curve25519xchacha20poly1305.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_core_salsa208.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_box_curve25519xsalsa20poly1305.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_core_ed25519.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_core_hchacha20.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_core_salsa2012.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_hash_sha512.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_kdf_blake2b.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_kdf_hkdf_sha512.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_kx.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_onetimeauth.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_secretbox.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_onetimeauth_poly1305.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_pwhash.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_pwhash_argon2i.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_pwhash_argon2id.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_scalarmult.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_scalarmult_curve25519.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_scalarmult_ristretto255.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_secretbox_xchacha20poly1305.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_stream_xchacha20.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_secretbox_xsalsa20poly1305.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_shorthash_siphash24.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_sign.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_sign_ed25519.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_stream_salsa20.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_stream_salsa208.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_verify_16.h:
+
+C:/msys64/ucrt64/include/sodium/crypto_verify_32.h:
+
+C:/msys64/ucrt64/include/sodium/export.h:
+
+C:/msys64/ucrt64/include/sodium/randombytes_internal_random.h:
+
+C:/msys64/ucrt64/include/sodium/utils.h:
+
+C:/msys64/ucrt64/include/sodium/version.h:
+
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/ThreeDayGraduatedLatePenaltyPolicy.h:
