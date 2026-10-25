@@ -13,7 +13,7 @@ find_package(SQLite3 REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(SODIUM REQUIRED IMPORTED_TARGET libsodium)
 
-# Build the application.
+# Build the main application.
 add_executable(ModeratedLMS
     src/main.cpp
 
@@ -39,20 +39,76 @@ add_executable(ModeratedLMS
     src/repositories/DepartmentRepository.cpp
     src/repositories/UserRepository.cpp
     src/repositories/AssignmentRepository.cpp
+    src/repositories/SubmissionRepository.cpp
 )
 
-# Locate project headers.
 target_include_directories(ModeratedLMS PRIVATE
     "${CMAKE_SOURCE_DIR}/include"
 )
 
-# Provide the absolute project directory to the application.
 target_compile_definitions(ModeratedLMS PRIVATE
     PROJECT_ROOT="${CMAKE_SOURCE_DIR}"
 )
 
-# Link required libraries.
 target_link_libraries(ModeratedLMS PRIVATE
+    SQLite::SQLite3
+    PkgConfig::SODIUM
+)
+
+# Build the lecturer account creation utility.
+add_executable(CreateLecturer
+    src/create_lecturer.cpp
+
+    # Models
+    src/models/User.cpp
+    src/models/Student.cpp
+    src/models/Lecturer.cpp
+    src/models/HeadOfDepartment.cpp
+    src/models/Administrator.cpp
+    src/models/UserFactory.cpp
+
+    # Repository
+    src/repositories/Database.cpp
+    src/repositories/UserRepository.cpp
+
+    # Services
+    src/services/PasswordService.cpp
+)
+
+target_include_directories(CreateLecturer PRIVATE
+    "${CMAKE_SOURCE_DIR}/include"
+)
+
+target_link_libraries(CreateLecturer PRIVATE
+    SQLite::SQLite3
+    PkgConfig::SODIUM
+)
+
+# Build the HOD account creation utility.
+add_executable(CreateHOD
+    src/CreateHOD.cpp
+
+    # Models
+    src/models/User.cpp
+    src/models/Student.cpp
+    src/models/Lecturer.cpp
+    src/models/HeadOfDepartment.cpp
+    src/models/Administrator.cpp
+    src/models/UserFactory.cpp
+
+    # Repository
+    src/repositories/Database.cpp
+    src/repositories/UserRepository.cpp
+
+    # Services
+    src/services/PasswordService.cpp
+)
+
+target_include_directories(CreateHOD PRIVATE
+    "${CMAKE_SOURCE_DIR}/include"
+)
+
+target_link_libraries(CreateHOD PRIVATE
     SQLite::SQLite3
     PkgConfig::SODIUM
 )

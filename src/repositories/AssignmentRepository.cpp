@@ -8,7 +8,81 @@
 AssignmentRepository::AssignmentRepository(Database& database)
     : database(database) {}
 
-std::vector<Assignment> AssignmentRepository::getAllAssignments() {
+/* Adds a new assignment to the database. */
+bool AssignmentRepository::addAssignment(
+    const Assignment& assignment) {
+
+    const char* sql =
+        "INSERT INTO assignments "
+        "(course_id, title, description, due_date, max_mark) "
+        "VALUES (?, ?, ?, ?, ?);";
+
+    sqlite3_stmt* statement = nullptr;
+    sqlite3* connection = database.getConnection();
+
+    if (sqlite3_prepare_v2(
+            connection, sql, -1, &statement, nullptr) != SQLITE_OK) {
+        throw std::runtime_error(sqlite3_errmsg(connection));
+    }
+
+    int result = SQLITE_OK;
+
+    result = sqlite3_bind_int(
+        statement, 1, assignment.getCourseId());
+
+    if (result == SQLITE_OK) {
+        result = sqlite3_bind_text(
+            statement, 2, assignment.getTitle().c_str(),
+            -1, SQLITE_TRANSIENT);
+    }
+
+    if (result == SQLITE_OK) {
+        result = sqlite3_bind_text(
+            statement, 3, assignment.getDescription().c_str(),
+            -1, SQLITE_TRANSIENT);
+    }
+
+    if (result == SQLITE_OK) {
+        result = sqlite3_bind_text(
+            statement, 4, assignment.getDueDate().c_str(),
+            -1, SQLITE_TRANSIENT);
+    }
+
+    if (result == SQLITE_OK) {
+        result = sqlite3_bind_double(
+            statement, 5, assignment.getMaxMark());
+    }
+
+    if (result != SQLITE_OK) {
+        std::string error = sqlite3_errmsg(connection);
+        sqlite3_finalize(statement);
+        throw std::runtime_error(error);
+    }
+
+    result = sqlite3_step(statement);
+
+    if (result == SQLITE_DONE) {
+        sqlite3_finalize(statement);
+        return true;
+    }
+
+    int errorCode = result;
+    std::string error = sqlite3_errmsg(connection);
+    sqlite3_finalize(statement);
+
+    if (errorCode == SQLITE_CONSTRAINT ||
+        errorCode == SQLITE_CONSTRAINT_FOREIGNKEY ||
+        errorCode == SQLITE_CONSTRAINT_CHECK) {
+        return false;
+    }
+
+    throw std::runtime_error(error);
+}
+
+/* Retrieves every assignment. */
+std::vector<Assignment>
+AssignmentRepository::getAllAssignments() {
+
     const char* sql =
         "SELECT assignment_id, course_id, title, description, "
         "due_date, max_mark "
@@ -55,8 +129,10 @@ std::vector<Assignment> AssignmentRepository::getAllAssignments() {
     return assignments;
 }
 
+/* Retrieves assignments belonging to a particular course. */
 std::vector<Assignment>
 AssignmentRepository::getAssignmentsByCourse(int courseId) {
+
     const char* sql =
         "SELECT assignment_id, course_id, title, description, "
         "due_date, max_mark "

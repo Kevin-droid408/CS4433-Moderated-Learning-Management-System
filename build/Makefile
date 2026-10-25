@@ -128,6 +128,80 @@ ModeratedLMS/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/build
 .PHONY : ModeratedLMS/fast
 
+#=============================================================================
+# Target rules for targets named CreateLecturer
+
+# Build rule for target.
+CreateLecturer: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CreateLecturer
+.PHONY : CreateLecturer
+
+# fast build rule for target.
+CreateLecturer/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/build
+.PHONY : CreateLecturer/fast
+
+#=============================================================================
+# Target rules for targets named CreateHOD
+
+# Build rule for target.
+CreateHOD: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CreateHOD
+.PHONY : CreateHOD
+
+# fast build rule for target.
+CreateHOD/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/build
+.PHONY : CreateHOD/fast
+
+src/CreateHOD.obj: src/CreateHOD.cpp.obj
+.PHONY : src/CreateHOD.obj
+
+# target to build an object file
+src/CreateHOD.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/CreateHOD.cpp.obj
+.PHONY : src/CreateHOD.cpp.obj
+
+src/CreateHOD.i: src/CreateHOD.cpp.i
+.PHONY : src/CreateHOD.i
+
+# target to preprocess a source file
+src/CreateHOD.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/CreateHOD.cpp.i
+.PHONY : src/CreateHOD.cpp.i
+
+src/CreateHOD.s: src/CreateHOD.cpp.s
+.PHONY : src/CreateHOD.s
+
+# target to generate assembly for a file
+src/CreateHOD.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/CreateHOD.cpp.s
+.PHONY : src/CreateHOD.cpp.s
+
+src/create_lecturer.obj: src/create_lecturer.cpp.obj
+.PHONY : src/create_lecturer.obj
+
+# target to build an object file
+src/create_lecturer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/create_lecturer.cpp.obj
+.PHONY : src/create_lecturer.cpp.obj
+
+src/create_lecturer.i: src/create_lecturer.cpp.i
+.PHONY : src/create_lecturer.i
+
+# target to preprocess a source file
+src/create_lecturer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/create_lecturer.cpp.i
+.PHONY : src/create_lecturer.cpp.i
+
+src/create_lecturer.s: src/create_lecturer.cpp.s
+.PHONY : src/create_lecturer.s
+
+# target to generate assembly for a file
+src/create_lecturer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/create_lecturer.cpp.s
+.PHONY : src/create_lecturer.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -158,6 +232,8 @@ src/models/Administrator.obj: src/models/Administrator.cpp.obj
 # target to build an object file
 src/models/Administrator.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Administrator.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Administrator.cpp.obj
 .PHONY : src/models/Administrator.cpp.obj
 
 src/models/Administrator.i: src/models/Administrator.cpp.i
@@ -166,6 +242,8 @@ src/models/Administrator.i: src/models/Administrator.cpp.i
 # target to preprocess a source file
 src/models/Administrator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Administrator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Administrator.cpp.i
 .PHONY : src/models/Administrator.cpp.i
 
 src/models/Administrator.s: src/models/Administrator.cpp.s
@@ -174,6 +252,8 @@ src/models/Administrator.s: src/models/Administrator.cpp.s
 # target to generate assembly for a file
 src/models/Administrator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Administrator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Administrator.cpp.s
 .PHONY : src/models/Administrator.cpp.s
 
 src/models/Assignment.obj: src/models/Assignment.cpp.obj
@@ -230,6 +310,8 @@ src/models/HeadOfDepartment.obj: src/models/HeadOfDepartment.cpp.obj
 # target to build an object file
 src/models/HeadOfDepartment.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/HeadOfDepartment.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/HeadOfDepartment.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/HeadOfDepartment.cpp.obj
 .PHONY : src/models/HeadOfDepartment.cpp.obj
 
 src/models/HeadOfDepartment.i: src/models/HeadOfDepartment.cpp.i
@@ -238,6 +320,8 @@ src/models/HeadOfDepartment.i: src/models/HeadOfDepartment.cpp.i
 # target to preprocess a source file
 src/models/HeadOfDepartment.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/HeadOfDepartment.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/HeadOfDepartment.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/HeadOfDepartment.cpp.i
 .PHONY : src/models/HeadOfDepartment.cpp.i
 
 src/models/HeadOfDepartment.s: src/models/HeadOfDepartment.cpp.s
@@ -246,6 +330,8 @@ src/models/HeadOfDepartment.s: src/models/HeadOfDepartment.cpp.s
 # target to generate assembly for a file
 src/models/HeadOfDepartment.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/HeadOfDepartment.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/HeadOfDepartment.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/HeadOfDepartment.cpp.s
 .PHONY : src/models/HeadOfDepartment.cpp.s
 
 src/models/Lecturer.obj: src/models/Lecturer.cpp.obj
@@ -254,6 +340,8 @@ src/models/Lecturer.obj: src/models/Lecturer.cpp.obj
 # target to build an object file
 src/models/Lecturer.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Lecturer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Lecturer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Lecturer.cpp.obj
 .PHONY : src/models/Lecturer.cpp.obj
 
 src/models/Lecturer.i: src/models/Lecturer.cpp.i
@@ -262,6 +350,8 @@ src/models/Lecturer.i: src/models/Lecturer.cpp.i
 # target to preprocess a source file
 src/models/Lecturer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Lecturer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Lecturer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Lecturer.cpp.i
 .PHONY : src/models/Lecturer.cpp.i
 
 src/models/Lecturer.s: src/models/Lecturer.cpp.s
@@ -270,6 +360,8 @@ src/models/Lecturer.s: src/models/Lecturer.cpp.s
 # target to generate assembly for a file
 src/models/Lecturer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Lecturer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Lecturer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Lecturer.cpp.s
 .PHONY : src/models/Lecturer.cpp.s
 
 src/models/Student.obj: src/models/Student.cpp.obj
@@ -278,6 +370,8 @@ src/models/Student.obj: src/models/Student.cpp.obj
 # target to build an object file
 src/models/Student.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Student.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Student.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Student.cpp.obj
 .PHONY : src/models/Student.cpp.obj
 
 src/models/Student.i: src/models/Student.cpp.i
@@ -286,6 +380,8 @@ src/models/Student.i: src/models/Student.cpp.i
 # target to preprocess a source file
 src/models/Student.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Student.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Student.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Student.cpp.i
 .PHONY : src/models/Student.cpp.i
 
 src/models/Student.s: src/models/Student.cpp.s
@@ -294,6 +390,8 @@ src/models/Student.s: src/models/Student.cpp.s
 # target to generate assembly for a file
 src/models/Student.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Student.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Student.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Student.cpp.s
 .PHONY : src/models/Student.cpp.s
 
 src/models/Submission.obj: src/models/Submission.cpp.obj
@@ -326,6 +424,8 @@ src/models/User.obj: src/models/User.cpp.obj
 # target to build an object file
 src/models/User.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/User.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/User.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/User.cpp.obj
 .PHONY : src/models/User.cpp.obj
 
 src/models/User.i: src/models/User.cpp.i
@@ -334,6 +434,8 @@ src/models/User.i: src/models/User.cpp.i
 # target to preprocess a source file
 src/models/User.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/User.cpp.i
 .PHONY : src/models/User.cpp.i
 
 src/models/User.s: src/models/User.cpp.s
@@ -342,6 +444,8 @@ src/models/User.s: src/models/User.cpp.s
 # target to generate assembly for a file
 src/models/User.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/User.cpp.s
 .PHONY : src/models/User.cpp.s
 
 src/models/UserFactory.obj: src/models/UserFactory.cpp.obj
@@ -350,6 +454,8 @@ src/models/UserFactory.obj: src/models/UserFactory.cpp.obj
 # target to build an object file
 src/models/UserFactory.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/UserFactory.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/UserFactory.cpp.obj
 .PHONY : src/models/UserFactory.cpp.obj
 
 src/models/UserFactory.i: src/models/UserFactory.cpp.i
@@ -358,6 +464,8 @@ src/models/UserFactory.i: src/models/UserFactory.cpp.i
 # target to preprocess a source file
 src/models/UserFactory.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/UserFactory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/UserFactory.cpp.i
 .PHONY : src/models/UserFactory.cpp.i
 
 src/models/UserFactory.s: src/models/UserFactory.cpp.s
@@ -366,6 +474,8 @@ src/models/UserFactory.s: src/models/UserFactory.cpp.s
 # target to generate assembly for a file
 src/models/UserFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/UserFactory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/UserFactory.cpp.s
 .PHONY : src/models/UserFactory.cpp.s
 
 src/repositories/AssignmentRepository.obj: src/repositories/AssignmentRepository.cpp.obj
@@ -422,6 +532,8 @@ src/repositories/Database.obj: src/repositories/Database.cpp.obj
 # target to build an object file
 src/repositories/Database.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/Database.cpp.obj
 .PHONY : src/repositories/Database.cpp.obj
 
 src/repositories/Database.i: src/repositories/Database.cpp.i
@@ -430,6 +542,8 @@ src/repositories/Database.i: src/repositories/Database.cpp.i
 # target to preprocess a source file
 src/repositories/Database.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/Database.cpp.i
 .PHONY : src/repositories/Database.cpp.i
 
 src/repositories/Database.s: src/repositories/Database.cpp.s
@@ -438,6 +552,8 @@ src/repositories/Database.s: src/repositories/Database.cpp.s
 # target to generate assembly for a file
 src/repositories/Database.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/Database.cpp.s
 .PHONY : src/repositories/Database.cpp.s
 
 src/repositories/DepartmentRepository.obj: src/repositories/DepartmentRepository.cpp.obj
@@ -464,12 +580,38 @@ src/repositories/DepartmentRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.s
 .PHONY : src/repositories/DepartmentRepository.cpp.s
 
+src/repositories/SubmissionRepository.obj: src/repositories/SubmissionRepository.cpp.obj
+.PHONY : src/repositories/SubmissionRepository.obj
+
+# target to build an object file
+src/repositories/SubmissionRepository.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj
+.PHONY : src/repositories/SubmissionRepository.cpp.obj
+
+src/repositories/SubmissionRepository.i: src/repositories/SubmissionRepository.cpp.i
+.PHONY : src/repositories/SubmissionRepository.i
+
+# target to preprocess a source file
+src/repositories/SubmissionRepository.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.i
+.PHONY : src/repositories/SubmissionRepository.cpp.i
+
+src/repositories/SubmissionRepository.s: src/repositories/SubmissionRepository.cpp.s
+.PHONY : src/repositories/SubmissionRepository.s
+
+# target to generate assembly for a file
+src/repositories/SubmissionRepository.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.s
+.PHONY : src/repositories/SubmissionRepository.cpp.s
+
 src/repositories/UserRepository.obj: src/repositories/UserRepository.cpp.obj
 .PHONY : src/repositories/UserRepository.obj
 
 # target to build an object file
 src/repositories/UserRepository.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/UserRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/UserRepository.cpp.obj
 .PHONY : src/repositories/UserRepository.cpp.obj
 
 src/repositories/UserRepository.i: src/repositories/UserRepository.cpp.i
@@ -478,6 +620,8 @@ src/repositories/UserRepository.i: src/repositories/UserRepository.cpp.i
 # target to preprocess a source file
 src/repositories/UserRepository.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/UserRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/UserRepository.cpp.i
 .PHONY : src/repositories/UserRepository.cpp.i
 
 src/repositories/UserRepository.s: src/repositories/UserRepository.cpp.s
@@ -486,6 +630,8 @@ src/repositories/UserRepository.s: src/repositories/UserRepository.cpp.s
 # target to generate assembly for a file
 src/repositories/UserRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/UserRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/UserRepository.cpp.s
 .PHONY : src/repositories/UserRepository.cpp.s
 
 src/services/AuthenticationService.obj: src/services/AuthenticationService.cpp.obj
@@ -518,6 +664,8 @@ src/services/PasswordService.obj: src/services/PasswordService.cpp.obj
 # target to build an object file
 src/services/PasswordService.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/PasswordService.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/services/PasswordService.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/services/PasswordService.cpp.obj
 .PHONY : src/services/PasswordService.cpp.obj
 
 src/services/PasswordService.i: src/services/PasswordService.cpp.i
@@ -526,6 +674,8 @@ src/services/PasswordService.i: src/services/PasswordService.cpp.i
 # target to preprocess a source file
 src/services/PasswordService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/PasswordService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/services/PasswordService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/services/PasswordService.cpp.i
 .PHONY : src/services/PasswordService.cpp.i
 
 src/services/PasswordService.s: src/services/PasswordService.cpp.s
@@ -534,6 +684,8 @@ src/services/PasswordService.s: src/services/PasswordService.cpp.s
 # target to generate assembly for a file
 src/services/PasswordService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/PasswordService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/services/PasswordService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/services/PasswordService.cpp.s
 .PHONY : src/services/PasswordService.cpp.s
 
 src/services/ThreeDayGraduatedLatePenaltyPolicy.obj: src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
@@ -568,7 +720,15 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... CreateHOD
+	@echo ... CreateLecturer
 	@echo ... ModeratedLMS
+	@echo ... src/CreateHOD.obj
+	@echo ... src/CreateHOD.i
+	@echo ... src/CreateHOD.s
+	@echo ... src/create_lecturer.obj
+	@echo ... src/create_lecturer.i
+	@echo ... src/create_lecturer.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
@@ -611,6 +771,9 @@ help:
 	@echo ... src/repositories/DepartmentRepository.obj
 	@echo ... src/repositories/DepartmentRepository.i
 	@echo ... src/repositories/DepartmentRepository.s
+	@echo ... src/repositories/SubmissionRepository.obj
+	@echo ... src/repositories/SubmissionRepository.i
+	@echo ... src/repositories/SubmissionRepository.s
 	@echo ... src/repositories/UserRepository.obj
 	@echo ... src/repositories/UserRepository.i
 	@echo ... src/repositories/UserRepository.s

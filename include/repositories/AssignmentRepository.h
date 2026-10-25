@@ -14,6 +14,8 @@ class AssignmentRepository {
     public:
         explicit AssignmentRepository(Database& database);
 
+        bool addAssignment(const Assignment& assignment);
+
         std::vector<Assignment> getAllAssignments();
         std::vector<Assignment> getAssignmentsByCourse(int courseId);
 };

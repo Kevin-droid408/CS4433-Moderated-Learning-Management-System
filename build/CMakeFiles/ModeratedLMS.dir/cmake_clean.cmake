@@ -27,6 +27,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj.d"
   "CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.obj"
   "CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.obj.d"
+  "CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj"
+  "CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj.d"
   "CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.obj"
   "CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.obj.d"
   "CMakeFiles/ModeratedLMS.dir/src/services/AuthenticationService.cpp.obj"

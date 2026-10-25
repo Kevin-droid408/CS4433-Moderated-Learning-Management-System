@@ -56,4 +56,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ModeratedLMS.dir/DependInfo.cmake"
+  "CMakeFiles/CreateLecturer.dir/DependInfo.cmake"
+  "CMakeFiles/CreateHOD.dir/DependInfo.cmake"
   )

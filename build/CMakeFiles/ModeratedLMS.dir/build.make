@@ -341,6 +341,21 @@ CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.s"
 	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\repositories\AssignmentRepository.cpp -o CMakeFiles\ModeratedLMS.dir\src\repositories\AssignmentRepository.cpp.s
 
+CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj: CMakeFiles/ModeratedLMS.dir/flags.make
+CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj: CMakeFiles/ModeratedLMS.dir/includes_CXX.rsp
+CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/SubmissionRepository.cpp
+CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj: CMakeFiles/ModeratedLMS.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj -MF CMakeFiles\ModeratedLMS.dir\src\repositories\SubmissionRepository.cpp.obj.d -o CMakeFiles\ModeratedLMS.dir\src\repositories\SubmissionRepository.cpp.obj -c C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\repositories\SubmissionRepository.cpp
+
+CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.i"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\repositories\SubmissionRepository.cpp > CMakeFiles\ModeratedLMS.dir\src\repositories\SubmissionRepository.cpp.i
+
+CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.s"
+	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\src\repositories\SubmissionRepository.cpp -o CMakeFiles\ModeratedLMS.dir\src\repositories\SubmissionRepository.cpp.s
+
 # Object files for target ModeratedLMS
 ModeratedLMS_OBJECTS = \
 "CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj" \
@@ -360,7 +375,8 @@ ModeratedLMS_OBJECTS = \
 "CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj" \
 "CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.obj" \
 "CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.obj" \
-"CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.obj"
+"CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.obj" \
+"CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj"
 
 # External object files for target ModeratedLMS
 ModeratedLMS_EXTERNAL_OBJECTS =
@@ -383,13 +399,14 @@ ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.obj
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.obj
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.obj
+ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/build.make
 ModeratedLMS.exe: C:/msys64/ucrt64/lib/libsqlite3.dll.a
 ModeratedLMS.exe: C:/msys64/ucrt64/lib/libsodium.dll.a
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/linkLibs.rsp
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/objects1.rsp
 ModeratedLMS.exe: CMakeFiles/ModeratedLMS.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable ModeratedLMS.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable ModeratedLMS.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ModeratedLMS.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
