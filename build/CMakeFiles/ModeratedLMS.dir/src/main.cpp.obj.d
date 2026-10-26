@@ -103,7 +103,6 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/UserRepository.h \
- C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h \
  C:/msys64/ucrt64/include/c++/15.2.0/memory \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \
@@ -146,6 +145,7 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/optional \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/CourseRepository.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Course.h \
  C:/msys64/ucrt64/include/c++/15.2.0/vector \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
@@ -155,7 +155,12 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Assignment.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/SubmissionRepository.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Submission.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/ThreeDayGraduatedLatePenaltyPolicy.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/LatePenaltyPolicy.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/EnrollmentRepository.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/ExtensionRepository.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/AuthenticationService.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/CreateAccount.h \
  C:/msys64/ucrt64/include/c++/15.2.0/iostream \
  C:/msys64/ucrt64/include/c++/15.2.0/ostream \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h \

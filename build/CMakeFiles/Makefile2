@@ -65,12 +65,14 @@ CMAKE_BINARY_DIR = C:\Users\Administrator\CS4433-Moderated-Learning-Management-S
 all: CMakeFiles/ModeratedLMS.dir/all
 all: CMakeFiles/CreateLecturer.dir/all
 all: CMakeFiles/CreateHOD.dir/all
+all: CMakeFiles/SetupDepartments.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/ModeratedLMS.dir/codegen
 codegen: CMakeFiles/CreateLecturer.dir/codegen
 codegen: CMakeFiles/CreateHOD.dir/codegen
+codegen: CMakeFiles/SetupDepartments.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -81,6 +83,7 @@ preinstall:
 clean: CMakeFiles/ModeratedLMS.dir/clean
 clean: CMakeFiles/CreateLecturer.dir/clean
 clean: CMakeFiles/CreateHOD.dir/clean
+clean: CMakeFiles/SetupDepartments.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -90,12 +93,12 @@ clean: CMakeFiles/CreateHOD.dir/clean
 CMakeFiles/ModeratedLMS.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Built target ModeratedLMS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45 "Built target ModeratedLMS"
 .PHONY : CMakeFiles/ModeratedLMS.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ModeratedLMS.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles 23
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/ModeratedLMS.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles 0
 .PHONY : CMakeFiles/ModeratedLMS.dir/rule
@@ -107,7 +110,7 @@ ModeratedLMS: CMakeFiles/ModeratedLMS.dir/rule
 # codegen rule for target.
 CMakeFiles/ModeratedLMS.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42 "Finished codegen for target ModeratedLMS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45 "Finished codegen for target ModeratedLMS"
 .PHONY : CMakeFiles/ModeratedLMS.dir/codegen
 
 # clean rule for target.
@@ -178,6 +181,38 @@ CMakeFiles/CreateHOD.dir/codegen:
 CMakeFiles/CreateHOD.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/clean
 .PHONY : CMakeFiles/CreateHOD.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/SetupDepartments.dir
+
+# All Build rule for target.
+CMakeFiles/SetupDepartments.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=46,47,48,49,50,51,52,53,54,55,56 "Built target SetupDepartments"
+.PHONY : CMakeFiles/SetupDepartments.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/SetupDepartments.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles 11
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/SetupDepartments.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles 0
+.PHONY : CMakeFiles/SetupDepartments.dir/rule
+
+# Convenience name for target.
+SetupDepartments: CMakeFiles/SetupDepartments.dir/rule
+.PHONY : SetupDepartments
+
+# codegen rule for target.
+CMakeFiles/SetupDepartments.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=46,47,48,49,50,51,52,53,54,55,56 "Finished codegen for target SetupDepartments"
+.PHONY : CMakeFiles/SetupDepartments.dir/codegen
+
+# clean rule for target.
+CMakeFiles/SetupDepartments.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/clean
+.PHONY : CMakeFiles/SetupDepartments.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

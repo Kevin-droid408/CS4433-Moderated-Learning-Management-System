@@ -4,6 +4,7 @@
 
 #include "User.h"
 #include <string>
+using namespace std;
 
 class HeadOfDepartment : public User {
     public:

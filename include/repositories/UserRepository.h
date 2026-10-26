@@ -2,7 +2,7 @@
 #ifndef USER_REPOSITORY_H
 #define USER_REPOSITORY_H
 
-#include "Database.h"
+#include "repositories/Database.h"
 #include "models/User.h"
 
 #include <memory>
@@ -18,13 +18,30 @@ class UserRepository {
 
         bool addUser(
             const User& user,
-            const string& passwordHash,
+            const std::string& username,
+            const std::string& passwordHash,
             int departmentId = 0
         );
 
-        unique_ptr<User> findByEmail(
-            const string& email
+        // Compatibility overload for existing setup utilities.
+        bool addUser(
+            const User& user,
+            const std::string& passwordHash,
+            int departmentId = 0
         );
+
+        std::unique_ptr<User> findByUsername(
+            const std::string& username
+        );
+
+        std::unique_ptr<User> findByEmail(
+            const std::string& email
+        );
+
+        bool usernameExists(const std::string& username);
+        bool emailExists(const std::string& email);
+
+        std::optional<int> getDepartmentId(int userId);
 };
 
 #endif

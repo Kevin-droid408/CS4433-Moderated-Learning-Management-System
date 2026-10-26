@@ -103,7 +103,6 @@ CMakeFiles/CreateLecturer.dir/src/create_lecturer.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/uses_allocator_args.h \
  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/UserRepository.h \
- C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h \
  C:/msys64/ucrt64/include/c++/15.2.0/memory \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_tempbuf.h \

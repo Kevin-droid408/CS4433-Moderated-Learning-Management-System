@@ -1,13 +1,14 @@
-
 #include "models/Lecturer.h"
 
-Lecturer::Lecturer(int userId,
-                   const string& fullName,
-                   const string& email,
-                   const string& passwordHash)
+Lecturer::Lecturer(
+    int userId,
+    const std::string& fullName,
+    const std::string& email,
+    const std::string& passwordHash
+)
     : User(userId, fullName, email, passwordHash) {
 }
 
-string Lecturer::getRole() const {
+std::string Lecturer::getRole() const {
     return "Lecturer";
 }

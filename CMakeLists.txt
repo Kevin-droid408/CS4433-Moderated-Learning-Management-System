@@ -3,17 +3,23 @@ cmake_minimum_required(VERSION 3.20)
 
 project(ModeratedLMS LANGUAGES CXX)
 
-# Use C++17.
+# --------------------------------------------------
+# C++ Standard
+# --------------------------------------------------
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Find required libraries.
+# --------------------------------------------------
+# Find Required Libraries
+# --------------------------------------------------
 find_package(SQLite3 REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(SODIUM REQUIRED IMPORTED_TARGET libsodium)
 
-# Build the main application.
+# --------------------------------------------------
+# Main Moderated LMS Application
+# --------------------------------------------------
 add_executable(ModeratedLMS
     src/main.cpp
 
@@ -32,7 +38,8 @@ add_executable(ModeratedLMS
     src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp
     src/services/PasswordService.cpp
     src/services/AuthenticationService.cpp
-
+    src/services/CreateAccount.cpp
+    
     # Repositories
     src/repositories/Database.cpp
     src/repositories/CourseRepository.cpp
@@ -40,6 +47,8 @@ add_executable(ModeratedLMS
     src/repositories/UserRepository.cpp
     src/repositories/AssignmentRepository.cpp
     src/repositories/SubmissionRepository.cpp
+    src/repositories/EnrollmentRepository.cpp
+    src/repositories/ExtensionRepository.cpp
 )
 
 target_include_directories(ModeratedLMS PRIVATE
@@ -51,11 +60,13 @@ target_compile_definitions(ModeratedLMS PRIVATE
 )
 
 target_link_libraries(ModeratedLMS PRIVATE
-    SQLite::SQLite3
+    SQLite3::SQLite3
     PkgConfig::SODIUM
 )
 
-# Build the lecturer account creation utility.
+# --------------------------------------------------
+# Lecturer Account Creation Utility
+# --------------------------------------------------
 add_executable(CreateLecturer
     src/create_lecturer.cpp
 
@@ -80,11 +91,13 @@ target_include_directories(CreateLecturer PRIVATE
 )
 
 target_link_libraries(CreateLecturer PRIVATE
-    SQLite::SQLite3
+    SQLite3::SQLite3
     PkgConfig::SODIUM
 )
 
-# Build the HOD account creation utility.
+# --------------------------------------------------
+# Head of Department Account Creation Utility
+# --------------------------------------------------
 add_executable(CreateHOD
     src/CreateHOD.cpp
 
@@ -109,6 +122,41 @@ target_include_directories(CreateHOD PRIVATE
 )
 
 target_link_libraries(CreateHOD PRIVATE
-    SQLite::SQLite3
+    SQLite3::SQLite3
+    PkgConfig::SODIUM
+)
+
+# --------------------------------------------------
+# Department Setup Utility
+# --------------------------------------------------
+add_executable(SetupDepartments
+    src/setup_departments.cpp
+
+    # Models
+    src/models/User.cpp
+    src/models/Student.cpp
+    src/models/Lecturer.cpp
+    src/models/HeadOfDepartment.cpp
+    src/models/Administrator.cpp
+    src/models/UserFactory.cpp
+
+    # Repositories
+    src/repositories/Database.cpp
+    src/repositories/UserRepository.cpp
+
+    # Services
+    src/services/PasswordService.cpp
+)
+
+target_include_directories(SetupDepartments PRIVATE
+    "${CMAKE_SOURCE_DIR}/include"
+)
+
+target_compile_definitions(SetupDepartments PRIVATE
+    PROJECT_ROOT="${CMAKE_SOURCE_DIR}"
+)
+
+target_link_libraries(SetupDepartments PRIVATE
+    SQLite3::SQLite3
     PkgConfig::SODIUM
 )

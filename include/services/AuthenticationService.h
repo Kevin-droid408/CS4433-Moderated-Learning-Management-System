@@ -16,7 +16,7 @@ class AuthenticationService {
         explicit AuthenticationService(UserRepository& userRepository);
 
         std::unique_ptr<User> login(
-            const std::string& email,
+            const std::string& username,
             const std::string& password
         );
 };

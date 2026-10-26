@@ -7,6 +7,7 @@
 #include "models/Administrator.h"
 
 #include <stdexcept>
+using namespace std;
 
 std::unique_ptr<User> UserFactory::createUser(
     const string& role,

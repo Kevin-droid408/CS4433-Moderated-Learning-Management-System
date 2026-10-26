@@ -1,4 +1,3 @@
-
 #ifndef STUDENT_H
 #define STUDENT_H
 
@@ -6,13 +5,15 @@
 #include <string>
 
 class Student : public User {
-    public:
-        Student(int userId,
-                const string& fullName,
-                const string& email,
-                const string& passwordHash);
+public:
+    Student(
+        int userId,
+        const std::string& fullName,
+        const std::string& email,
+        const std::string& passwordHash
+    );
 
-        string getRole() const override;
+    std::string getRole() const override;
 };
 
 #endif
