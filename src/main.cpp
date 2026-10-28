@@ -1,4 +1,3 @@
-
 #include "repositories/Database.h"
 #include "repositories/UserRepository.h"
 #include "repositories/CourseRepository.h"
@@ -27,6 +26,10 @@
 #include <stdexcept>
 #include <optional>
 #include <cctype>
+#include <filesystem>
+#ifndef PROJECT_ROOT
+#define PROJECT_ROOT "."
+#endif
 
 using namespace std;
 
@@ -694,7 +697,6 @@ void displayDepartmentSubmissions(
 }
 
 /* Grades a submission from the lecturer's department. */
-
 void gradeSubmission(
     const User& lecturer,
     AssignmentRepository& assignmentRepository,
@@ -970,8 +972,11 @@ void showRoleMenu(const User& user) {
 int getHighestRoleOption(const User& user) {
     if (user.getRole() == "Student") return 7;
     if (user.getRole() == "Lecturer") return 5;
+
     if (user.getRole() == "HeadOfDepartment" ||
-        user.getRole() == "Administrator") return 3;
+        user.getRole() == "Administrator") {
+        return 3;
+    }
 
     return -1;
 }
@@ -1057,9 +1062,26 @@ void createAccountMenu(CreateAccount& accountService) {
 
 int main() {
     try {
-        Database database("database/lms.db");
-        database.initializeSchema("database/schema.sql");
+        // Resolve database and schema paths from the project root.
+        const filesystem::path projectRoot = PROJECT_ROOT;
 
+        const filesystem::path databaseDirectory =
+            projectRoot / "database";
+
+        const filesystem::path databasePath =
+            databaseDirectory / "lms.db";
+
+        const filesystem::path schemaPath =
+            databaseDirectory / "schema.sql";
+
+        // Ensure the database directory exists.
+        filesystem::create_directories(databaseDirectory);
+
+        // Initialize the database and schema.
+        Database database(databasePath.string());
+        database.initializeSchema(schemaPath.string());
+
+        // Initialize repositories.
         UserRepository userRepository(database);
         CourseRepository courseRepository(database);
         AssignmentRepository assignmentRepository(database);
@@ -1069,6 +1091,7 @@ int main() {
         EnrollmentRepository enrollmentRepository(
             database.getConnection());
 
+        // Initialize services.
         AuthenticationService authenticationService(userRepository);
         CreateAccount accountService(userRepository);
 
@@ -1086,12 +1109,16 @@ int main() {
             if (mainChoice == -1 || mainChoice == 0) {
                 applicationRunning = false;
                 cout << "\nExiting the Moderated LMS. Goodbye!\n";
-            } else if (mainChoice == 2) {
+            }
+            else if (mainChoice == 2) {
                 createAccountMenu(accountService);
-            } else if (mainChoice == 1) {
-                string username, password;
+            }
+            else if (mainChoice == 1) {
+                string username;
+                string password;
 
-                if (!readRequiredText("Enter your username: ", username) ||
+                if (!readRequiredText(
+                        "Enter your username: ", username) ||
                     !readPassword(password)) {
                     cout << "\nInput ended. Exiting the application.\n";
                     return 0;
@@ -1114,7 +1141,9 @@ int main() {
                 if (loggedInUser->getRole() == "Lecturer" ||
                     loggedInUser->getRole() == "HeadOfDepartment") {
                     departmentAvailable = getUserDepartment(
-                        *loggedInUser, userRepository, departmentId);
+                        *loggedInUser,
+                        userRepository,
+                        departmentId);
                 }
 
                 bool loggedIn = true;
@@ -1135,9 +1164,11 @@ int main() {
                         continue;
                     }
 
-                    int highestOption = getHighestRoleOption(*loggedInUser);
+                    int highestOption =
+                        getHighestRoleOption(*loggedInUser);
 
-                    if (roleChoice < 1 || roleChoice > highestOption) {
+                    if (roleChoice < 1 ||
+                        roleChoice > highestOption) {
                         cout << "\nInvalid menu choice. Try again.\n";
                         continue;
                     }
@@ -1149,22 +1180,28 @@ int main() {
                             case 1:
                                 displayAvailableCourses(courseRepository);
                                 break;
+
                             case 2:
-                                enrollInCourse(*loggedInUser,
-                                               enrollmentRepository,
-                                               courseRepository);
+                                enrollInCourse(
+                                    *loggedInUser,
+                                    enrollmentRepository,
+                                    courseRepository);
                                 break;
+
                             case 3:
-                                displayEnrolledCourses(*loggedInUser,
-                                                       enrollmentRepository,
-                                                       courseRepository);
+                                displayEnrolledCourses(
+                                    *loggedInUser,
+                                    enrollmentRepository,
+                                    courseRepository);
                                 break;
+
                             case 4:
                                 displayStudentAssignments(
                                     *loggedInUser,
                                     enrollmentRepository,
                                     assignmentRepository);
                                 break;
+
                             case 5:
                                 submitAssignment(
                                     *loggedInUser,
@@ -1172,11 +1209,13 @@ int main() {
                                     assignmentRepository,
                                     submissionRepository);
                                 break;
+
                             case 6:
                                 displayMySubmissions(
                                     *loggedInUser,
                                     submissionRepository);
                                 break;
+
                             case 7:
                                 displayMySubmissions(
                                     *loggedInUser,
@@ -1184,7 +1223,8 @@ int main() {
                                     true);
                                 break;
                         }
-                    } else if (role == "Lecturer") {
+                    }
+                    else if (role == "Lecturer") {
                         if (!departmentAvailable) {
                             cout << "\nThis operation requires a valid department.\n";
                             continue;
@@ -1193,18 +1233,23 @@ int main() {
                         switch (roleChoice) {
                             case 1:
                                 displayDepartmentCourses(
-                                    courseRepository, departmentId);
+                                    courseRepository,
+                                    departmentId);
                                 break;
+
                             case 2:
                                 createAssignment(
                                     courseRepository,
                                     assignmentRepository,
                                     departmentId);
                                 break;
+
                             case 3:
                                 displayDepartmentSubmissions(
-                                    submissionRepository, departmentId);
+                                    submissionRepository,
+                                    departmentId);
                                 break;
+
                             case 4:
                                 gradeSubmission(
                                     *loggedInUser,
@@ -1212,13 +1257,15 @@ int main() {
                                     submissionRepository,
                                     departmentId);
                                 break;
+
                             case 5:
                                 grantIndividualExtension(
                                     *loggedInUser,
                                     extensionRepository);
                                 break;
                         }
-                    } else if (role == "HeadOfDepartment") {
+                    }
+                    else if (role == "HeadOfDepartment") {
                         if (!departmentAvailable) {
                             cout << "\nThis operation requires a valid department.\n";
                             continue;
@@ -1227,8 +1274,10 @@ int main() {
                         switch (roleChoice) {
                             case 1:
                                 displaySubmissionsAwaitingModeration(
-                                    submissionRepository, departmentId);
+                                    submissionRepository,
+                                    departmentId);
                                 break;
+
                             case 2:
                                 processHODSubmission(
                                     *loggedInUser,
@@ -1236,6 +1285,7 @@ int main() {
                                     departmentId,
                                     false);
                                 break;
+
                             case 3:
                                 processHODSubmission(
                                     *loggedInUser,
@@ -1244,18 +1294,22 @@ int main() {
                                     true);
                                 break;
                         }
-                    } else if (role == "Administrator") {
+                    }
+                    else if (role == "Administrator") {
                         cout << "\nThis feature has not been implemented yet.\n";
-                    } else {
+                    }
+                    else {
                         cout << "\nAccess denied: unrecognized user role.\n";
                         loggedIn = false;
                     }
                 }
-            } else {
+            }
+            else {
                 cout << "\nInvalid menu choice. Please select 1, 2, or 0.\n";
             }
         }
-    } catch (const exception& error) {
+    }
+    catch (const exception& error) {
         cerr << "\nApplication error: " << error.what() << '\n';
         return 1;
     }

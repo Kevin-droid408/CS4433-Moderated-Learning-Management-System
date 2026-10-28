@@ -854,6 +854,79 @@ SubmissionRepository::getAllSubmissions() {
 }
 
 
+// Calculates the expected final mark without saving any changes.
+bool SubmissionRepository::previewGrade(
+    int submissionId,
+    double awardedMark,
+    GradePreview& preview
+) {
+    sqlite3* db = database.getConnection();
+
+    if (db == nullptr ||
+        submissionId <= 0 ||
+        !std::isfinite(awardedMark) ||
+        awardedMark < 0.0) {
+        return false;
+    }
+
+    std::string submittedAt;
+    std::string applicableDeadline;
+    double maximumMark = 0.0;
+
+    if (!getGradingDetails(
+            db,
+            submissionId,
+            submittedAt,
+            applicableDeadline,
+            maximumMark
+        ) ||
+        awardedMark > maximumMark) {
+        return false;
+    }
+
+    int daysLate = 0;
+
+    if (!calculateCalendarDaysLate(
+            submittedAt,
+            applicableDeadline,
+            daysLate
+        )) {
+        return false;
+    }
+
+    ThreeDayGraduatedLatePenaltyPolicy penaltyPolicy;
+    double finalMark = 0.0;
+
+    try {
+        finalMark = penaltyPolicy.calculateFinalMark(
+            awardedMark,
+            maximumMark,
+            daysLate
+        );
+    } catch (...) {
+        return false;
+    }
+
+    if (!std::isfinite(finalMark) ||
+        finalMark < 0.0 ||
+        finalMark > maximumMark) {
+        return false;
+    }
+
+    // Only replace the caller's preview after all checks succeed.
+    GradePreview result;
+    result.submittedAt = submittedAt;
+    result.applicableDeadline = applicableDeadline;
+    result.daysLate = daysLate;
+    result.maximumMark = maximumMark;
+    result.awardedMark = awardedMark;
+    result.finalMark = finalMark;
+
+    preview = result;
+    return true;
+}
+
+
 // Grades a submission, applies the late penalty, and records
 // the final adjusted mark in the audit log.
 bool SubmissionRepository::gradeSubmission(

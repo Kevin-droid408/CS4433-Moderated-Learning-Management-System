@@ -9,6 +9,19 @@
 #include <string>
 #include <vector>
 
+// Contains the grading information shown to a lecturer
+// before the grade is saved.
+struct GradePreview {
+    std::string submittedAt;
+    std::string applicableDeadline;
+
+    int daysLate = 0;
+
+    double maximumMark = 0.0;
+    double awardedMark = 0.0;
+    double finalMark = 0.0;
+};
+
 class SubmissionRepository {
 private:
     Database& database;
@@ -38,8 +51,17 @@ public:
         int departmentId
     );
 
+    // Calculates the grading preview without saving a mark.
+    // The supplied mark is the mark awarded before the late penalty.
+    bool previewGrade(
+        int submissionId,
+        double awardedMark,
+        GradePreview& preview
+    );
+
     // Grades a submission, applies the late penalty,
     // and records the final mark in the audit log.
+    // The supplied mark is the mark awarded before the penalty.
     bool gradeSubmission(
         int submissionId,
         double mark,
