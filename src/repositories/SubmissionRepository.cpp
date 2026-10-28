@@ -1204,3 +1204,103 @@ bool SubmissionRepository::releaseSubmission(
 
     return true;
 }
+// Allows the relevant department's HOD to change a mark
+// before the result is released. The change is recorded in the audit log.
+bool SubmissionRepository::changeSubmissionMark(
+    int submissionId,
+    int hodId,
+    double newMark,
+    const std::string& reason
+) {
+    sqlite3* db = database.getConnection();
+
+    if (db == nullptr ||
+        submissionId <= 0 ||
+        hodId <= 0 ||
+        !std::isfinite(newMark) ||
+        newMark < 0.0 ||
+        !hasValidReason(reason)) {
+        return false;
+    }
+
+    if (!executeSql(db, "BEGIN TRANSACTION;")) {
+        return false;
+    }
+
+    // Verify that the HOD belongs to the submission's department.
+    if (!isAuthorizedForSubmission(
+            db, hodId, submissionId, "HeadOfDepartment"
+        ) ||
+        !userHasRole(db, hodId, "HeadOfDepartment") ||
+        !isMarkWithinLimit(db, submissionId, newMark)) {
+        rollbackTransaction(db);
+        return false;
+    }
+
+    // A mark must exist before the HOD can change it.
+    bool hasOldMark = false;
+    double oldMark = 0.0;
+
+    if (!getOldMark(
+            db, submissionId, hasOldMark, oldMark
+        ) ||
+        !hasOldMark) {
+        rollbackTransaction(db);
+        return false;
+    }
+
+    // Change the mark only while it is awaiting moderation
+    // or has been moderated. Never change a released result.
+    const char* updateSql =
+        "UPDATE submissions "
+        "SET mark = ?, status = 'Moderated' "
+        "WHERE submission_id = ? "
+        "AND status IN ('Graded', 'Moderated');";
+
+    sqlite3_stmt* statement = nullptr;
+
+    if (sqlite3_prepare_v2(
+            db, updateSql, -1, &statement, nullptr
+        ) != SQLITE_OK) {
+        rollbackTransaction(db);
+        return false;
+    }
+
+    int result = sqlite3_bind_double(
+        statement, 1, newMark
+    );
+
+    if (result == SQLITE_OK) {
+        result = sqlite3_bind_int(
+            statement, 2, submissionId
+        );
+    }
+
+    bool success = result == SQLITE_OK &&
+                   sqlite3_step(statement) == SQLITE_DONE &&
+                   sqlite3_changes(db) == 1;
+
+    sqlite3_finalize(statement);
+
+    // Record the previous mark, new mark, HOD and reason.
+    if (!success ||
+        !insertGradingAudit(
+            db,
+            submissionId,
+            hodId,
+            hasOldMark,
+            oldMark,
+            newMark,
+            reason
+        )) {
+        rollbackTransaction(db);
+        return false;
+    }
+
+    if (!executeSql(db, "COMMIT;")) {
+        rollbackTransaction(db);
+        return false;
+    }
+
+    return true;
+}

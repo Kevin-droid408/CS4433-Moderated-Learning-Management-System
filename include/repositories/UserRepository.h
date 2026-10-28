@@ -8,6 +8,7 @@
 #include <memory>
 #include <optional>
 #include <string>
+#include <vector>
 
 class UserRepository {
     private:
@@ -42,6 +43,7 @@ class UserRepository {
         bool emailExists(const std::string& email);
 
         std::optional<int> getDepartmentId(int userId);
+        std::vector<std::unique_ptr<User>> getAllUsers();
 };
 
 #endif

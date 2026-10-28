@@ -155,6 +155,19 @@ CreateHOD/fast:
 .PHONY : CreateHOD/fast
 
 #=============================================================================
+# Target rules for targets named CreateAdministrator
+
+# Build rule for target.
+CreateAdministrator: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CreateAdministrator
+.PHONY : CreateAdministrator
+
+# fast build rule for target.
+CreateAdministrator/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/build
+.PHONY : CreateAdministrator/fast
+
+#=============================================================================
 # Target rules for targets named SetupDepartments
 
 # Build rule for target.
@@ -166,6 +179,30 @@ SetupDepartments: cmake_check_build_system
 SetupDepartments/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/build
 .PHONY : SetupDepartments/fast
+
+src/CreateAdministrator.obj: src/CreateAdministrator.cpp.obj
+.PHONY : src/CreateAdministrator.obj
+
+# target to build an object file
+src/CreateAdministrator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/CreateAdministrator.cpp.obj
+.PHONY : src/CreateAdministrator.cpp.obj
+
+src/CreateAdministrator.i: src/CreateAdministrator.cpp.i
+.PHONY : src/CreateAdministrator.i
+
+# target to preprocess a source file
+src/CreateAdministrator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/CreateAdministrator.cpp.i
+.PHONY : src/CreateAdministrator.cpp.i
+
+src/CreateAdministrator.s: src/CreateAdministrator.cpp.s
+.PHONY : src/CreateAdministrator.s
+
+# target to generate assembly for a file
+src/CreateAdministrator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/CreateAdministrator.cpp.s
+.PHONY : src/CreateAdministrator.cpp.s
 
 src/CreateHOD.obj: src/CreateHOD.cpp.obj
 .PHONY : src/CreateHOD.obj
@@ -247,6 +284,7 @@ src/models/Administrator.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Administrator.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Administrator.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Administrator.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Administrator.cpp.obj
 .PHONY : src/models/Administrator.cpp.obj
 
@@ -258,6 +296,7 @@ src/models/Administrator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Administrator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Administrator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Administrator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Administrator.cpp.i
 .PHONY : src/models/Administrator.cpp.i
 
@@ -269,6 +308,7 @@ src/models/Administrator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Administrator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Administrator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Administrator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Administrator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Administrator.cpp.s
 .PHONY : src/models/Administrator.cpp.s
 
@@ -328,6 +368,7 @@ src/models/HeadOfDepartment.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/HeadOfDepartment.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/HeadOfDepartment.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/HeadOfDepartment.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/HeadOfDepartment.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/HeadOfDepartment.cpp.obj
 .PHONY : src/models/HeadOfDepartment.cpp.obj
 
@@ -339,6 +380,7 @@ src/models/HeadOfDepartment.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/HeadOfDepartment.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/HeadOfDepartment.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/HeadOfDepartment.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/HeadOfDepartment.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/HeadOfDepartment.cpp.i
 .PHONY : src/models/HeadOfDepartment.cpp.i
 
@@ -350,6 +392,7 @@ src/models/HeadOfDepartment.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/HeadOfDepartment.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/HeadOfDepartment.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/HeadOfDepartment.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/HeadOfDepartment.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/HeadOfDepartment.cpp.s
 .PHONY : src/models/HeadOfDepartment.cpp.s
 
@@ -361,6 +404,7 @@ src/models/Lecturer.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Lecturer.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Lecturer.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Lecturer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Lecturer.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Lecturer.cpp.obj
 .PHONY : src/models/Lecturer.cpp.obj
 
@@ -372,6 +416,7 @@ src/models/Lecturer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Lecturer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Lecturer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Lecturer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Lecturer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Lecturer.cpp.i
 .PHONY : src/models/Lecturer.cpp.i
 
@@ -383,6 +428,7 @@ src/models/Lecturer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Lecturer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Lecturer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Lecturer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Lecturer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Lecturer.cpp.s
 .PHONY : src/models/Lecturer.cpp.s
 
@@ -394,6 +440,7 @@ src/models/Student.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Student.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Student.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Student.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Student.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Student.cpp.obj
 .PHONY : src/models/Student.cpp.obj
 
@@ -405,6 +452,7 @@ src/models/Student.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Student.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Student.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Student.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Student.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Student.cpp.i
 .PHONY : src/models/Student.cpp.i
 
@@ -416,6 +464,7 @@ src/models/Student.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Student.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/Student.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Student.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Student.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Student.cpp.s
 .PHONY : src/models/Student.cpp.s
 
@@ -451,6 +500,7 @@ src/models/User.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/User.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/User.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/User.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/User.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/User.cpp.obj
 .PHONY : src/models/User.cpp.obj
 
@@ -462,6 +512,7 @@ src/models/User.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/User.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/User.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/User.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/User.cpp.i
 .PHONY : src/models/User.cpp.i
 
@@ -473,6 +524,7 @@ src/models/User.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/User.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/User.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/User.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/User.cpp.s
 .PHONY : src/models/User.cpp.s
 
@@ -484,6 +536,7 @@ src/models/UserFactory.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/UserFactory.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/UserFactory.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/UserFactory.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/UserFactory.cpp.obj
 .PHONY : src/models/UserFactory.cpp.obj
 
@@ -495,6 +548,7 @@ src/models/UserFactory.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/UserFactory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/UserFactory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/UserFactory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/UserFactory.cpp.i
 .PHONY : src/models/UserFactory.cpp.i
 
@@ -506,6 +560,7 @@ src/models/UserFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/UserFactory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/models/UserFactory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/UserFactory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/UserFactory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/UserFactory.cpp.s
 .PHONY : src/models/UserFactory.cpp.s
 
@@ -565,6 +620,7 @@ src/repositories/Database.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/Database.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/Database.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/Database.cpp.obj
 .PHONY : src/repositories/Database.cpp.obj
 
@@ -576,6 +632,7 @@ src/repositories/Database.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/Database.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/Database.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/Database.cpp.i
 .PHONY : src/repositories/Database.cpp.i
 
@@ -587,6 +644,7 @@ src/repositories/Database.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/Database.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/Database.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/Database.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/Database.cpp.s
 .PHONY : src/repositories/Database.cpp.s
 
@@ -694,6 +752,7 @@ src/repositories/UserRepository.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/UserRepository.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/UserRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/UserRepository.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/UserRepository.cpp.obj
 .PHONY : src/repositories/UserRepository.cpp.obj
 
@@ -705,6 +764,7 @@ src/repositories/UserRepository.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/UserRepository.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/UserRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/UserRepository.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/UserRepository.cpp.i
 .PHONY : src/repositories/UserRepository.cpp.i
 
@@ -716,6 +776,7 @@ src/repositories/UserRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/UserRepository.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/repositories/UserRepository.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/UserRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/UserRepository.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/UserRepository.cpp.s
 .PHONY : src/repositories/UserRepository.cpp.s
 
@@ -775,6 +836,7 @@ src/services/PasswordService.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/PasswordService.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/services/PasswordService.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/services/PasswordService.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/services/PasswordService.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/services/PasswordService.cpp.obj
 .PHONY : src/services/PasswordService.cpp.obj
 
@@ -786,6 +848,7 @@ src/services/PasswordService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/PasswordService.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/services/PasswordService.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/services/PasswordService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/services/PasswordService.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/services/PasswordService.cpp.i
 .PHONY : src/services/PasswordService.cpp.i
 
@@ -797,6 +860,7 @@ src/services/PasswordService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/PasswordService.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/src/services/PasswordService.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/services/PasswordService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/services/PasswordService.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/services/PasswordService.cpp.s
 .PHONY : src/services/PasswordService.cpp.s
 
@@ -856,10 +920,14 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... CreateAdministrator
 	@echo ... CreateHOD
 	@echo ... CreateLecturer
 	@echo ... ModeratedLMS
 	@echo ... SetupDepartments
+	@echo ... src/CreateAdministrator.obj
+	@echo ... src/CreateAdministrator.i
+	@echo ... src/CreateAdministrator.s
 	@echo ... src/CreateHOD.obj
 	@echo ... src/CreateHOD.i
 	@echo ... src/CreateHOD.s

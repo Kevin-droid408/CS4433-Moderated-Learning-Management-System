@@ -58,5 +58,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/ModeratedLMS.dir/DependInfo.cmake"
   "CMakeFiles/CreateLecturer.dir/DependInfo.cmake"
   "CMakeFiles/CreateHOD.dir/DependInfo.cmake"
+  "CMakeFiles/CreateAdministrator.dir/DependInfo.cmake"
   "CMakeFiles/SetupDepartments.dir/DependInfo.cmake"
   )

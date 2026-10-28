@@ -83,6 +83,13 @@ public:
         int hodId,
         const std::string& reason
     );
+
+    bool changeSubmissionMark(
+        int submissionId,
+        int hodId,
+        double newMark,
+        const std::string& reason
+    );
 };
 
 #endif

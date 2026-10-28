@@ -5,14 +5,17 @@
 #include "repositories/SubmissionRepository.h"
 #include "repositories/EnrollmentRepository.h"
 #include "repositories/ExtensionRepository.h"
+#include "repositories/DepartmentRepository.h"
 
 #include "models/User.h"
 #include "models/Course.h"
 #include "models/Assignment.h"
 #include "models/Submission.h"
+#include "models/HeadOfDepartment.h"
 
 #include "services/AuthenticationService.h"
 #include "services/CreateAccount.h"
+#include "services/PasswordService.h"
 
 #include <iostream>
 #include <limits>
@@ -937,6 +940,407 @@ void processHODSubmission(
         : "\nOperation failed. Check authorization and submission status.\n");
 }
 
+void changeHODMark(
+    const User& hod,
+    AssignmentRepository& assignmentRepository,
+    SubmissionRepository& submissionRepository,
+    int departmentId
+) {
+    if (hod.getRole() != "HeadOfDepartment") {
+        cout << "Access denied.\n";
+        return;
+    }
+
+    vector<Submission> submissions =
+        submissionRepository.getSubmissionsByDepartment(departmentId);
+
+    cout << "\n========== CHANGE A MARK ==========\n";
+
+    bool found = false;
+
+    for (const Submission& submission : submissions) {
+        if ((submission.getStatus() == SubmissionStatus::Graded ||
+             submission.getStatus() == SubmissionStatus::Moderated) &&
+            submission.getMark().has_value()) {
+
+            found = true;
+
+            cout << "\nSubmission ID: "
+                 << submission.getSubmissionId()
+                 << "\nStudent ID: " << submission.getStudentId()
+                 << "\nAssignment ID: " << submission.getAssignmentId()
+                 << "\nCurrent mark: " << submission.getMark().value()
+                 << "\nStatus: "
+                 << getSubmissionStatusText(submission.getStatus())
+                 << "\n----------------------------------\n";
+        }
+    }
+
+    if (!found) {
+        cout << "No eligible marks are available to change.\n";
+        return;
+    }
+
+    cout << "Enter submission ID (0 to cancel): ";
+    int submissionId = readMenuChoice();
+
+    if (submissionId <= 0) {
+        cout << "Mark change cancelled.\n";
+        return;
+    }
+
+    const Submission* selected = nullptr;
+
+    for (const Submission& submission : submissions) {
+        if (submission.getSubmissionId() == submissionId) {
+            selected = &submission;
+            break;
+        }
+    }
+
+    if (selected == nullptr ||
+        !selected->getMark().has_value() ||
+        (selected->getStatus() != SubmissionStatus::Graded &&
+         selected->getStatus() != SubmissionStatus::Moderated)) {
+        cout << "Invalid submission or status.\n";
+        return;
+    }
+
+    vector<Assignment> assignments =
+        assignmentRepository.getAllAssignments();
+
+    const Assignment* selectedAssignment = nullptr;
+
+    for (const Assignment& assignment : assignments) {
+        if (assignment.getAssignmentId() ==
+            selected->getAssignmentId()) {
+            selectedAssignment = &assignment;
+            break;
+        }
+    }
+
+    if (selectedAssignment == nullptr) {
+        cout << "Assignment not found.\n";
+        return;
+    }
+
+    double newMark = readGradeMark(
+        selectedAssignment->getMaxMark()
+    );
+
+    if (newMark < 0) {
+        cout << "Mark change cancelled.\n";
+        return;
+    }
+
+    string reason;
+
+    if (!readRequiredText(
+            "Enter the reason for changing this mark: ", reason)) {
+        cout << "Mark change cancelled.\n";
+        return;
+    }
+
+    cout << "\nConfirm mark change:\n"
+         << "Old mark: " << selected->getMark().value()
+         << "\nNew mark: " << newMark
+         << "\n1. Save change\n"
+         << "0. Cancel\n";
+
+    if (readMenuChoice() != 1) {
+        cout << "Mark change cancelled.\n";
+        return;
+    }
+
+    bool success = submissionRepository.changeSubmissionMark(
+        submissionId,
+        hod.getUserId(),
+        newMark,
+        reason
+    );
+
+    cout << (success
+        ? "Mark changed successfully. The result is now moderated.\n"
+        : "Mark change failed. Check authorization and submission status.\n");
+}
+
+
+/* Displays all departments and returns the selected department ID.
+   Returns 0 when the selection is cancelled or invalid. */
+int selectDepartment(DepartmentRepository& departmentRepository) {
+    vector<Department> departments =
+        departmentRepository.getAllDepartments();
+
+    cout << "\n========== SELECT DEPARTMENT ==========\n";
+
+    if (departments.empty()) {
+        cout << "No departments are available. Add a department first.\n";
+        return 0;
+    }
+
+    for (const Department& department : departments) {
+        cout << department.departmentId << ". "
+             << department.departmentName << '\n';
+    }
+
+    cout << "0. Cancel\n";
+
+    int choice = readMenuChoice();
+
+    if (choice <= 0) {
+        cout << "Department selection cancelled.\n";
+        return 0;
+    }
+
+    for (const Department& department : departments) {
+        if (department.departmentId == choice) {
+            return department.departmentId;
+        }
+    }
+
+    cout << "Invalid department ID.\n";
+    return 0;
+}
+
+/* Displays all departments. */
+void manageDepartments(DepartmentRepository& departmentRepository) {
+    while (true) {
+        cout << "\n========== MANAGE DEPARTMENTS ==========\n"
+             << "1. View departments\n"
+             << "2. Add department\n"
+             << "0. Back\n"
+             << "========================================\n";
+
+        int choice = readMenuChoice();
+
+        if (choice <= 0) {
+            return;
+        }
+
+        if (choice == 1) {
+            vector<Department> departments =
+                departmentRepository.getAllDepartments();
+
+            cout << "\n========== DEPARTMENTS ==========\n";
+
+            if (departments.empty()) {
+                cout << "No departments found.\n";
+            } else {
+                for (const Department& department : departments) {
+                    cout << "Department ID: "
+                         << department.departmentId
+                         << "\nName: "
+                         << department.departmentName
+                         << "\n------------------------------\n";
+                }
+            }
+        } else if (choice == 2) {
+            string name;
+
+            if (!readRequiredText("Enter department name: ", name)) {
+                cout << "Input ended. Returning to the previous menu.\n";
+                return;
+            }
+
+            if (departmentRepository.addDepartment(name)) {
+                cout << "Department added successfully.\n";
+            } else {
+                cout << "Department could not be added. "
+                     << "Check whether it already exists.\n";
+            }
+        } else {
+            cout << "Invalid choice.\n";
+        }
+    }
+}
+
+/* Displays courses and allows the administrator to add courses. */
+void manageCourses(
+    CourseRepository& courseRepository,
+    DepartmentRepository& departmentRepository) {
+
+    while (true) {
+        cout << "\n========== MANAGE COURSES ==========\n"
+             << "1. View courses\n"
+             << "2. Add course\n"
+             << "0. Back\n"
+             << "====================================\n";
+
+        int choice = readMenuChoice();
+
+        if (choice <= 0) {
+            return;
+        }
+
+        if (choice == 1) {
+            vector<Course> courses = courseRepository.getAllCourses();
+            vector<Department> departments =
+                departmentRepository.getAllDepartments();
+
+            cout << "\n========== ALL COURSES ==========\n";
+
+            if (courses.empty()) {
+                cout << "No courses found.\n";
+            } else {
+                for (const Course& course : courses) {
+                    string departmentName = "Unknown";
+
+                    for (const Department& department : departments) {
+                        if (department.departmentId ==
+                            course.getDepartmentId()) {
+                            departmentName = department.departmentName;
+                            break;
+                        }
+                    }
+
+                    cout << "Course ID: " << course.getCourseId()
+                         << "\nCode: " << course.getCourseCode()
+                         << "\nName: " << course.getCourseName()
+                         << "\nDepartment: " << departmentName
+                         << "\n------------------------------\n";
+                }
+            }
+        } else if (choice == 2) {
+            int departmentId =
+                selectDepartment(departmentRepository);
+
+            if (departmentId <= 0) {
+                continue;
+            }
+
+            string code;
+            string name;
+
+            if (!readRequiredText("Enter course code: ", code) ||
+                !readRequiredText("Enter course name: ", name)) {
+                cout << "Input ended. Course creation cancelled.\n";
+                return;
+            }
+
+            Course course(0, code, name, departmentId);
+
+            if (courseRepository.addCourse(course)) {
+                cout << "Course added successfully.\n";
+            } else {
+                cout << "Course could not be added. "
+                     << "Check the course code and department.\n";
+            }
+        } else {
+            cout << "Invalid choice.\n";
+        }
+    }
+}
+
+/* Creates an HOD account and assigns it to a selected department. */
+void createHODAccount(
+    UserRepository& userRepository,
+    DepartmentRepository& departmentRepository) {
+
+    cout << "\n========== CREATE HOD ACCOUNT ==========\n"
+         << "Enter 0 at the username prompt to cancel.\n";
+
+    string username;
+
+    if (!readRequiredText("Enter username: ", username)) {
+        cout << "Input ended. Account creation cancelled.\n";
+        return;
+    }
+
+    if (username == "0") {
+        cout << "Account creation cancelled.\n";
+        return;
+    }
+
+    if (username.length() < 3 || username.length() > 30) {
+        cout << "Username must contain 3 to 30 characters.\n";
+        return;
+    }
+
+    if (userRepository.usernameExists(username)) {
+        cout << "That username is already taken.\n";
+        return;
+    }
+
+    string fullName;
+    string email;
+    string password;
+    string confirmation;
+
+    if (!readRequiredText("Enter full name: ", fullName) ||
+        !readRequiredText("Enter email: ", email) ||
+        !readPassword(password)) {
+        cout << "Input ended. Account creation cancelled.\n";
+        return;
+    }
+
+    if (userRepository.emailExists(email)) {
+        cout << "An account with that email already exists.\n";
+        return;
+    }
+
+    if (password.length() < 8) {
+        cout << "Use a password with at least 8 characters.\n";
+        return;
+    }
+
+    if (!readRequiredText("Confirm password: ", confirmation)) {
+        cout << "Input ended. Account creation cancelled.\n";
+        return;
+    }
+
+    if (password != confirmation) {
+        cout << "Passwords do not match.\n";
+        return;
+    }
+
+    int departmentId = selectDepartment(departmentRepository);
+
+    if (departmentId <= 0) {
+        cout << "HOD account creation cancelled.\n";
+        return;
+    }
+
+    string passwordHash = PasswordService::hashPassword(password);
+
+    HeadOfDepartment hod(0, fullName, email, passwordHash);
+
+    if (userRepository.addUser(
+            hod, username, passwordHash, departmentId)) {
+        cout << "\nHOD account created successfully.\n"
+             << "Username: " << username
+             << "\nDepartment ID: " << departmentId << '\n';
+    } else {
+        cout << "HOD account creation failed. "
+             << "Check the supplied details and database constraints.\n";
+    }
+}
+
+/* Administrator's user-management submenu. */
+void manageUsers(
+    UserRepository& userRepository,
+    DepartmentRepository& departmentRepository) {
+
+    while (true) {
+        cout << "\n========== MANAGE USERS ==========\n"
+             << "1. Create Head of Department account\n"
+             << "0. Back\n"
+             << "==================================\n";
+
+        int choice = readMenuChoice();
+
+        if (choice <= 0) {
+            return;
+        }
+
+        if (choice == 1) {
+            createHODAccount(userRepository, departmentRepository);
+        } else {
+            cout << "Invalid choice.\n";
+        }
+    }
+}
+
+
 /* Displays a role-specific menu. */
 void showRoleMenu(const User& user) {
     cout << "\n========== " << user.getRole() << " MENU ==========\n";
@@ -955,11 +1359,14 @@ void showRoleMenu(const User& user) {
              << "3. View department submissions\n"
              << "4. Grade submission\n"
              << "5. Grant individual extension\n";
-    } else if (user.getRole() == "HeadOfDepartment") {
+    } 
+     else if (user.getRole() == "HeadOfDepartment") {
         cout << "1. View marks awaiting moderation\n"
              << "2. Moderate marks\n"
-             << "3. Release marks\n";
-    } else if (user.getRole() == "Administrator") {
+             << "3. Release marks\n"
+             << "4. Change a mark\n";
+    }
+    else if (user.getRole() == "Administrator") {
         cout << "1. Manage users\n"
              << "2. Manage departments\n"
              << "3. Manage courses\n";
@@ -970,13 +1377,15 @@ void showRoleMenu(const User& user) {
 }
 
 int getHighestRoleOption(const User& user) {
-    if (user.getRole() == "Student") return 7;
-    if (user.getRole() == "Lecturer") return 5;
+    if (user.getRole() == "Student") 
+        return 7;
+    if (user.getRole() == "Lecturer") 
+        return 5;
 
-    if (user.getRole() == "HeadOfDepartment" ||
-        user.getRole() == "Administrator") {
-        return 3;
-    }
+    if (user.getRole() == "HeadOfDepartment") 
+        return 4;
+    if (user.getRole() == "Administrator") 
+        return 4;
 
     return -1;
 }
@@ -1087,6 +1496,7 @@ int main() {
         AssignmentRepository assignmentRepository(database);
         SubmissionRepository submissionRepository(database);
         ExtensionRepository extensionRepository(database);
+        DepartmentRepository departmentRepository(database);
 
         EnrollmentRepository enrollmentRepository(
             database.getConnection());
@@ -1293,10 +1703,34 @@ int main() {
                                     departmentId,
                                     true);
                                 break;
+                            case 4:
+                                changeHODMark(
+                                    *loggedInUser,
+                                    assignmentRepository,
+                                    submissionRepository,
+                                    departmentId
+                                );
+                                break;
                         }
                     }
                     else if (role == "Administrator") {
-                        cout << "\nThis feature has not been implemented yet.\n";
+                        switch (roleChoice) {
+                            case 1:
+                                manageUsers(userRepository, departmentRepository);
+                                break;
+
+                            case 2:
+                                manageDepartments(departmentRepository);
+                                break;
+
+                            case 3:
+                                manageCourses(courseRepository, departmentRepository);
+                                break;
+
+                            default:
+                                cout << "Invalid Administrator menu choice.\n";
+                                break;
+                        }
                     }
                     else {
                         cout << "\nAccess denied: unrecognized user role.\n";

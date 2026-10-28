@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = C:\Users\Administrator\CS4433-Moderated-Learning-Management-S
 all: CMakeFiles/ModeratedLMS.dir/all
 all: CMakeFiles/CreateLecturer.dir/all
 all: CMakeFiles/CreateHOD.dir/all
+all: CMakeFiles/CreateAdministrator.dir/all
 all: CMakeFiles/SetupDepartments.dir/all
 .PHONY : all
 
@@ -72,6 +73,7 @@ all: CMakeFiles/SetupDepartments.dir/all
 codegen: CMakeFiles/ModeratedLMS.dir/codegen
 codegen: CMakeFiles/CreateLecturer.dir/codegen
 codegen: CMakeFiles/CreateHOD.dir/codegen
+codegen: CMakeFiles/CreateAdministrator.dir/codegen
 codegen: CMakeFiles/SetupDepartments.dir/codegen
 .PHONY : codegen
 
@@ -83,6 +85,7 @@ preinstall:
 clean: CMakeFiles/ModeratedLMS.dir/clean
 clean: CMakeFiles/CreateLecturer.dir/clean
 clean: CMakeFiles/CreateHOD.dir/clean
+clean: CMakeFiles/CreateAdministrator.dir/clean
 clean: CMakeFiles/SetupDepartments.dir/clean
 .PHONY : clean
 
@@ -93,7 +96,7 @@ clean: CMakeFiles/SetupDepartments.dir/clean
 CMakeFiles/ModeratedLMS.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45 "Built target ModeratedLMS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56 "Built target ModeratedLMS"
 .PHONY : CMakeFiles/ModeratedLMS.dir/all
 
 # Build rule for subdir invocation for target.
@@ -110,7 +113,7 @@ ModeratedLMS: CMakeFiles/ModeratedLMS.dir/rule
 # codegen rule for target.
 CMakeFiles/ModeratedLMS.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45 "Finished codegen for target ModeratedLMS"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56 "Finished codegen for target ModeratedLMS"
 .PHONY : CMakeFiles/ModeratedLMS.dir/codegen
 
 # clean rule for target.
@@ -125,7 +128,7 @@ CMakeFiles/ModeratedLMS.dir/clean:
 CMakeFiles/CreateLecturer.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=12,13,14,15,16,17,18,19,20,21,22 "Built target CreateLecturer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33 "Built target CreateLecturer"
 .PHONY : CMakeFiles/CreateLecturer.dir/all
 
 # Build rule for subdir invocation for target.
@@ -142,7 +145,7 @@ CreateLecturer: CMakeFiles/CreateLecturer.dir/rule
 # codegen rule for target.
 CMakeFiles/CreateLecturer.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateLecturer.dir\build.make CMakeFiles/CreateLecturer.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=12,13,14,15,16,17,18,19,20,21,22 "Finished codegen for target CreateLecturer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=23,24,25,26,27,28,29,30,31,32,33 "Finished codegen for target CreateLecturer"
 .PHONY : CMakeFiles/CreateLecturer.dir/codegen
 
 # clean rule for target.
@@ -157,7 +160,7 @@ CMakeFiles/CreateLecturer.dir/clean:
 CMakeFiles/CreateHOD.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target CreateHOD"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=12,13,14,15,16,17,18,19,20,21,22 "Built target CreateHOD"
 .PHONY : CMakeFiles/CreateHOD.dir/all
 
 # Build rule for subdir invocation for target.
@@ -174,7 +177,7 @@ CreateHOD: CMakeFiles/CreateHOD.dir/rule
 # codegen rule for target.
 CMakeFiles/CreateHOD.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Finished codegen for target CreateHOD"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=12,13,14,15,16,17,18,19,20,21,22 "Finished codegen for target CreateHOD"
 .PHONY : CMakeFiles/CreateHOD.dir/codegen
 
 # clean rule for target.
@@ -183,13 +186,45 @@ CMakeFiles/CreateHOD.dir/clean:
 .PHONY : CMakeFiles/CreateHOD.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/CreateAdministrator.dir
+
+# All Build rule for target.
+CMakeFiles/CreateAdministrator.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target CreateAdministrator"
+.PHONY : CMakeFiles/CreateAdministrator.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/CreateAdministrator.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles 11
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/CreateAdministrator.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles 0
+.PHONY : CMakeFiles/CreateAdministrator.dir/rule
+
+# Convenience name for target.
+CreateAdministrator: CMakeFiles/CreateAdministrator.dir/rule
+.PHONY : CreateAdministrator
+
+# codegen rule for target.
+CMakeFiles/CreateAdministrator.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Finished codegen for target CreateAdministrator"
+.PHONY : CMakeFiles/CreateAdministrator.dir/codegen
+
+# clean rule for target.
+CMakeFiles/CreateAdministrator.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/clean
+.PHONY : CMakeFiles/CreateAdministrator.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/SetupDepartments.dir
 
 # All Build rule for target.
 CMakeFiles/SetupDepartments.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=46,47,48,49,50,51,52,53,54,55,56 "Built target SetupDepartments"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=57,58,59,60,61,62,63,64,65,66,67 "Built target SetupDepartments"
 .PHONY : CMakeFiles/SetupDepartments.dir/all
 
 # Build rule for subdir invocation for target.
@@ -206,7 +241,7 @@ SetupDepartments: CMakeFiles/SetupDepartments.dir/rule
 # codegen rule for target.
 CMakeFiles/SetupDepartments.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=46,47,48,49,50,51,52,53,54,55,56 "Finished codegen for target SetupDepartments"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Administrator\CS4433-Moderated-Learning-Management-System\build\CMakeFiles --progress-num=57,58,59,60,61,62,63,64,65,66,67 "Finished codegen for target SetupDepartments"
 .PHONY : CMakeFiles/SetupDepartments.dir/codegen
 
 # clean rule for target.

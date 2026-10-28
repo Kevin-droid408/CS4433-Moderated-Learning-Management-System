@@ -159,8 +159,12 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/LatePenaltyPolicy.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/EnrollmentRepository.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/ExtensionRepository.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/DepartmentRepository.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/HeadOfDepartment.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/AuthenticationService.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/CreateAccount.h \
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/PasswordService.h \
  C:/msys64/ucrt64/include/c++/15.2.0/iostream \
  C:/msys64/ucrt64/include/c++/15.2.0/ostream \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/ostream.h \

@@ -1,6 +1,7 @@
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/build/CMakeFiles/ModeratedLMS.dir
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/build/CMakeFiles/CreateLecturer.dir
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/build/CMakeFiles/CreateHOD.dir
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/build/CMakeFiles/CreateAdministrator.dir
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/build/CMakeFiles/SetupDepartments.dir
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/build/CMakeFiles/edit_cache.dir
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/build/CMakeFiles/rebuild_cache.dir

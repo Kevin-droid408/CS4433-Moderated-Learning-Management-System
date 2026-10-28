@@ -127,6 +127,41 @@ target_link_libraries(CreateHOD PRIVATE
 )
 
 # --------------------------------------------------
+# Administrator Account Creation Utility
+# --------------------------------------------------
+add_executable(CreateAdministrator
+    src/CreateAdministrator.cpp
+
+    # Models
+    src/models/User.cpp
+    src/models/Student.cpp
+    src/models/Lecturer.cpp
+    src/models/HeadOfDepartment.cpp
+    src/models/Administrator.cpp
+    src/models/UserFactory.cpp
+
+    # Repositories
+    src/repositories/Database.cpp
+    src/repositories/UserRepository.cpp
+
+    # Services
+    src/services/PasswordService.cpp
+)
+
+target_include_directories(CreateAdministrator PRIVATE
+    "${CMAKE_SOURCE_DIR}/include"
+)
+
+target_compile_definitions(CreateAdministrator PRIVATE
+    PROJECT_ROOT="${CMAKE_SOURCE_DIR}"
+)
+
+target_link_libraries(CreateAdministrator PRIVATE
+    SQLite3::SQLite3
+    PkgConfig::SODIUM
+)
+
+# --------------------------------------------------
 # Department Setup Utility
 # --------------------------------------------------
 add_executable(SetupDepartments
