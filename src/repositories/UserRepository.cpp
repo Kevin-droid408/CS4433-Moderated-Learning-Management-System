@@ -331,3 +331,63 @@ std::optional<int> UserRepository::getDepartmentId(int userId) {
     sqlite3_finalize(statement);
     throw std::runtime_error(error);
 }
+
+std::vector<std::unique_ptr<User>> UserRepository::getAllUsers() {
+    const char* sql =
+        "SELECT user_id, username, full_name, email, password_hash, role "
+        "FROM users ORDER BY user_id;";
+
+    sqlite3* connection = database.getConnection();
+    sqlite3_stmt* statement = nullptr;
+
+    int result = sqlite3_prepare_v2(
+        connection, sql, -1, &statement, nullptr
+    );
+
+    if (result != SQLITE_OK) {
+        throw std::runtime_error(sqlite3_errmsg(connection));
+    }
+
+    std::vector<std::unique_ptr<User>> users;
+
+    while ((result = sqlite3_step(statement)) == SQLITE_ROW) {
+        const int userId = sqlite3_column_int(statement, 0);
+
+        auto readText = [statement](int column) -> std::string {
+            const unsigned char* value =
+                sqlite3_column_text(statement, column);
+
+            return value
+                ? reinterpret_cast<const char*>(value)
+                : "";
+        };
+
+        const std::string username = readText(1);
+        const std::string fullName = readText(2);
+        const std::string email = readText(3);
+        const std::string passwordHash = readText(4);
+        const std::string role = readText(5);
+
+        std::unique_ptr<User> user = UserFactory::createUser(
+            role,
+            userId,
+            fullName,
+            email,
+            passwordHash
+        );
+
+        user->setUsername(username);
+
+        users.push_back(std::move(user));
+    }
+
+    if (result != SQLITE_DONE) {
+        const std::string error = sqlite3_errmsg(connection);
+        sqlite3_finalize(statement);
+        throw std::runtime_error(error);
+    }
+
+    sqlite3_finalize(statement);
+
+    return users;
+}

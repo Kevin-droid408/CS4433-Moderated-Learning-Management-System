@@ -1315,6 +1315,34 @@ void createHODAccount(
     }
 }
 
+/* Displays all registered users to an administrator. */
+void viewAllUsers(UserRepository& userRepository) {
+    // UserRepository must provide getAllUsers(), returning
+    // vector<unique_ptr<User>> populated through the data-access layer.
+    vector<unique_ptr<User>> users = userRepository.getAllUsers();
+
+    cout << "\n========== REGISTERED USERS ==========\n";
+
+    if (users.empty()) {
+        cout << "No user accounts found.\n";
+        return;
+    }
+
+    cout << left
+         << "ID\tName\t\tEmail\t\tRole\t\tUsername\n"
+         << string(78, '-') << '\n';
+
+    for (const auto& user : users) {
+        if (!user) continue;
+
+        cout << user->getUserId() << "\t"
+             << user->getFullName() << "\t"
+             << user->getEmail() << "\t"
+             << user->getRole() << "\t"
+             << user->getUsername() << '\n';
+    }
+}
+
 /* Administrator's user-management submenu. */
 void manageUsers(
     UserRepository& userRepository,
@@ -1322,7 +1350,8 @@ void manageUsers(
 
     while (true) {
         cout << "\n========== MANAGE USERS ==========\n"
-             << "1. Create Head of Department account\n"
+             << "1. View all users\n"
+             << "2. Create Head of Department account\n"
              << "0. Back\n"
              << "==================================\n";
 
@@ -1332,10 +1361,16 @@ void manageUsers(
             return;
         }
 
-        if (choice == 1) {
-            createHODAccount(userRepository, departmentRepository);
-        } else {
-            cout << "Invalid choice.\n";
+        switch (choice) {
+            case 1:
+                viewAllUsers(userRepository);
+                break;
+            case 2:
+                createHODAccount(userRepository, departmentRepository);
+                break;
+            default:
+                cout << "Invalid choice. Please select 1, 2, or 0.\n";
+                break;
         }
     }
 }
