@@ -5,11 +5,13 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/main.cpp
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Assignment.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Course.h
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/HeadOfDepartment.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Submission.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/AssignmentRepository.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/CourseRepository.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/DepartmentRepository.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/EnrollmentRepository.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/ExtensionRepository.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/SubmissionRepository.h
@@ -17,6 +19,7 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/AuthenticationService.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/CreateAccount.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/LatePenaltyPolicy.h
+ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/PasswordService.h
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/ThreeDayGraduatedLatePenaltyPolicy.h
  C:/msys64/ucrt64/include/_mingw.h
  C:/msys64/ucrt64/include/_mingw_mac.h

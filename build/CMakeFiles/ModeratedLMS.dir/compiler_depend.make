@@ -4,11 +4,13 @@
 CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/main.cpp \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Assignment.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Course.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/HeadOfDepartment.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Submission.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/AssignmentRepository.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/CourseRepository.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/DepartmentRepository.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/EnrollmentRepository.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/ExtensionRepository.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/SubmissionRepository.h \
@@ -16,6 +18,7 @@ CMakeFiles/ModeratedLMS.dir/src/main.cpp.obj: C:/Users/Administrator/CS4433-Mode
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/AuthenticationService.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/CreateAccount.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/LatePenaltyPolicy.h \
+  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/PasswordService.h \
   C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/ThreeDayGraduatedLatePenaltyPolicy.h \
   C:/msys64/ucrt64/include/_mingw.h \
   C:/msys64/ucrt64/include/_mingw_mac.h \
@@ -2916,11 +2919,11 @@ CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.
   C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h
 
 
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h:
+
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/limits.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h:
-
-C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/Database.h:
 
 C:/msys64/ucrt64/include/sodium.h:
 
@@ -2937,6 +2940,10 @@ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/servi
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/EnrollmentRepository.cpp:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/Assignment.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/HeadOfDepartment.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/ctype_inline.h:
 
@@ -2958,6 +2965,14 @@ C:/msys64/ucrt64/include/c++/15.2.0/pstl/glue_memory_defs.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/AssignmentRepository.h:
 
+C:/msys64/ucrt64/include/sodium/crypto_hash_sha256.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/iomanip:
+
+C:/msys64/ucrt64/include/c++/15.2.0/cstdlib:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/DepartmentRepository.h:
+
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/EnrollmentRepository.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/optional:
@@ -2974,8 +2989,6 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/memory_resource.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/SubmissionRepository.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.h:
-
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/UserRepository.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.tcc:
@@ -2985,6 +2998,14 @@ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/servi
 C:/msys64/ucrt64/include/_mingw_stdarg.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/atomic_base.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/quoted_string.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bit:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.h:
+
+C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/PasswordService.h:
 
 C:/msys64/ucrt64/include/sodium/crypto_hash.h:
 
@@ -3022,12 +3043,6 @@ C:/msys64/ucrt64/include/_mingw_stat64.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/backward/auto_ptr.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/quoted_string.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bit:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/basic_ios.h:
-
 C:/msys64/ucrt64/include/c++/15.2.0/bits/align.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h:
@@ -3035,8 +3050,6 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/alloc_traits.h:
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Assignment.cpp:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/allocated_ptr.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_conv.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/allocator.h:
 
@@ -3080,8 +3093,6 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_dir.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_forced.h:
 
-C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.tcc:
-
 C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_classes.h:
 
 C:/msys64/ucrt64/include/sodium/crypto_generichash.h:
@@ -3093,8 +3104,6 @@ C:/msys64/ucrt64/include/sodium/crypto_sign_ed25519.h:
 C:/msys64/ucrt64/include/c++/15.2.0/bits/fs_path.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/fstream.tcc:
-
-C:/msys64/ucrt64/include/c++/15.2.0/bits/functexcept.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/Database.cpp:
 
@@ -3111,6 +3120,12 @@ C:/msys64/ucrt64/include/c++/15.2.0/bits/invoke.h:
 C:/msys64/ucrt64/include/stdarg.h:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/istream.tcc:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_conv.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.h:
+
+C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets.tcc:
 
 C:/msys64/ucrt64/include/c++/15.2.0/bits/locale_facets_nonio.h:
 
@@ -3257,14 +3272,6 @@ C:/msys64/ucrt64/include/pthread_unistd.h:
 C:/msys64/ucrt64/include/c++/15.2.0/cstdint:
 
 C:/msys64/ucrt64/include/c++/15.2.0/cstdio:
-
-C:/msys64/ucrt64/include/sodium/crypto_hash_sha256.h:
-
-C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/repositories/DepartmentRepository.h:
-
-C:/msys64/ucrt64/include/c++/15.2.0/iomanip:
-
-C:/msys64/ucrt64/include/c++/15.2.0/cstdlib:
 
 C:/msys64/ucrt64/include/sodium/crypto_verify_32.h:
 
@@ -3478,8 +3485,6 @@ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Ad
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/HeadOfDepartment.cpp:
 
-C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/HeadOfDepartment.h:
-
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Lecturer.cpp:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/models/Student.cpp:
@@ -3497,8 +3502,6 @@ C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositor
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/repositories/UserRepository.cpp:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/services/AuthenticationService.cpp:
-
-C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/services/PasswordService.h:
 
 C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/src/services/PasswordService.cpp:
 

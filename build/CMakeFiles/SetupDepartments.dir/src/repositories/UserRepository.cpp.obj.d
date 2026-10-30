@@ -144,6 +144,10 @@ CMakeFiles/SetupDepartments.dir/src/repositories/UserRepository.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/pstl/execution_defs.h \
  C:/msys64/ucrt64/include/c++/15.2.0/optional \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/enable_special_members.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/vector \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/UserFactory.h \
  C:/Users/Administrator/CS4433-Moderated-Learning-Management-System/include/models/User.h \
  C:/msys64/ucrt64/include/c++/15.2.0/stdexcept
