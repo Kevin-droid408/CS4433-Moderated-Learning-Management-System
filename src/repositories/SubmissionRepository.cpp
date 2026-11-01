@@ -1,4 +1,3 @@
-
 #include "repositories/SubmissionRepository.h"
 
 #include <sqlite3.h>
@@ -9,6 +8,7 @@
 #include <sstream>
 #include <stdexcept>
 #include <string>
+#include <iostream>
 
 namespace {
 
@@ -329,30 +329,49 @@ bool parseDate(
         return false;
     }
 
-    std::istringstream input(value);
+    // Validate that all date characters are digits.
+    for (int i = 0; i < 10; ++i) {
+        if (i == 4 || i == 7) {
+            continue;
+        }
 
+        if (value[i] < '0' || value[i] > '9') {
+            return false;
+        }
+    }
+
+    // Extract year, month and day manually.
+    int year =
+        (value[0] - '0') * 1000 +
+        (value[1] - '0') * 100 +
+        (value[2] - '0') * 10 +
+        (value[3] - '0');
+
+    int month =
+        (value[5] - '0') * 10 +
+        (value[6] - '0');
+
+    int day =
+        (value[8] - '0') * 10 +
+        (value[9] - '0');
+
+    if (month < 1 || month > 12 ||
+        day < 1 || day > 31) {
+        return false;
+    }
+
+    // Construct the date.
     std::tm date{};
-    input >> std::get_time(&date, "%Y-%m-%d");
 
-    if (input.fail()) {
-        return false;
-    }
+    date.tm_year = year - 1900;
+    date.tm_mon = month - 1;
+    date.tm_mday = day;
 
-    char extra;
-
-    if (input >> extra) {
-        return false;
-    }
-
-    // Noon avoids most daylight-saving boundary problems.
+    // Use noon to avoid daylight-saving boundary problems.
     date.tm_hour = 12;
     date.tm_min = 0;
     date.tm_sec = 0;
     date.tm_isdst = -1;
-
-    int originalYear = date.tm_year;
-    int originalMonth = date.tm_mon;
-    int originalDay = date.tm_mday;
 
     std::time_t timestamp = std::mktime(&date);
 
@@ -360,6 +379,7 @@ bool parseDate(
         return false;
     }
 
+    // Normalize the date and verify that it did not roll over.
     std::tm normalized{};
 
 #ifdef _WIN32
@@ -372,9 +392,14 @@ bool parseDate(
     }
 #endif
 
-    return normalized.tm_year == originalYear &&
-           normalized.tm_mon == originalMonth &&
-           normalized.tm_mday == originalDay;
+    if (normalized.tm_year != year - 1900 ||
+        normalized.tm_mon != month - 1 ||
+        normalized.tm_mday != day) {
+        return false;
+    }
+
+    parsedDate = normalized;
+    return true;
 }
 
 // Calculates calendar days late, ignoring the time of day.
@@ -478,11 +503,11 @@ bool getGradingDetails(
            maximumMark > 0.0;
 }
 
-// Records the grading action and its final mark in the audit log.
+// Records a grading, moderation, release or mark-change action.
 bool insertGradingAudit(
     sqlite3* db,
     int submissionId,
-    int lecturerId,
+    int actorId,
     bool hasOldMark,
     double oldMark,
     double newMark,
@@ -514,7 +539,7 @@ bool insertGradingAudit(
     int result = sqlite3_bind_int(statement, 1, submissionId);
 
     if (result == SQLITE_OK) {
-        result = sqlite3_bind_int(statement, 2, lecturerId);
+        result = sqlite3_bind_int(statement, 2, actorId);
     }
 
     if (result == SQLITE_OK) {
@@ -639,7 +664,10 @@ SubmissionRepository::getSubmissionsByStudent(int studentId) {
 
     const char* sql =
         "SELECT submission_id, student_id, assignment_id, "
-        "submitted_at, file_path, mark, feedback, status "
+        "submitted_at, file_path, "
+        "CASE WHEN status = 'Released' THEN mark ELSE NULL END, "
+        "CASE WHEN status = 'Released' THEN feedback ELSE '' END, "
+        "status "
         "FROM submissions "
         "WHERE student_id = ? "
         "ORDER BY submitted_at DESC;";
@@ -682,6 +710,7 @@ SubmissionRepository::getSubmissionsByStudent(int studentId) {
 
 
 // Retrieves submissions belonging to the authenticated student.
+// Marks and feedback are only visible after release.
 std::vector<Submission>
 SubmissionRepository::getSubmissionsForAuthenticatedStudent(
     int studentId,
@@ -703,7 +732,10 @@ SubmissionRepository::getSubmissionsForAuthenticatedStudent(
 
     const char* sql =
         "SELECT s.submission_id, s.student_id, s.assignment_id, "
-        "s.submitted_at, s.file_path, s.mark, s.feedback, s.status "
+        "s.submitted_at, s.file_path, "
+        "CASE WHEN s.status = 'Released' THEN s.mark ELSE NULL END, "
+        "CASE WHEN s.status = 'Released' THEN s.feedback ELSE '' END, "
+        "s.status "
         "FROM submissions s "
         "JOIN users u ON u.user_id = s.student_id "
         "WHERE s.student_id = ? "
@@ -938,41 +970,60 @@ bool SubmissionRepository::gradeSubmission(
 ) {
     sqlite3* db = database.getConnection();
 
-    if (db == nullptr ||
-        submissionId <= 0 ||
+    if (db == nullptr) {
+        std::cerr << " Database connection is null.\n";
+        return false;
+    }
+
+    if (submissionId <= 0 ||
         lecturerId <= 0 ||
         !std::isfinite(mark) ||
         mark < 0.0 ||
         !hasValidReason(reason)) {
+        std::cerr << " Invalid input parameters.\n";
         return false;
     }
 
     if (!executeSql(db, "BEGIN TRANSACTION;")) {
+        std::cerr << " BEGIN TRANSACTION: "
+                  << sqlite3_errmsg(db) << '\n';
         return false;
     }
 
-    // Only a lecturer in the assignment's department may grade it.
+    // 1. Authorization
     if (!isAuthorizedForSubmission(
-            db, lecturerId, submissionId, "Lecturer"
-        ) ||
-        !userHasRole(db, lecturerId, "Lecturer") ||
-        !isMarkWithinLimit(db, submissionId, mark)) {
+            db, lecturerId, submissionId, "Lecturer")) {
+        std::cerr << " Lecturer is not authorized "
+                  << "for this submission.\n";
         rollbackTransaction(db);
         return false;
     }
 
+    if (!userHasRole(db, lecturerId, "Lecturer")) {
+        std::cerr << " User does not have Lecturer role.\n";
+        rollbackTransaction(db);
+        return false;
+    }
+
+    // 2. Mark validation
+    if (!isMarkWithinLimit(db, submissionId, mark)) {
+        std::cerr << " Mark exceeds the assignment "
+                  << "maximum or submission was not found.\n";
+        rollbackTransaction(db);
+        return false;
+    }
+
+    // 3. Existing mark
     bool hasOldMark = false;
     double oldMark = 0.0;
 
-    if (!getOldMark(
-            db, submissionId, hasOldMark, oldMark
-        )) {
+    if (!getOldMark(db, submissionId, hasOldMark, oldMark)) {
+        std::cerr << "Could not retrieve existing mark.\n";
         rollbackTransaction(db);
         return false;
     }
 
-    // Retrieve the submitted timestamp, applicable deadline,
-    // and maximum mark from the database.
+    // 4. Assignment and deadline information
     std::string submittedAt;
     std::string applicableDeadline;
     double maximumMark = 0.0;
@@ -982,27 +1033,36 @@ bool SubmissionRepository::gradeSubmission(
             submissionId,
             submittedAt,
             applicableDeadline,
-            maximumMark
-        )) {
+            maximumMark)) {
+        std::cerr << " Could not retrieve grading details.\n";
+        std::cerr << " SQLite: "
+                  << sqlite3_errmsg(db) << '\n';
         rollbackTransaction(db);
         return false;
     }
 
-    // Calculate lateness by calendar date.
+    std::cerr << " Submitted: " << submittedAt << '\n';
+    std::cerr << " Applicable deadline: "
+              << applicableDeadline << '\n';
+    std::cerr << " Maximum mark: "
+              << maximumMark << '\n';
+
+    // 5. Late penalty calculation
     int daysLate = 0;
 
     if (!calculateCalendarDaysLate(
             submittedAt,
             applicableDeadline,
-            daysLate
-        )) {
+            daysLate)) {
+        std::cerr << " Could not calculate days late.\n";
         rollbackTransaction(db);
         return false;
     }
 
-    // Apply the existing three-day graduated late-penalty policy.
-    ThreeDayGraduatedLatePenaltyPolicy penaltyPolicy;
+    std::cerr << "[GRADE DEBUG] Days late: "
+              << daysLate << '\n';
 
+    ThreeDayGraduatedLatePenaltyPolicy penaltyPolicy;
     double finalMark = 0.0;
 
     try {
@@ -1011,7 +1071,9 @@ bool SubmissionRepository::gradeSubmission(
             maximumMark,
             daysLate
         );
-    } catch (...) {
+    } catch (const std::exception& error) {
+        std::cerr << " Penalty calculation: "
+                  << error.what() << '\n';
         rollbackTransaction(db);
         return false;
     }
@@ -1019,11 +1081,15 @@ bool SubmissionRepository::gradeSubmission(
     if (!std::isfinite(finalMark) ||
         finalMark < 0.0 ||
         finalMark > maximumMark) {
+        std::cerr << " Calculated final mark is invalid.\n";
         rollbackTransaction(db);
         return false;
     }
 
-    // Store the adjusted mark, not the original awarded mark.
+    std::cerr << "[GRADE DEBUG] Final mark: "
+              << finalMark << '\n';
+
+    // 6. Update submission
     const char* updateSql =
         "UPDATE submissions "
         "SET mark = ?, feedback = ?, status = 'Graded' "
@@ -1033,8 +1099,9 @@ bool SubmissionRepository::gradeSubmission(
     sqlite3_stmt* statement = nullptr;
 
     if (sqlite3_prepare_v2(
-            db, updateSql, -1, &statement, nullptr
-        ) != SQLITE_OK) {
+            db, updateSql, -1, &statement, nullptr) != SQLITE_OK) {
+        std::cerr << "UPDATE preparation: "
+                  << sqlite3_errmsg(db) << '\n';
         rollbackTransaction(db);
         return false;
     }
@@ -1043,51 +1110,74 @@ bool SubmissionRepository::gradeSubmission(
 
     if (result == SQLITE_OK) {
         result = sqlite3_bind_text(
-            statement, 2,
-            feedback.c_str(),
+            statement, 2, feedback.c_str(),
             -1, SQLITE_TRANSIENT
         );
     }
 
     if (result == SQLITE_OK) {
-        result = sqlite3_bind_int(
-            statement, 3, submissionId
-        );
+        result = sqlite3_bind_int(statement, 3, submissionId);
     }
 
-    bool success = result == SQLITE_OK &&
-                   sqlite3_step(statement) == SQLITE_DONE &&
-                   sqlite3_changes(db) == 1;
+    if (result != SQLITE_OK) {
+        std::cerr << " UPDATE binding: "
+                  << sqlite3_errmsg(db) << '\n';
+        sqlite3_finalize(statement);
+        rollbackTransaction(db);
+        return false;
+    }
 
+    result = sqlite3_step(statement);
+
+    if (result != SQLITE_DONE) {
+        std::cerr << " UPDATE execution: "
+                  << sqlite3_errmsg(db) << '\n';
+        sqlite3_finalize(statement);
+        rollbackTransaction(db);
+        return false;
+    }
+
+    int affectedRows = sqlite3_changes(db);
     sqlite3_finalize(statement);
 
-    // The audit record must contain the same final mark
-    // that is stored in the submission.
-    if (!success ||
-        !insertGradingAudit(
+    if (affectedRows != 1) {
+        std::cerr << " UPDATE affected "
+                  << affectedRows << " rows instead of 1.\n";
+        rollbackTransaction(db);
+        return false;
+    }
+
+    // 7. Audit log
+    if (!insertGradingAudit(
             db,
             submissionId,
             lecturerId,
             hasOldMark,
             oldMark,
             finalMark,
-            reason
-        )) {
+            reason)) {
+        std::cerr << " Audit insertion failed: "
+                  << sqlite3_errmsg(db) << '\n';
         rollbackTransaction(db);
         return false;
     }
 
+    // 8. Commit
     if (!executeSql(db, "COMMIT;")) {
+        std::cerr << " COMMIT failed: "
+                  << sqlite3_errmsg(db) << '\n';
         rollbackTransaction(db);
         return false;
     }
+
+    std::cerr << " Submission "
+              << submissionId << " graded successfully.\n";
 
     return true;
 }
 
-
 // Only the relevant department's HOD can moderate a graded submission.
-// Moderation does not recalculate the mark.
+// Moderation does not recalculate the mark, but the action is audited.
 bool SubmissionRepository::moderateSubmission(
     int submissionId,
     int hodId,
@@ -1106,6 +1196,7 @@ bool SubmissionRepository::moderateSubmission(
         return false;
     }
 
+    // Confirm that the HOD belongs to the submission's department.
     if (!isAuthorizedForSubmission(
             db, hodId, submissionId, "HeadOfDepartment"
         ) ||
@@ -1114,6 +1205,19 @@ bool SubmissionRepository::moderateSubmission(
         return false;
     }
 
+    // Retrieve the mark that the lecturer awarded.
+    bool hasOldMark = false;
+    double oldMark = 0.0;
+
+    if (!getOldMark(
+            db, submissionId, hasOldMark, oldMark
+        ) ||
+        !hasOldMark) {
+        rollbackTransaction(db);
+        return false;
+    }
+
+    // A submission can only be moderated after grading.
     const char* sql =
         "UPDATE submissions "
         "SET status = 'Moderated' "
@@ -1137,7 +1241,23 @@ bool SubmissionRepository::moderateSubmission(
 
     sqlite3_finalize(statement);
 
-    if (!success || !executeSql(db, "COMMIT;")) {
+    // Record the moderation action, HOD ID and reason.
+    // The mark remains unchanged.
+    if (!success ||
+        !insertGradingAudit(
+            db,
+            submissionId,
+            hodId,
+            hasOldMark,
+            oldMark,
+            oldMark,
+            reason
+        )) {
+        rollbackTransaction(db);
+        return false;
+    }
+
+    if (!executeSql(db, "COMMIT;")) {
         rollbackTransaction(db);
         return false;
     }
@@ -1147,7 +1267,7 @@ bool SubmissionRepository::moderateSubmission(
 
 
 // Only the relevant department's HOD can release a moderated submission.
-// Releasing does not recalculate the mark.
+// Releasing does not recalculate the mark, but the action is audited.
 bool SubmissionRepository::releaseSubmission(
     int submissionId,
     int hodId,
@@ -1166,6 +1286,7 @@ bool SubmissionRepository::releaseSubmission(
         return false;
     }
 
+    // Confirm that the HOD belongs to the submission's department.
     if (!isAuthorizedForSubmission(
             db, hodId, submissionId, "HeadOfDepartment"
         ) ||
@@ -1174,6 +1295,19 @@ bool SubmissionRepository::releaseSubmission(
         return false;
     }
 
+    // Retrieve the mark being released.
+    bool hasOldMark = false;
+    double oldMark = 0.0;
+
+    if (!getOldMark(
+            db, submissionId, hasOldMark, oldMark
+        ) ||
+        !hasOldMark) {
+        rollbackTransaction(db);
+        return false;
+    }
+
+    // Only moderated submissions can be released.
     const char* sql =
         "UPDATE submissions "
         "SET status = 'Released' "
@@ -1197,13 +1331,31 @@ bool SubmissionRepository::releaseSubmission(
 
     sqlite3_finalize(statement);
 
-    if (!success || !executeSql(db, "COMMIT;")) {
+    // Record the release action, HOD ID and reason.
+    // The mark remains unchanged.
+    if (!success ||
+        !insertGradingAudit(
+            db,
+            submissionId,
+            hodId,
+            hasOldMark,
+            oldMark,
+            oldMark,
+            reason
+        )) {
+        rollbackTransaction(db);
+        return false;
+    }
+
+    if (!executeSql(db, "COMMIT;")) {
         rollbackTransaction(db);
         return false;
     }
 
     return true;
 }
+
+
 // Allows the relevant department's HOD to change a mark
 // before the result is released. The change is recorded in the audit log.
 bool SubmissionRepository::changeSubmissionMark(

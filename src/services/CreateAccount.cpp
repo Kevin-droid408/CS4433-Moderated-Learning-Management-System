@@ -6,7 +6,6 @@
 
 #include <cctype>
 #include <memory>
-#include <stdexcept>
 #include <string>
 
 CreateAccount::CreateAccount(UserRepository& userRepository)
@@ -21,28 +20,96 @@ bool CreateAccount::registerAccount(
     const std::string& role,
     int departmentId) {
 
-    // Public registration must not grant privileged roles.
+    // Public registration cannot create privileged accounts.
     if (role != "Student" && role != "Lecturer") {
         return false;
     }
 
-    if (username.empty() || fullName.empty() ||
-        email.empty() || password.empty()) {
+    return createAccount(
+        username,
+        fullName,
+        email,
+        password,
+        role,
+        departmentId,
+        false
+    );
+}
+
+bool CreateAccount::registerAccountByAdministrator(
+    const User& administrator,
+    const std::string& username,
+    const std::string& fullName,
+    const std::string& email,
+    const std::string& password,
+    const std::string& role,
+    int departmentId) {
+
+    // Only an authenticated Administrator may use this method.
+    if (administrator.getRole() != "Administrator") {
         return false;
     }
 
-    // Normalize usernames to lowercase so username matching
-    // is consistent regardless of capitalization.
+    if (role != "Student" &&
+        role != "Lecturer" &&
+        role != "HeadOfDepartment" &&
+        role != "Administrator") {
+        return false;
+    }
+
+    return createAccount(
+        username,
+        fullName,
+        email,
+        password,
+        role,
+        departmentId,
+        true
+    );
+}
+
+bool CreateAccount::createAccount(
+    const std::string& username,
+    const std::string& fullName,
+    const std::string& email,
+    const std::string& password,
+    const std::string& role,
+    int departmentId,
+    bool administratorCreated) {
+
+    if (username.empty() ||
+        fullName.empty() ||
+        email.empty() ||
+        password.empty()) {
+        return false;
+    }
+
+    if (role != "Student" &&
+        role != "Lecturer" &&
+        role != "HeadOfDepartment" &&
+        role != "Administrator") {
+        return false;
+    }
+
+    // Privileged roles can only be created by an Administrator.
+    if (!administratorCreated &&
+        role != "Student" &&
+        role != "Lecturer") {
+        return false;
+    }
+
+    // Normalize the username to lowercase.
     std::string normalizedUsername = username;
 
     for (char& character : normalizedUsername) {
         character = static_cast<char>(
-            std::tolower(static_cast<unsigned char>(character))
+            std::tolower(
+                static_cast<unsigned char>(character)
+            )
         );
     }
 
-    // Allow simple usernames containing letters, digits,
-    // underscores, and periods.
+    // Allow letters, digits, underscores and periods.
     for (unsigned char character : normalizedUsername) {
         if (!std::isalnum(character) &&
             character != '_' &&
@@ -61,11 +128,15 @@ bool CreateAccount::registerAccount(
         return false;
     }
 
-    if (role == "Lecturer" && departmentId <= 0) {
+    // Lecturer and Head of Department accounts need a department.
+    if ((role == "Lecturer" || role == "HeadOfDepartment") &&
+        departmentId <= 0) {
         return false;
     }
 
-    if (role == "Student") {
+    // Students and Administrators are not assigned a department
+    // by this account-creation operation.
+    if (role == "Student" || role == "Administrator") {
         departmentId = 0;
     }
 

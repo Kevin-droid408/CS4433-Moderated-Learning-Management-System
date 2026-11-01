@@ -55,6 +55,30 @@ CREATE TABLE IF NOT EXISTS courses (
 
 
 -- =====================================================
+-- 3A. LECTURER-COURSE ASSIGNMENTS
+-- =====================================================
+
+CREATE TABLE IF NOT EXISTS course_lecturers (
+    lecturer_id INTEGER NOT NULL,
+    course_id INTEGER NOT NULL,
+
+    PRIMARY KEY (lecturer_id, course_id),
+
+    FOREIGN KEY (lecturer_id)
+        REFERENCES users(user_id),
+
+    FOREIGN KEY (course_id)
+        REFERENCES courses(course_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_course_lecturers_course
+    ON course_lecturers(course_id);
+
+CREATE INDEX IF NOT EXISTS idx_course_lecturers_lecturer
+    ON course_lecturers(lecturer_id);
+
+
+-- =====================================================
 -- 4. STUDENT COURSE ENROLLMENTS
 -- =====================================================
 
