@@ -320,8 +320,6 @@ The main objectives of the Moderated LMS are to:
 
 The project includes the core LMS functionality for student enrolment, assignment submission, grading, moderation, result release, and administration.
 
-Further integration testing, validation, and verification against the complete project requirements should be carried out before final submission.
-
 ---
 
 **Project:** CS4433 Moderated Learning Management System
