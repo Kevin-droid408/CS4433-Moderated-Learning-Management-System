@@ -1,0 +1,16 @@
+# Build Directories
+build-coverage/
+build/
+cmake-build-*/
+
+# Executables and oject file
+*.exe
+*.o
+*.obj
+*.a
+*.dll
+
+# Coverage-generated files
+*.gcda
+*.gcno
+*.gcov

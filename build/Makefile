@@ -64,6 +64,16 @@ CMAKE_BINARY_DIR = C:\Users\Administrator\CS4433-Moderated-Learning-Management-S
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	"C:\Program Files\CMake\bin\ctest.exe" $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -83,6 +93,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	"C:\Program Files\CMake\bin\cmake.exe" -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -179,6 +234,565 @@ SetupDepartments: cmake_check_build_system
 SetupDepartments/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/build
 .PHONY : SetupDepartments/fast
+
+#=============================================================================
+# Target rules for targets named Experimental
+
+# Build rule for target.
+Experimental: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Experimental
+.PHONY : Experimental
+
+# fast build rule for target.
+Experimental/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Experimental.dir\build.make CMakeFiles/Experimental.dir/build
+.PHONY : Experimental/fast
+
+#=============================================================================
+# Target rules for targets named Nightly
+
+# Build rule for target.
+Nightly: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Nightly
+.PHONY : Nightly
+
+# fast build rule for target.
+Nightly/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Nightly.dir\build.make CMakeFiles/Nightly.dir/build
+.PHONY : Nightly/fast
+
+#=============================================================================
+# Target rules for targets named Continuous
+
+# Build rule for target.
+Continuous: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Continuous
+.PHONY : Continuous
+
+# fast build rule for target.
+Continuous/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Continuous.dir\build.make CMakeFiles/Continuous.dir/build
+.PHONY : Continuous/fast
+
+#=============================================================================
+# Target rules for targets named NightlyMemoryCheck
+
+# Build rule for target.
+NightlyMemoryCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NightlyMemoryCheck
+.PHONY : NightlyMemoryCheck
+
+# fast build rule for target.
+NightlyMemoryCheck/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NightlyMemoryCheck.dir\build.make CMakeFiles/NightlyMemoryCheck.dir/build
+.PHONY : NightlyMemoryCheck/fast
+
+#=============================================================================
+# Target rules for targets named NightlyStart
+
+# Build rule for target.
+NightlyStart: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NightlyStart
+.PHONY : NightlyStart
+
+# fast build rule for target.
+NightlyStart/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NightlyStart.dir\build.make CMakeFiles/NightlyStart.dir/build
+.PHONY : NightlyStart/fast
+
+#=============================================================================
+# Target rules for targets named NightlyUpdate
+
+# Build rule for target.
+NightlyUpdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NightlyUpdate
+.PHONY : NightlyUpdate
+
+# fast build rule for target.
+NightlyUpdate/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NightlyUpdate.dir\build.make CMakeFiles/NightlyUpdate.dir/build
+.PHONY : NightlyUpdate/fast
+
+#=============================================================================
+# Target rules for targets named NightlyConfigure
+
+# Build rule for target.
+NightlyConfigure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NightlyConfigure
+.PHONY : NightlyConfigure
+
+# fast build rule for target.
+NightlyConfigure/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NightlyConfigure.dir\build.make CMakeFiles/NightlyConfigure.dir/build
+.PHONY : NightlyConfigure/fast
+
+#=============================================================================
+# Target rules for targets named NightlyBuild
+
+# Build rule for target.
+NightlyBuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NightlyBuild
+.PHONY : NightlyBuild
+
+# fast build rule for target.
+NightlyBuild/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NightlyBuild.dir\build.make CMakeFiles/NightlyBuild.dir/build
+.PHONY : NightlyBuild/fast
+
+#=============================================================================
+# Target rules for targets named NightlyTest
+
+# Build rule for target.
+NightlyTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NightlyTest
+.PHONY : NightlyTest
+
+# fast build rule for target.
+NightlyTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NightlyTest.dir\build.make CMakeFiles/NightlyTest.dir/build
+.PHONY : NightlyTest/fast
+
+#=============================================================================
+# Target rules for targets named NightlyCoverage
+
+# Build rule for target.
+NightlyCoverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NightlyCoverage
+.PHONY : NightlyCoverage
+
+# fast build rule for target.
+NightlyCoverage/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NightlyCoverage.dir\build.make CMakeFiles/NightlyCoverage.dir/build
+.PHONY : NightlyCoverage/fast
+
+#=============================================================================
+# Target rules for targets named NightlyMemCheck
+
+# Build rule for target.
+NightlyMemCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NightlyMemCheck
+.PHONY : NightlyMemCheck
+
+# fast build rule for target.
+NightlyMemCheck/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NightlyMemCheck.dir\build.make CMakeFiles/NightlyMemCheck.dir/build
+.PHONY : NightlyMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named NightlySubmit
+
+# Build rule for target.
+NightlySubmit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 NightlySubmit
+.PHONY : NightlySubmit
+
+# fast build rule for target.
+NightlySubmit/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\NightlySubmit.dir\build.make CMakeFiles/NightlySubmit.dir/build
+.PHONY : NightlySubmit/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalStart
+
+# Build rule for target.
+ExperimentalStart: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ExperimentalStart
+.PHONY : ExperimentalStart
+
+# fast build rule for target.
+ExperimentalStart/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExperimentalStart.dir\build.make CMakeFiles/ExperimentalStart.dir/build
+.PHONY : ExperimentalStart/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalUpdate
+
+# Build rule for target.
+ExperimentalUpdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ExperimentalUpdate
+.PHONY : ExperimentalUpdate
+
+# fast build rule for target.
+ExperimentalUpdate/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExperimentalUpdate.dir\build.make CMakeFiles/ExperimentalUpdate.dir/build
+.PHONY : ExperimentalUpdate/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalConfigure
+
+# Build rule for target.
+ExperimentalConfigure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ExperimentalConfigure
+.PHONY : ExperimentalConfigure
+
+# fast build rule for target.
+ExperimentalConfigure/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExperimentalConfigure.dir\build.make CMakeFiles/ExperimentalConfigure.dir/build
+.PHONY : ExperimentalConfigure/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalBuild
+
+# Build rule for target.
+ExperimentalBuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ExperimentalBuild
+.PHONY : ExperimentalBuild
+
+# fast build rule for target.
+ExperimentalBuild/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExperimentalBuild.dir\build.make CMakeFiles/ExperimentalBuild.dir/build
+.PHONY : ExperimentalBuild/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalTest
+
+# Build rule for target.
+ExperimentalTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ExperimentalTest
+.PHONY : ExperimentalTest
+
+# fast build rule for target.
+ExperimentalTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExperimentalTest.dir\build.make CMakeFiles/ExperimentalTest.dir/build
+.PHONY : ExperimentalTest/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalCoverage
+
+# Build rule for target.
+ExperimentalCoverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ExperimentalCoverage
+.PHONY : ExperimentalCoverage
+
+# fast build rule for target.
+ExperimentalCoverage/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExperimentalCoverage.dir\build.make CMakeFiles/ExperimentalCoverage.dir/build
+.PHONY : ExperimentalCoverage/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalMemCheck
+
+# Build rule for target.
+ExperimentalMemCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ExperimentalMemCheck
+.PHONY : ExperimentalMemCheck
+
+# fast build rule for target.
+ExperimentalMemCheck/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExperimentalMemCheck.dir\build.make CMakeFiles/ExperimentalMemCheck.dir/build
+.PHONY : ExperimentalMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalSubmit
+
+# Build rule for target.
+ExperimentalSubmit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ExperimentalSubmit
+.PHONY : ExperimentalSubmit
+
+# fast build rule for target.
+ExperimentalSubmit/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExperimentalSubmit.dir\build.make CMakeFiles/ExperimentalSubmit.dir/build
+.PHONY : ExperimentalSubmit/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousStart
+
+# Build rule for target.
+ContinuousStart: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ContinuousStart
+.PHONY : ContinuousStart
+
+# fast build rule for target.
+ContinuousStart/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ContinuousStart.dir\build.make CMakeFiles/ContinuousStart.dir/build
+.PHONY : ContinuousStart/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousUpdate
+
+# Build rule for target.
+ContinuousUpdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ContinuousUpdate
+.PHONY : ContinuousUpdate
+
+# fast build rule for target.
+ContinuousUpdate/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ContinuousUpdate.dir\build.make CMakeFiles/ContinuousUpdate.dir/build
+.PHONY : ContinuousUpdate/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousConfigure
+
+# Build rule for target.
+ContinuousConfigure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ContinuousConfigure
+.PHONY : ContinuousConfigure
+
+# fast build rule for target.
+ContinuousConfigure/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ContinuousConfigure.dir\build.make CMakeFiles/ContinuousConfigure.dir/build
+.PHONY : ContinuousConfigure/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousBuild
+
+# Build rule for target.
+ContinuousBuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ContinuousBuild
+.PHONY : ContinuousBuild
+
+# fast build rule for target.
+ContinuousBuild/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ContinuousBuild.dir\build.make CMakeFiles/ContinuousBuild.dir/build
+.PHONY : ContinuousBuild/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousTest
+
+# Build rule for target.
+ContinuousTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ContinuousTest
+.PHONY : ContinuousTest
+
+# fast build rule for target.
+ContinuousTest/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ContinuousTest.dir\build.make CMakeFiles/ContinuousTest.dir/build
+.PHONY : ContinuousTest/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousCoverage
+
+# Build rule for target.
+ContinuousCoverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ContinuousCoverage
+.PHONY : ContinuousCoverage
+
+# fast build rule for target.
+ContinuousCoverage/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ContinuousCoverage.dir\build.make CMakeFiles/ContinuousCoverage.dir/build
+.PHONY : ContinuousCoverage/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousMemCheck
+
+# Build rule for target.
+ContinuousMemCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ContinuousMemCheck
+.PHONY : ContinuousMemCheck
+
+# fast build rule for target.
+ContinuousMemCheck/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ContinuousMemCheck.dir\build.make CMakeFiles/ContinuousMemCheck.dir/build
+.PHONY : ContinuousMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousSubmit
+
+# Build rule for target.
+ContinuousSubmit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ContinuousSubmit
+.PHONY : ContinuousSubmit
+
+# fast build rule for target.
+ContinuousSubmit/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ContinuousSubmit.dir\build.make CMakeFiles/ContinuousSubmit.dir/build
+.PHONY : ContinuousSubmit/fast
+
+#=============================================================================
+# Target rules for targets named LatePenaltyPolicyTests
+
+# Build rule for target.
+LatePenaltyPolicyTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 LatePenaltyPolicyTests
+.PHONY : LatePenaltyPolicyTests
+
+# fast build rule for target.
+LatePenaltyPolicyTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LatePenaltyPolicyTests.dir\build.make CMakeFiles/LatePenaltyPolicyTests.dir/build
+.PHONY : LatePenaltyPolicyTests/fast
+
+#=============================================================================
+# Target rules for targets named PasswordServiceTests
+
+# Build rule for target.
+PasswordServiceTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 PasswordServiceTests
+.PHONY : PasswordServiceTests
+
+# fast build rule for target.
+PasswordServiceTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordServiceTests.dir\build.make CMakeFiles/PasswordServiceTests.dir/build
+.PHONY : PasswordServiceTests/fast
+
+#=============================================================================
+# Target rules for targets named AuthenticationServiceTests
+
+# Build rule for target.
+AuthenticationServiceTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 AuthenticationServiceTests
+.PHONY : AuthenticationServiceTests
+
+# fast build rule for target.
+AuthenticationServiceTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/build
+.PHONY : AuthenticationServiceTests/fast
+
+#=============================================================================
+# Target rules for targets named SubmissionWorkflowIntegrationTests
+
+# Build rule for target.
+SubmissionWorkflowIntegrationTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 SubmissionWorkflowIntegrationTests
+.PHONY : SubmissionWorkflowIntegrationTests
+
+# fast build rule for target.
+SubmissionWorkflowIntegrationTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/build
+.PHONY : SubmissionWorkflowIntegrationTests/fast
+
+#=============================================================================
+# Target rules for targets named CourseRepositoryTests
+
+# Build rule for target.
+CourseRepositoryTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CourseRepositoryTests
+.PHONY : CourseRepositoryTests
+
+# fast build rule for target.
+CourseRepositoryTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/build
+.PHONY : CourseRepositoryTests/fast
+
+#=============================================================================
+# Target rules for targets named UserRepositoryTests
+
+# Build rule for target.
+UserRepositoryTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 UserRepositoryTests
+.PHONY : UserRepositoryTests
+
+# fast build rule for target.
+UserRepositoryTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/build
+.PHONY : UserRepositoryTests/fast
+
+#=============================================================================
+# Target rules for targets named DepartmentRepositoryTests
+
+# Build rule for target.
+DepartmentRepositoryTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 DepartmentRepositoryTests
+.PHONY : DepartmentRepositoryTests
+
+# fast build rule for target.
+DepartmentRepositoryTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DepartmentRepositoryTests.dir\build.make CMakeFiles/DepartmentRepositoryTests.dir/build
+.PHONY : DepartmentRepositoryTests/fast
+
+#=============================================================================
+# Target rules for targets named EnrollmentRepositoryTests
+
+# Build rule for target.
+EnrollmentRepositoryTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 EnrollmentRepositoryTests
+.PHONY : EnrollmentRepositoryTests
+
+# fast build rule for target.
+EnrollmentRepositoryTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EnrollmentRepositoryTests.dir\build.make CMakeFiles/EnrollmentRepositoryTests.dir/build
+.PHONY : EnrollmentRepositoryTests/fast
+
+#=============================================================================
+# Target rules for targets named ExtensionRepositoryTests
+
+# Build rule for target.
+ExtensionRepositoryTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ExtensionRepositoryTests
+.PHONY : ExtensionRepositoryTests
+
+# fast build rule for target.
+ExtensionRepositoryTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExtensionRepositoryTests.dir\build.make CMakeFiles/ExtensionRepositoryTests.dir/build
+.PHONY : ExtensionRepositoryTests/fast
+
+#=============================================================================
+# Target rules for targets named CreateAccountTests
+
+# Build rule for target.
+CreateAccountTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CreateAccountTests
+.PHONY : CreateAccountTests
+
+# fast build rule for target.
+CreateAccountTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/build
+.PHONY : CreateAccountTests/fast
+
+#=============================================================================
+# Target rules for targets named ThreeDayGraduatedLatePenaltyPolicyTests
+
+# Build rule for target.
+ThreeDayGraduatedLatePenaltyPolicyTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 ThreeDayGraduatedLatePenaltyPolicyTests
+.PHONY : ThreeDayGraduatedLatePenaltyPolicyTests
+
+# fast build rule for target.
+ThreeDayGraduatedLatePenaltyPolicyTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ThreeDayGraduatedLatePenaltyPolicyTests.dir\build.make CMakeFiles/ThreeDayGraduatedLatePenaltyPolicyTests.dir/build
+.PHONY : ThreeDayGraduatedLatePenaltyPolicyTests/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 src/CreateAdministrator.obj: src/CreateAdministrator.cpp.obj
 .PHONY : src/CreateAdministrator.obj
@@ -286,6 +900,9 @@ src/models/Administrator.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Administrator.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Administrator.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Administrator.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/Administrator.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/Administrator.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/Administrator.cpp.obj
 .PHONY : src/models/Administrator.cpp.obj
 
 src/models/Administrator.i: src/models/Administrator.cpp.i
@@ -298,6 +915,9 @@ src/models/Administrator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Administrator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Administrator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Administrator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/Administrator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/Administrator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/Administrator.cpp.i
 .PHONY : src/models/Administrator.cpp.i
 
 src/models/Administrator.s: src/models/Administrator.cpp.s
@@ -310,6 +930,9 @@ src/models/Administrator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Administrator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Administrator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Administrator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/Administrator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/Administrator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/Administrator.cpp.s
 .PHONY : src/models/Administrator.cpp.s
 
 src/models/Assignment.obj: src/models/Assignment.cpp.obj
@@ -318,6 +941,7 @@ src/models/Assignment.obj: src/models/Assignment.cpp.obj
 # target to build an object file
 src/models/Assignment.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/models/Assignment.cpp.obj
 .PHONY : src/models/Assignment.cpp.obj
 
 src/models/Assignment.i: src/models/Assignment.cpp.i
@@ -326,6 +950,7 @@ src/models/Assignment.i: src/models/Assignment.cpp.i
 # target to preprocess a source file
 src/models/Assignment.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/models/Assignment.cpp.i
 .PHONY : src/models/Assignment.cpp.i
 
 src/models/Assignment.s: src/models/Assignment.cpp.s
@@ -334,6 +959,7 @@ src/models/Assignment.s: src/models/Assignment.cpp.s
 # target to generate assembly for a file
 src/models/Assignment.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Assignment.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/models/Assignment.cpp.s
 .PHONY : src/models/Assignment.cpp.s
 
 src/models/Course.obj: src/models/Course.cpp.obj
@@ -342,6 +968,7 @@ src/models/Course.obj: src/models/Course.cpp.obj
 # target to build an object file
 src/models/Course.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/src/models/Course.cpp.obj
 .PHONY : src/models/Course.cpp.obj
 
 src/models/Course.i: src/models/Course.cpp.i
@@ -350,6 +977,7 @@ src/models/Course.i: src/models/Course.cpp.i
 # target to preprocess a source file
 src/models/Course.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/src/models/Course.cpp.i
 .PHONY : src/models/Course.cpp.i
 
 src/models/Course.s: src/models/Course.cpp.s
@@ -358,6 +986,7 @@ src/models/Course.s: src/models/Course.cpp.s
 # target to generate assembly for a file
 src/models/Course.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Course.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/src/models/Course.cpp.s
 .PHONY : src/models/Course.cpp.s
 
 src/models/HeadOfDepartment.obj: src/models/HeadOfDepartment.cpp.obj
@@ -370,6 +999,9 @@ src/models/HeadOfDepartment.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/HeadOfDepartment.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/HeadOfDepartment.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/HeadOfDepartment.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/HeadOfDepartment.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/HeadOfDepartment.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/HeadOfDepartment.cpp.obj
 .PHONY : src/models/HeadOfDepartment.cpp.obj
 
 src/models/HeadOfDepartment.i: src/models/HeadOfDepartment.cpp.i
@@ -382,6 +1014,9 @@ src/models/HeadOfDepartment.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/HeadOfDepartment.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/HeadOfDepartment.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/HeadOfDepartment.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/HeadOfDepartment.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/HeadOfDepartment.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/HeadOfDepartment.cpp.i
 .PHONY : src/models/HeadOfDepartment.cpp.i
 
 src/models/HeadOfDepartment.s: src/models/HeadOfDepartment.cpp.s
@@ -394,6 +1029,9 @@ src/models/HeadOfDepartment.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/HeadOfDepartment.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/HeadOfDepartment.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/HeadOfDepartment.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/HeadOfDepartment.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/HeadOfDepartment.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/HeadOfDepartment.cpp.s
 .PHONY : src/models/HeadOfDepartment.cpp.s
 
 src/models/Lecturer.obj: src/models/Lecturer.cpp.obj
@@ -406,6 +1044,9 @@ src/models/Lecturer.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Lecturer.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Lecturer.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Lecturer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/Lecturer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/Lecturer.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/Lecturer.cpp.obj
 .PHONY : src/models/Lecturer.cpp.obj
 
 src/models/Lecturer.i: src/models/Lecturer.cpp.i
@@ -418,6 +1059,9 @@ src/models/Lecturer.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Lecturer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Lecturer.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Lecturer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/Lecturer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/Lecturer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/Lecturer.cpp.i
 .PHONY : src/models/Lecturer.cpp.i
 
 src/models/Lecturer.s: src/models/Lecturer.cpp.s
@@ -430,6 +1074,9 @@ src/models/Lecturer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Lecturer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Lecturer.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Lecturer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/Lecturer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/Lecturer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/Lecturer.cpp.s
 .PHONY : src/models/Lecturer.cpp.s
 
 src/models/Student.obj: src/models/Student.cpp.obj
@@ -442,6 +1089,9 @@ src/models/Student.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Student.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Student.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Student.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/Student.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/Student.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/Student.cpp.obj
 .PHONY : src/models/Student.cpp.obj
 
 src/models/Student.i: src/models/Student.cpp.i
@@ -454,6 +1104,9 @@ src/models/Student.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Student.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Student.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Student.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/Student.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/Student.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/Student.cpp.i
 .PHONY : src/models/Student.cpp.i
 
 src/models/Student.s: src/models/Student.cpp.s
@@ -466,6 +1119,9 @@ src/models/Student.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/Student.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/Student.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/Student.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/Student.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/Student.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/Student.cpp.s
 .PHONY : src/models/Student.cpp.s
 
 src/models/Submission.obj: src/models/Submission.cpp.obj
@@ -474,6 +1130,7 @@ src/models/Submission.obj: src/models/Submission.cpp.obj
 # target to build an object file
 src/models/Submission.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/models/Submission.cpp.obj
 .PHONY : src/models/Submission.cpp.obj
 
 src/models/Submission.i: src/models/Submission.cpp.i
@@ -482,6 +1139,7 @@ src/models/Submission.i: src/models/Submission.cpp.i
 # target to preprocess a source file
 src/models/Submission.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/models/Submission.cpp.i
 .PHONY : src/models/Submission.cpp.i
 
 src/models/Submission.s: src/models/Submission.cpp.s
@@ -490,6 +1148,7 @@ src/models/Submission.s: src/models/Submission.cpp.s
 # target to generate assembly for a file
 src/models/Submission.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/models/Submission.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/models/Submission.cpp.s
 .PHONY : src/models/Submission.cpp.s
 
 src/models/User.obj: src/models/User.cpp.obj
@@ -502,6 +1161,9 @@ src/models/User.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/User.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/User.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/User.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/User.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/User.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/User.cpp.obj
 .PHONY : src/models/User.cpp.obj
 
 src/models/User.i: src/models/User.cpp.i
@@ -514,6 +1176,9 @@ src/models/User.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/User.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/User.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/User.cpp.i
 .PHONY : src/models/User.cpp.i
 
 src/models/User.s: src/models/User.cpp.s
@@ -526,6 +1191,9 @@ src/models/User.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/User.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/User.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/User.cpp.s
 .PHONY : src/models/User.cpp.s
 
 src/models/UserFactory.obj: src/models/UserFactory.cpp.obj
@@ -538,6 +1206,9 @@ src/models/UserFactory.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/UserFactory.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/UserFactory.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/UserFactory.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/UserFactory.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/UserFactory.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/UserFactory.cpp.obj
 .PHONY : src/models/UserFactory.cpp.obj
 
 src/models/UserFactory.i: src/models/UserFactory.cpp.i
@@ -550,6 +1221,9 @@ src/models/UserFactory.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/UserFactory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/UserFactory.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/UserFactory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/UserFactory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/UserFactory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/UserFactory.cpp.i
 .PHONY : src/models/UserFactory.cpp.i
 
 src/models/UserFactory.s: src/models/UserFactory.cpp.s
@@ -562,6 +1236,9 @@ src/models/UserFactory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/models/UserFactory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/models/UserFactory.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/models/UserFactory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/models/UserFactory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/models/UserFactory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/models/UserFactory.cpp.s
 .PHONY : src/models/UserFactory.cpp.s
 
 src/repositories/AssignmentRepository.obj: src/repositories/AssignmentRepository.cpp.obj
@@ -570,6 +1247,7 @@ src/repositories/AssignmentRepository.obj: src/repositories/AssignmentRepository
 # target to build an object file
 src/repositories/AssignmentRepository.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/repositories/AssignmentRepository.cpp.obj
 .PHONY : src/repositories/AssignmentRepository.cpp.obj
 
 src/repositories/AssignmentRepository.i: src/repositories/AssignmentRepository.cpp.i
@@ -578,6 +1256,7 @@ src/repositories/AssignmentRepository.i: src/repositories/AssignmentRepository.c
 # target to preprocess a source file
 src/repositories/AssignmentRepository.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/repositories/AssignmentRepository.cpp.i
 .PHONY : src/repositories/AssignmentRepository.cpp.i
 
 src/repositories/AssignmentRepository.s: src/repositories/AssignmentRepository.cpp.s
@@ -586,6 +1265,7 @@ src/repositories/AssignmentRepository.s: src/repositories/AssignmentRepository.c
 # target to generate assembly for a file
 src/repositories/AssignmentRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/AssignmentRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/repositories/AssignmentRepository.cpp.s
 .PHONY : src/repositories/AssignmentRepository.cpp.s
 
 src/repositories/CourseRepository.obj: src/repositories/CourseRepository.cpp.obj
@@ -594,6 +1274,7 @@ src/repositories/CourseRepository.obj: src/repositories/CourseRepository.cpp.obj
 # target to build an object file
 src/repositories/CourseRepository.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/src/repositories/CourseRepository.cpp.obj
 .PHONY : src/repositories/CourseRepository.cpp.obj
 
 src/repositories/CourseRepository.i: src/repositories/CourseRepository.cpp.i
@@ -602,6 +1283,7 @@ src/repositories/CourseRepository.i: src/repositories/CourseRepository.cpp.i
 # target to preprocess a source file
 src/repositories/CourseRepository.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/src/repositories/CourseRepository.cpp.i
 .PHONY : src/repositories/CourseRepository.cpp.i
 
 src/repositories/CourseRepository.s: src/repositories/CourseRepository.cpp.s
@@ -610,6 +1292,7 @@ src/repositories/CourseRepository.s: src/repositories/CourseRepository.cpp.s
 # target to generate assembly for a file
 src/repositories/CourseRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/CourseRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/src/repositories/CourseRepository.cpp.s
 .PHONY : src/repositories/CourseRepository.cpp.s
 
 src/repositories/Database.obj: src/repositories/Database.cpp.obj
@@ -622,6 +1305,13 @@ src/repositories/Database.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/Database.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/Database.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/repositories/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/repositories/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/src/repositories/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/repositories/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DepartmentRepositoryTests.dir\build.make CMakeFiles/DepartmentRepositoryTests.dir/src/repositories/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExtensionRepositoryTests.dir\build.make CMakeFiles/ExtensionRepositoryTests.dir/src/repositories/Database.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/repositories/Database.cpp.obj
 .PHONY : src/repositories/Database.cpp.obj
 
 src/repositories/Database.i: src/repositories/Database.cpp.i
@@ -634,6 +1324,13 @@ src/repositories/Database.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/Database.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/Database.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/repositories/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/repositories/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/src/repositories/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/repositories/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DepartmentRepositoryTests.dir\build.make CMakeFiles/DepartmentRepositoryTests.dir/src/repositories/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExtensionRepositoryTests.dir\build.make CMakeFiles/ExtensionRepositoryTests.dir/src/repositories/Database.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/repositories/Database.cpp.i
 .PHONY : src/repositories/Database.cpp.i
 
 src/repositories/Database.s: src/repositories/Database.cpp.s
@@ -646,6 +1343,13 @@ src/repositories/Database.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/Database.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/Database.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/repositories/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/repositories/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/src/repositories/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/repositories/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DepartmentRepositoryTests.dir\build.make CMakeFiles/DepartmentRepositoryTests.dir/src/repositories/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExtensionRepositoryTests.dir\build.make CMakeFiles/ExtensionRepositoryTests.dir/src/repositories/Database.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/repositories/Database.cpp.s
 .PHONY : src/repositories/Database.cpp.s
 
 src/repositories/DepartmentRepository.obj: src/repositories/DepartmentRepository.cpp.obj
@@ -654,6 +1358,7 @@ src/repositories/DepartmentRepository.obj: src/repositories/DepartmentRepository
 # target to build an object file
 src/repositories/DepartmentRepository.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DepartmentRepositoryTests.dir\build.make CMakeFiles/DepartmentRepositoryTests.dir/src/repositories/DepartmentRepository.cpp.obj
 .PHONY : src/repositories/DepartmentRepository.cpp.obj
 
 src/repositories/DepartmentRepository.i: src/repositories/DepartmentRepository.cpp.i
@@ -662,6 +1367,7 @@ src/repositories/DepartmentRepository.i: src/repositories/DepartmentRepository.c
 # target to preprocess a source file
 src/repositories/DepartmentRepository.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DepartmentRepositoryTests.dir\build.make CMakeFiles/DepartmentRepositoryTests.dir/src/repositories/DepartmentRepository.cpp.i
 .PHONY : src/repositories/DepartmentRepository.cpp.i
 
 src/repositories/DepartmentRepository.s: src/repositories/DepartmentRepository.cpp.s
@@ -670,6 +1376,7 @@ src/repositories/DepartmentRepository.s: src/repositories/DepartmentRepository.c
 # target to generate assembly for a file
 src/repositories/DepartmentRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/DepartmentRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DepartmentRepositoryTests.dir\build.make CMakeFiles/DepartmentRepositoryTests.dir/src/repositories/DepartmentRepository.cpp.s
 .PHONY : src/repositories/DepartmentRepository.cpp.s
 
 src/repositories/EnrollmentRepository.obj: src/repositories/EnrollmentRepository.cpp.obj
@@ -678,6 +1385,7 @@ src/repositories/EnrollmentRepository.obj: src/repositories/EnrollmentRepository
 # target to build an object file
 src/repositories/EnrollmentRepository.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/EnrollmentRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EnrollmentRepositoryTests.dir\build.make CMakeFiles/EnrollmentRepositoryTests.dir/src/repositories/EnrollmentRepository.cpp.obj
 .PHONY : src/repositories/EnrollmentRepository.cpp.obj
 
 src/repositories/EnrollmentRepository.i: src/repositories/EnrollmentRepository.cpp.i
@@ -686,6 +1394,7 @@ src/repositories/EnrollmentRepository.i: src/repositories/EnrollmentRepository.c
 # target to preprocess a source file
 src/repositories/EnrollmentRepository.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/EnrollmentRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EnrollmentRepositoryTests.dir\build.make CMakeFiles/EnrollmentRepositoryTests.dir/src/repositories/EnrollmentRepository.cpp.i
 .PHONY : src/repositories/EnrollmentRepository.cpp.i
 
 src/repositories/EnrollmentRepository.s: src/repositories/EnrollmentRepository.cpp.s
@@ -694,6 +1403,7 @@ src/repositories/EnrollmentRepository.s: src/repositories/EnrollmentRepository.c
 # target to generate assembly for a file
 src/repositories/EnrollmentRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/EnrollmentRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EnrollmentRepositoryTests.dir\build.make CMakeFiles/EnrollmentRepositoryTests.dir/src/repositories/EnrollmentRepository.cpp.s
 .PHONY : src/repositories/EnrollmentRepository.cpp.s
 
 src/repositories/ExtensionRepository.obj: src/repositories/ExtensionRepository.cpp.obj
@@ -702,6 +1412,7 @@ src/repositories/ExtensionRepository.obj: src/repositories/ExtensionRepository.c
 # target to build an object file
 src/repositories/ExtensionRepository.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/ExtensionRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExtensionRepositoryTests.dir\build.make CMakeFiles/ExtensionRepositoryTests.dir/src/repositories/ExtensionRepository.cpp.obj
 .PHONY : src/repositories/ExtensionRepository.cpp.obj
 
 src/repositories/ExtensionRepository.i: src/repositories/ExtensionRepository.cpp.i
@@ -710,6 +1421,7 @@ src/repositories/ExtensionRepository.i: src/repositories/ExtensionRepository.cpp
 # target to preprocess a source file
 src/repositories/ExtensionRepository.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/ExtensionRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExtensionRepositoryTests.dir\build.make CMakeFiles/ExtensionRepositoryTests.dir/src/repositories/ExtensionRepository.cpp.i
 .PHONY : src/repositories/ExtensionRepository.cpp.i
 
 src/repositories/ExtensionRepository.s: src/repositories/ExtensionRepository.cpp.s
@@ -718,6 +1430,7 @@ src/repositories/ExtensionRepository.s: src/repositories/ExtensionRepository.cpp
 # target to generate assembly for a file
 src/repositories/ExtensionRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/ExtensionRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExtensionRepositoryTests.dir\build.make CMakeFiles/ExtensionRepositoryTests.dir/src/repositories/ExtensionRepository.cpp.s
 .PHONY : src/repositories/ExtensionRepository.cpp.s
 
 src/repositories/SubmissionRepository.obj: src/repositories/SubmissionRepository.cpp.obj
@@ -726,6 +1439,7 @@ src/repositories/SubmissionRepository.obj: src/repositories/SubmissionRepository
 # target to build an object file
 src/repositories/SubmissionRepository.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/repositories/SubmissionRepository.cpp.obj
 .PHONY : src/repositories/SubmissionRepository.cpp.obj
 
 src/repositories/SubmissionRepository.i: src/repositories/SubmissionRepository.cpp.i
@@ -734,6 +1448,7 @@ src/repositories/SubmissionRepository.i: src/repositories/SubmissionRepository.c
 # target to preprocess a source file
 src/repositories/SubmissionRepository.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/repositories/SubmissionRepository.cpp.i
 .PHONY : src/repositories/SubmissionRepository.cpp.i
 
 src/repositories/SubmissionRepository.s: src/repositories/SubmissionRepository.cpp.s
@@ -742,6 +1457,7 @@ src/repositories/SubmissionRepository.s: src/repositories/SubmissionRepository.c
 # target to generate assembly for a file
 src/repositories/SubmissionRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/repositories/SubmissionRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/repositories/SubmissionRepository.cpp.s
 .PHONY : src/repositories/SubmissionRepository.cpp.s
 
 src/repositories/UserRepository.obj: src/repositories/UserRepository.cpp.obj
@@ -754,6 +1470,9 @@ src/repositories/UserRepository.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/UserRepository.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/UserRepository.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/UserRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/repositories/UserRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/repositories/UserRepository.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/repositories/UserRepository.cpp.obj
 .PHONY : src/repositories/UserRepository.cpp.obj
 
 src/repositories/UserRepository.i: src/repositories/UserRepository.cpp.i
@@ -766,6 +1485,9 @@ src/repositories/UserRepository.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/UserRepository.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/UserRepository.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/UserRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/repositories/UserRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/repositories/UserRepository.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/repositories/UserRepository.cpp.i
 .PHONY : src/repositories/UserRepository.cpp.i
 
 src/repositories/UserRepository.s: src/repositories/UserRepository.cpp.s
@@ -778,6 +1500,9 @@ src/repositories/UserRepository.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/repositories/UserRepository.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/repositories/UserRepository.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/repositories/UserRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/repositories/UserRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/src/repositories/UserRepository.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/repositories/UserRepository.cpp.s
 .PHONY : src/repositories/UserRepository.cpp.s
 
 src/services/AuthenticationService.obj: src/services/AuthenticationService.cpp.obj
@@ -786,6 +1511,7 @@ src/services/AuthenticationService.obj: src/services/AuthenticationService.cpp.o
 # target to build an object file
 src/services/AuthenticationService.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/AuthenticationService.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/services/AuthenticationService.cpp.obj
 .PHONY : src/services/AuthenticationService.cpp.obj
 
 src/services/AuthenticationService.i: src/services/AuthenticationService.cpp.i
@@ -794,6 +1520,7 @@ src/services/AuthenticationService.i: src/services/AuthenticationService.cpp.i
 # target to preprocess a source file
 src/services/AuthenticationService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/AuthenticationService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/services/AuthenticationService.cpp.i
 .PHONY : src/services/AuthenticationService.cpp.i
 
 src/services/AuthenticationService.s: src/services/AuthenticationService.cpp.s
@@ -802,6 +1529,7 @@ src/services/AuthenticationService.s: src/services/AuthenticationService.cpp.s
 # target to generate assembly for a file
 src/services/AuthenticationService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/AuthenticationService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/services/AuthenticationService.cpp.s
 .PHONY : src/services/AuthenticationService.cpp.s
 
 src/services/CreateAccount.obj: src/services/CreateAccount.cpp.obj
@@ -810,6 +1538,7 @@ src/services/CreateAccount.obj: src/services/CreateAccount.cpp.obj
 # target to build an object file
 src/services/CreateAccount.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/CreateAccount.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/services/CreateAccount.cpp.obj
 .PHONY : src/services/CreateAccount.cpp.obj
 
 src/services/CreateAccount.i: src/services/CreateAccount.cpp.i
@@ -818,6 +1547,7 @@ src/services/CreateAccount.i: src/services/CreateAccount.cpp.i
 # target to preprocess a source file
 src/services/CreateAccount.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/CreateAccount.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/services/CreateAccount.cpp.i
 .PHONY : src/services/CreateAccount.cpp.i
 
 src/services/CreateAccount.s: src/services/CreateAccount.cpp.s
@@ -826,6 +1556,7 @@ src/services/CreateAccount.s: src/services/CreateAccount.cpp.s
 # target to generate assembly for a file
 src/services/CreateAccount.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/CreateAccount.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/services/CreateAccount.cpp.s
 .PHONY : src/services/CreateAccount.cpp.s
 
 src/services/PasswordService.obj: src/services/PasswordService.cpp.obj
@@ -838,6 +1569,9 @@ src/services/PasswordService.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/services/PasswordService.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/services/PasswordService.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/services/PasswordService.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordServiceTests.dir\build.make CMakeFiles/PasswordServiceTests.dir/src/services/PasswordService.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/services/PasswordService.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/services/PasswordService.cpp.obj
 .PHONY : src/services/PasswordService.cpp.obj
 
 src/services/PasswordService.i: src/services/PasswordService.cpp.i
@@ -850,6 +1584,9 @@ src/services/PasswordService.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/services/PasswordService.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/services/PasswordService.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/services/PasswordService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordServiceTests.dir\build.make CMakeFiles/PasswordServiceTests.dir/src/services/PasswordService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/services/PasswordService.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/services/PasswordService.cpp.i
 .PHONY : src/services/PasswordService.cpp.i
 
 src/services/PasswordService.s: src/services/PasswordService.cpp.s
@@ -862,6 +1599,9 @@ src/services/PasswordService.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateHOD.dir\build.make CMakeFiles/CreateHOD.dir/src/services/PasswordService.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAdministrator.dir\build.make CMakeFiles/CreateAdministrator.dir/src/services/PasswordService.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/services/PasswordService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordServiceTests.dir\build.make CMakeFiles/PasswordServiceTests.dir/src/services/PasswordService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/src/services/PasswordService.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/src/services/PasswordService.cpp.s
 .PHONY : src/services/PasswordService.cpp.s
 
 src/services/ThreeDayGraduatedLatePenaltyPolicy.obj: src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
@@ -870,6 +1610,9 @@ src/services/ThreeDayGraduatedLatePenaltyPolicy.obj: src/services/ThreeDayGradua
 # target to build an object file
 src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LatePenaltyPolicyTests.dir\build.make CMakeFiles/LatePenaltyPolicyTests.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ThreeDayGraduatedLatePenaltyPolicyTests.dir\build.make CMakeFiles/ThreeDayGraduatedLatePenaltyPolicyTests.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
 .PHONY : src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.obj
 
 src/services/ThreeDayGraduatedLatePenaltyPolicy.i: src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i
@@ -878,6 +1621,9 @@ src/services/ThreeDayGraduatedLatePenaltyPolicy.i: src/services/ThreeDayGraduate
 # target to preprocess a source file
 src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LatePenaltyPolicyTests.dir\build.make CMakeFiles/LatePenaltyPolicyTests.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ThreeDayGraduatedLatePenaltyPolicyTests.dir\build.make CMakeFiles/ThreeDayGraduatedLatePenaltyPolicyTests.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i
 .PHONY : src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.i
 
 src/services/ThreeDayGraduatedLatePenaltyPolicy.s: src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s
@@ -886,6 +1632,9 @@ src/services/ThreeDayGraduatedLatePenaltyPolicy.s: src/services/ThreeDayGraduate
 # target to generate assembly for a file
 src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ModeratedLMS.dir\build.make CMakeFiles/ModeratedLMS.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LatePenaltyPolicyTests.dir\build.make CMakeFiles/LatePenaltyPolicyTests.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ThreeDayGraduatedLatePenaltyPolicyTests.dir\build.make CMakeFiles/ThreeDayGraduatedLatePenaltyPolicyTests.dir/src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s
 .PHONY : src/services/ThreeDayGraduatedLatePenaltyPolicy.cpp.s
 
 src/setup_departments.obj: src/setup_departments.cpp.obj
@@ -912,6 +1661,270 @@ src/setup_departments.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SetupDepartments.dir\build.make CMakeFiles/SetupDepartments.dir/src/setup_departments.cpp.s
 .PHONY : src/setup_departments.cpp.s
 
+tests/AuthenticationServiceTest.obj: tests/AuthenticationServiceTest.cpp.obj
+.PHONY : tests/AuthenticationServiceTest.obj
+
+# target to build an object file
+tests/AuthenticationServiceTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/tests/AuthenticationServiceTest.cpp.obj
+.PHONY : tests/AuthenticationServiceTest.cpp.obj
+
+tests/AuthenticationServiceTest.i: tests/AuthenticationServiceTest.cpp.i
+.PHONY : tests/AuthenticationServiceTest.i
+
+# target to preprocess a source file
+tests/AuthenticationServiceTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/tests/AuthenticationServiceTest.cpp.i
+.PHONY : tests/AuthenticationServiceTest.cpp.i
+
+tests/AuthenticationServiceTest.s: tests/AuthenticationServiceTest.cpp.s
+.PHONY : tests/AuthenticationServiceTest.s
+
+# target to generate assembly for a file
+tests/AuthenticationServiceTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AuthenticationServiceTests.dir\build.make CMakeFiles/AuthenticationServiceTests.dir/tests/AuthenticationServiceTest.cpp.s
+.PHONY : tests/AuthenticationServiceTest.cpp.s
+
+tests/CourseRepositoryTest.obj: tests/CourseRepositoryTest.cpp.obj
+.PHONY : tests/CourseRepositoryTest.obj
+
+# target to build an object file
+tests/CourseRepositoryTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/tests/CourseRepositoryTest.cpp.obj
+.PHONY : tests/CourseRepositoryTest.cpp.obj
+
+tests/CourseRepositoryTest.i: tests/CourseRepositoryTest.cpp.i
+.PHONY : tests/CourseRepositoryTest.i
+
+# target to preprocess a source file
+tests/CourseRepositoryTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/tests/CourseRepositoryTest.cpp.i
+.PHONY : tests/CourseRepositoryTest.cpp.i
+
+tests/CourseRepositoryTest.s: tests/CourseRepositoryTest.cpp.s
+.PHONY : tests/CourseRepositoryTest.s
+
+# target to generate assembly for a file
+tests/CourseRepositoryTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CourseRepositoryTests.dir\build.make CMakeFiles/CourseRepositoryTests.dir/tests/CourseRepositoryTest.cpp.s
+.PHONY : tests/CourseRepositoryTest.cpp.s
+
+tests/CreateAccountTest.obj: tests/CreateAccountTest.cpp.obj
+.PHONY : tests/CreateAccountTest.obj
+
+# target to build an object file
+tests/CreateAccountTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/tests/CreateAccountTest.cpp.obj
+.PHONY : tests/CreateAccountTest.cpp.obj
+
+tests/CreateAccountTest.i: tests/CreateAccountTest.cpp.i
+.PHONY : tests/CreateAccountTest.i
+
+# target to preprocess a source file
+tests/CreateAccountTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/tests/CreateAccountTest.cpp.i
+.PHONY : tests/CreateAccountTest.cpp.i
+
+tests/CreateAccountTest.s: tests/CreateAccountTest.cpp.s
+.PHONY : tests/CreateAccountTest.s
+
+# target to generate assembly for a file
+tests/CreateAccountTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\CreateAccountTests.dir\build.make CMakeFiles/CreateAccountTests.dir/tests/CreateAccountTest.cpp.s
+.PHONY : tests/CreateAccountTest.cpp.s
+
+tests/DepartmentRepositoryTest.obj: tests/DepartmentRepositoryTest.cpp.obj
+.PHONY : tests/DepartmentRepositoryTest.obj
+
+# target to build an object file
+tests/DepartmentRepositoryTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DepartmentRepositoryTests.dir\build.make CMakeFiles/DepartmentRepositoryTests.dir/tests/DepartmentRepositoryTest.cpp.obj
+.PHONY : tests/DepartmentRepositoryTest.cpp.obj
+
+tests/DepartmentRepositoryTest.i: tests/DepartmentRepositoryTest.cpp.i
+.PHONY : tests/DepartmentRepositoryTest.i
+
+# target to preprocess a source file
+tests/DepartmentRepositoryTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DepartmentRepositoryTests.dir\build.make CMakeFiles/DepartmentRepositoryTests.dir/tests/DepartmentRepositoryTest.cpp.i
+.PHONY : tests/DepartmentRepositoryTest.cpp.i
+
+tests/DepartmentRepositoryTest.s: tests/DepartmentRepositoryTest.cpp.s
+.PHONY : tests/DepartmentRepositoryTest.s
+
+# target to generate assembly for a file
+tests/DepartmentRepositoryTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\DepartmentRepositoryTests.dir\build.make CMakeFiles/DepartmentRepositoryTests.dir/tests/DepartmentRepositoryTest.cpp.s
+.PHONY : tests/DepartmentRepositoryTest.cpp.s
+
+tests/EnrollmentRepositoryTest.obj: tests/EnrollmentRepositoryTest.cpp.obj
+.PHONY : tests/EnrollmentRepositoryTest.obj
+
+# target to build an object file
+tests/EnrollmentRepositoryTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EnrollmentRepositoryTests.dir\build.make CMakeFiles/EnrollmentRepositoryTests.dir/tests/EnrollmentRepositoryTest.cpp.obj
+.PHONY : tests/EnrollmentRepositoryTest.cpp.obj
+
+tests/EnrollmentRepositoryTest.i: tests/EnrollmentRepositoryTest.cpp.i
+.PHONY : tests/EnrollmentRepositoryTest.i
+
+# target to preprocess a source file
+tests/EnrollmentRepositoryTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EnrollmentRepositoryTests.dir\build.make CMakeFiles/EnrollmentRepositoryTests.dir/tests/EnrollmentRepositoryTest.cpp.i
+.PHONY : tests/EnrollmentRepositoryTest.cpp.i
+
+tests/EnrollmentRepositoryTest.s: tests/EnrollmentRepositoryTest.cpp.s
+.PHONY : tests/EnrollmentRepositoryTest.s
+
+# target to generate assembly for a file
+tests/EnrollmentRepositoryTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\EnrollmentRepositoryTests.dir\build.make CMakeFiles/EnrollmentRepositoryTests.dir/tests/EnrollmentRepositoryTest.cpp.s
+.PHONY : tests/EnrollmentRepositoryTest.cpp.s
+
+tests/ExtensionRepositoryTest.obj: tests/ExtensionRepositoryTest.cpp.obj
+.PHONY : tests/ExtensionRepositoryTest.obj
+
+# target to build an object file
+tests/ExtensionRepositoryTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExtensionRepositoryTests.dir\build.make CMakeFiles/ExtensionRepositoryTests.dir/tests/ExtensionRepositoryTest.cpp.obj
+.PHONY : tests/ExtensionRepositoryTest.cpp.obj
+
+tests/ExtensionRepositoryTest.i: tests/ExtensionRepositoryTest.cpp.i
+.PHONY : tests/ExtensionRepositoryTest.i
+
+# target to preprocess a source file
+tests/ExtensionRepositoryTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExtensionRepositoryTests.dir\build.make CMakeFiles/ExtensionRepositoryTests.dir/tests/ExtensionRepositoryTest.cpp.i
+.PHONY : tests/ExtensionRepositoryTest.cpp.i
+
+tests/ExtensionRepositoryTest.s: tests/ExtensionRepositoryTest.cpp.s
+.PHONY : tests/ExtensionRepositoryTest.s
+
+# target to generate assembly for a file
+tests/ExtensionRepositoryTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ExtensionRepositoryTests.dir\build.make CMakeFiles/ExtensionRepositoryTests.dir/tests/ExtensionRepositoryTest.cpp.s
+.PHONY : tests/ExtensionRepositoryTest.cpp.s
+
+tests/LatePenaltyPolicyTest.obj: tests/LatePenaltyPolicyTest.cpp.obj
+.PHONY : tests/LatePenaltyPolicyTest.obj
+
+# target to build an object file
+tests/LatePenaltyPolicyTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LatePenaltyPolicyTests.dir\build.make CMakeFiles/LatePenaltyPolicyTests.dir/tests/LatePenaltyPolicyTest.cpp.obj
+.PHONY : tests/LatePenaltyPolicyTest.cpp.obj
+
+tests/LatePenaltyPolicyTest.i: tests/LatePenaltyPolicyTest.cpp.i
+.PHONY : tests/LatePenaltyPolicyTest.i
+
+# target to preprocess a source file
+tests/LatePenaltyPolicyTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LatePenaltyPolicyTests.dir\build.make CMakeFiles/LatePenaltyPolicyTests.dir/tests/LatePenaltyPolicyTest.cpp.i
+.PHONY : tests/LatePenaltyPolicyTest.cpp.i
+
+tests/LatePenaltyPolicyTest.s: tests/LatePenaltyPolicyTest.cpp.s
+.PHONY : tests/LatePenaltyPolicyTest.s
+
+# target to generate assembly for a file
+tests/LatePenaltyPolicyTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LatePenaltyPolicyTests.dir\build.make CMakeFiles/LatePenaltyPolicyTests.dir/tests/LatePenaltyPolicyTest.cpp.s
+.PHONY : tests/LatePenaltyPolicyTest.cpp.s
+
+tests/PasswordServiceTest.obj: tests/PasswordServiceTest.cpp.obj
+.PHONY : tests/PasswordServiceTest.obj
+
+# target to build an object file
+tests/PasswordServiceTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordServiceTests.dir\build.make CMakeFiles/PasswordServiceTests.dir/tests/PasswordServiceTest.cpp.obj
+.PHONY : tests/PasswordServiceTest.cpp.obj
+
+tests/PasswordServiceTest.i: tests/PasswordServiceTest.cpp.i
+.PHONY : tests/PasswordServiceTest.i
+
+# target to preprocess a source file
+tests/PasswordServiceTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordServiceTests.dir\build.make CMakeFiles/PasswordServiceTests.dir/tests/PasswordServiceTest.cpp.i
+.PHONY : tests/PasswordServiceTest.cpp.i
+
+tests/PasswordServiceTest.s: tests/PasswordServiceTest.cpp.s
+.PHONY : tests/PasswordServiceTest.s
+
+# target to generate assembly for a file
+tests/PasswordServiceTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PasswordServiceTests.dir\build.make CMakeFiles/PasswordServiceTests.dir/tests/PasswordServiceTest.cpp.s
+.PHONY : tests/PasswordServiceTest.cpp.s
+
+tests/SubmissionWorkflowIntegrationTest.obj: tests/SubmissionWorkflowIntegrationTest.cpp.obj
+.PHONY : tests/SubmissionWorkflowIntegrationTest.obj
+
+# target to build an object file
+tests/SubmissionWorkflowIntegrationTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/tests/SubmissionWorkflowIntegrationTest.cpp.obj
+.PHONY : tests/SubmissionWorkflowIntegrationTest.cpp.obj
+
+tests/SubmissionWorkflowIntegrationTest.i: tests/SubmissionWorkflowIntegrationTest.cpp.i
+.PHONY : tests/SubmissionWorkflowIntegrationTest.i
+
+# target to preprocess a source file
+tests/SubmissionWorkflowIntegrationTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/tests/SubmissionWorkflowIntegrationTest.cpp.i
+.PHONY : tests/SubmissionWorkflowIntegrationTest.cpp.i
+
+tests/SubmissionWorkflowIntegrationTest.s: tests/SubmissionWorkflowIntegrationTest.cpp.s
+.PHONY : tests/SubmissionWorkflowIntegrationTest.s
+
+# target to generate assembly for a file
+tests/SubmissionWorkflowIntegrationTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SubmissionWorkflowIntegrationTests.dir\build.make CMakeFiles/SubmissionWorkflowIntegrationTests.dir/tests/SubmissionWorkflowIntegrationTest.cpp.s
+.PHONY : tests/SubmissionWorkflowIntegrationTest.cpp.s
+
+tests/ThreeDayGraduatedLatePenaltyPolicyTest.obj: tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.obj
+.PHONY : tests/ThreeDayGraduatedLatePenaltyPolicyTest.obj
+
+# target to build an object file
+tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ThreeDayGraduatedLatePenaltyPolicyTests.dir\build.make CMakeFiles/ThreeDayGraduatedLatePenaltyPolicyTests.dir/tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.obj
+.PHONY : tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.obj
+
+tests/ThreeDayGraduatedLatePenaltyPolicyTest.i: tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.i
+.PHONY : tests/ThreeDayGraduatedLatePenaltyPolicyTest.i
+
+# target to preprocess a source file
+tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ThreeDayGraduatedLatePenaltyPolicyTests.dir\build.make CMakeFiles/ThreeDayGraduatedLatePenaltyPolicyTests.dir/tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.i
+.PHONY : tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.i
+
+tests/ThreeDayGraduatedLatePenaltyPolicyTest.s: tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.s
+.PHONY : tests/ThreeDayGraduatedLatePenaltyPolicyTest.s
+
+# target to generate assembly for a file
+tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ThreeDayGraduatedLatePenaltyPolicyTests.dir\build.make CMakeFiles/ThreeDayGraduatedLatePenaltyPolicyTests.dir/tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.s
+.PHONY : tests/ThreeDayGraduatedLatePenaltyPolicyTest.cpp.s
+
+tests/UserRepositoryTest.obj: tests/UserRepositoryTest.cpp.obj
+.PHONY : tests/UserRepositoryTest.obj
+
+# target to build an object file
+tests/UserRepositoryTest.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/tests/UserRepositoryTest.cpp.obj
+.PHONY : tests/UserRepositoryTest.cpp.obj
+
+tests/UserRepositoryTest.i: tests/UserRepositoryTest.cpp.i
+.PHONY : tests/UserRepositoryTest.i
+
+# target to preprocess a source file
+tests/UserRepositoryTest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/tests/UserRepositoryTest.cpp.i
+.PHONY : tests/UserRepositoryTest.cpp.i
+
+tests/UserRepositoryTest.s: tests/UserRepositoryTest.cpp.s
+.PHONY : tests/UserRepositoryTest.s
+
+# target to generate assembly for a file
+tests/UserRepositoryTest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\UserRepositoryTests.dir\build.make CMakeFiles/UserRepositoryTests.dir/tests/UserRepositoryTest.cpp.s
+.PHONY : tests/UserRepositoryTest.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -919,12 +1932,60 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
+	@echo ... test
+	@echo ... Continuous
+	@echo ... ContinuousBuild
+	@echo ... ContinuousConfigure
+	@echo ... ContinuousCoverage
+	@echo ... ContinuousMemCheck
+	@echo ... ContinuousStart
+	@echo ... ContinuousSubmit
+	@echo ... ContinuousTest
+	@echo ... ContinuousUpdate
+	@echo ... Experimental
+	@echo ... ExperimentalBuild
+	@echo ... ExperimentalConfigure
+	@echo ... ExperimentalCoverage
+	@echo ... ExperimentalMemCheck
+	@echo ... ExperimentalStart
+	@echo ... ExperimentalSubmit
+	@echo ... ExperimentalTest
+	@echo ... ExperimentalUpdate
+	@echo ... Nightly
+	@echo ... NightlyBuild
+	@echo ... NightlyConfigure
+	@echo ... NightlyCoverage
+	@echo ... NightlyMemCheck
+	@echo ... NightlyMemoryCheck
+	@echo ... NightlyStart
+	@echo ... NightlySubmit
+	@echo ... NightlyTest
+	@echo ... NightlyUpdate
+	@echo ... AuthenticationServiceTests
+	@echo ... CourseRepositoryTests
+	@echo ... CreateAccountTests
 	@echo ... CreateAdministrator
 	@echo ... CreateHOD
 	@echo ... CreateLecturer
+	@echo ... DepartmentRepositoryTests
+	@echo ... EnrollmentRepositoryTests
+	@echo ... ExtensionRepositoryTests
+	@echo ... LatePenaltyPolicyTests
 	@echo ... ModeratedLMS
+	@echo ... PasswordServiceTests
 	@echo ... SetupDepartments
+	@echo ... SubmissionWorkflowIntegrationTests
+	@echo ... ThreeDayGraduatedLatePenaltyPolicyTests
+	@echo ... UserRepositoryTests
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
 	@echo ... src/CreateAdministrator.obj
 	@echo ... src/CreateAdministrator.i
 	@echo ... src/CreateAdministrator.s
@@ -1003,6 +2064,39 @@ help:
 	@echo ... src/setup_departments.obj
 	@echo ... src/setup_departments.i
 	@echo ... src/setup_departments.s
+	@echo ... tests/AuthenticationServiceTest.obj
+	@echo ... tests/AuthenticationServiceTest.i
+	@echo ... tests/AuthenticationServiceTest.s
+	@echo ... tests/CourseRepositoryTest.obj
+	@echo ... tests/CourseRepositoryTest.i
+	@echo ... tests/CourseRepositoryTest.s
+	@echo ... tests/CreateAccountTest.obj
+	@echo ... tests/CreateAccountTest.i
+	@echo ... tests/CreateAccountTest.s
+	@echo ... tests/DepartmentRepositoryTest.obj
+	@echo ... tests/DepartmentRepositoryTest.i
+	@echo ... tests/DepartmentRepositoryTest.s
+	@echo ... tests/EnrollmentRepositoryTest.obj
+	@echo ... tests/EnrollmentRepositoryTest.i
+	@echo ... tests/EnrollmentRepositoryTest.s
+	@echo ... tests/ExtensionRepositoryTest.obj
+	@echo ... tests/ExtensionRepositoryTest.i
+	@echo ... tests/ExtensionRepositoryTest.s
+	@echo ... tests/LatePenaltyPolicyTest.obj
+	@echo ... tests/LatePenaltyPolicyTest.i
+	@echo ... tests/LatePenaltyPolicyTest.s
+	@echo ... tests/PasswordServiceTest.obj
+	@echo ... tests/PasswordServiceTest.i
+	@echo ... tests/PasswordServiceTest.s
+	@echo ... tests/SubmissionWorkflowIntegrationTest.obj
+	@echo ... tests/SubmissionWorkflowIntegrationTest.i
+	@echo ... tests/SubmissionWorkflowIntegrationTest.s
+	@echo ... tests/ThreeDayGraduatedLatePenaltyPolicyTest.obj
+	@echo ... tests/ThreeDayGraduatedLatePenaltyPolicyTest.i
+	@echo ... tests/ThreeDayGraduatedLatePenaltyPolicyTest.s
+	@echo ... tests/UserRepositoryTest.obj
+	@echo ... tests/UserRepositoryTest.i
+	@echo ... tests/UserRepositoryTest.s
 .PHONY : help
 
 
