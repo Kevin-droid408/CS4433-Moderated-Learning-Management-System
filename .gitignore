@@ -15,5 +15,11 @@ cmake-build-*/
 *.gcno
 *.gcov
 
-#database
-*.db
+# SQLite database files
+database/*.db
+database/*.db-journal
+database/*.db-shm
+database/*.db-wal
+
+# Database backups
+database/*backup*
