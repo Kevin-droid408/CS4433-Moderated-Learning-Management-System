@@ -427,6 +427,8 @@ void enrollInCourse(
 }
 
 /* Returns assignments belonging only to enrolled courses. */
+/* Returns assignments belonging only to enrolled courses.
+   Uses the student's individual extension deadline when available. */
 vector<Assignment> getStudentAssignments(
     const User& user,
     EnrollmentRepository& enrollmentRepository,
@@ -435,23 +437,22 @@ vector<Assignment> getStudentAssignments(
     vector<int> enrolledIds =
         enrollmentRepository.getEnrolledCourses(user.getUserId());
 
-    vector<Assignment> allAssignments =
-        assignmentRepository.getAllAssignments();
-
     vector<Assignment> result;
 
-    for (const Assignment& assignment : allAssignments) {
-        for (int courseId : enrolledIds) {
-            if (assignment.getCourseId() == courseId) {
-                result.push_back(assignment);
-                break;
-            }
+    for (int courseId : enrolledIds) {
+        vector<Assignment> courseAssignments =
+            assignmentRepository.getAssignmentsForStudent(
+                courseId,
+                user.getUserId()
+            );
+
+        for (const Assignment& assignment : courseAssignments) {
+            result.push_back(assignment);
         }
     }
 
     return result;
 }
-
 /* Displays assignments belonging to enrolled courses. */
 void displayStudentAssignments(
     const User& user,

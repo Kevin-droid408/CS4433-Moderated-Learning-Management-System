@@ -1059,7 +1059,7 @@ bool SubmissionRepository::gradeSubmission(
         return false;
     }
 
-    std::cerr << "[GRADE DEBUG] Days late: "
+    std::cerr << " Days late: "
               << daysLate << '\n';
 
     ThreeDayGraduatedLatePenaltyPolicy penaltyPolicy;
@@ -1086,7 +1086,7 @@ bool SubmissionRepository::gradeSubmission(
         return false;
     }
 
-    std::cerr << "[GRADE DEBUG] Final mark: "
+    std::cerr << " Final mark: "
               << finalMark << '\n';
 
     // 6. Update submission

@@ -1,4 +1,3 @@
-
 #ifndef ASSIGNMENT_REPOSITORY_H
 #define ASSIGNMENT_REPOSITORY_H
 
@@ -17,7 +16,14 @@ class AssignmentRepository {
         bool addAssignment(const Assignment& assignment);
 
         std::vector<Assignment> getAllAssignments();
+
         std::vector<Assignment> getAssignmentsByCourse(int courseId);
+
+        // Retrieves assignments using the student's individual deadline.
+        std::vector<Assignment> getAssignmentsForStudent(
+            int courseId,
+            int studentId
+        );
 };
 
 #endif
