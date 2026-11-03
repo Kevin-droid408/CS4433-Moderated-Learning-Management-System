@@ -455,9 +455,8 @@ if(BUILD_TESTING)
     target_link_libraries(CreateAccountTests PRIVATE
         GTest::gtest_main
         SQLite3::SQLite3
-        sodium
+        PkgConfig::SODIUM
     )
-
     include(GoogleTest)
     gtest_discover_tests(CreateAccountTests)
 

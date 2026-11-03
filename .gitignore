@@ -23,3 +23,6 @@ database/*.db-wal
 
 # Database backups
 database/*backup*
+
+# Python virtual environment used for code analysis
+.venv/
