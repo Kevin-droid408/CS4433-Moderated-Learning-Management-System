@@ -1,0 +1,81 @@
+src\CreateAdministrator.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+src\main.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+src\main.cpp:317:27: style: Parameter 'enrollmentRepository' can be declared as reference to const [constParameterReference]
+    EnrollmentRepository& enrollmentRepository,
+                          ^
+src\main.cpp:434:27: style: Parameter 'enrollmentRepository' can be declared as reference to const [constParameterReference]
+    EnrollmentRepository& enrollmentRepository,
+                          ^
+src\main.cpp:261:0: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+        if (course.getCourseId() == courseId) return &course;
+^
+src\main.cpp:348:71: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+            if (department.departmentId == course->getDepartmentId()) {
+                                                                      ^
+src\main.cpp:409:29: style: Consider using std::any_of algorithm instead of a raw loop. [useStlAlgorithm]
+        if (id == courseId) {
+                            ^
+src\main.cpp:450:20: style: Consider using std::copy algorithm instead of a raw loop. [useStlAlgorithm]
+            result.push_back(assignment);
+                   ^
+src\main.cpp:518:30: style: Consider using std::copy_if algorithm instead of a raw loop. [useStlAlgorithm]
+            departmentCourses.push_back(course);
+                             ^
+src\main.cpp:683:59: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+        if (assignment.getAssignmentId() == assignmentId) {
+                                                          ^
+src\main.cpp:859:59: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+        if (submission.getSubmissionId() == submissionId) {
+                                                          ^
+src\main.cpp:879:52: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+            selectedSubmission->getAssignmentId()) {
+                                                   ^
+src\main.cpp:1026:59: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+        if (submission.getSubmissionId() == submissionId) {
+                                                          ^
+src\main.cpp:1119:59: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+        if (submission.getSubmissionId() == submissionId) {
+                                                          ^
+src\main.cpp:1140:42: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+            selected->getAssignmentId()) {
+                                         ^
+src\main.cpp:1300:55: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+                            course.getDepartmentId()) {
+                                                      ^
+src\repositories\AssignmentRepository.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+src\repositories\ExtensionRepository.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+src\repositories\SubmissionRepository.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+src\services\CreateAccount.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+src\services\CreateAccount.cpp:105:19: style: Consider using std::transform algorithm instead of a raw loop. [useStlAlgorithm]
+        character = static_cast<char>(
+                  ^
+src\services\CreateAccount.cpp:113:5: style: Consider using std::all_of or std::none_of algorithm instead of a raw loop. [useStlAlgorithm]
+    for (unsigned char character : normalizedUsername) {
+    ^
+src\setup_departments.cpp:0:0: information: Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches. [normalCheckLevelMaxBranches]
+
+^
+tests\AuthenticationServiceTest.cpp:32:23: style: class member 'AuthenticationServiceTest::incorrectPassword' is never used. [unusedStructMember]
+    const std::string incorrectPassword = "WrongPassword123!";
+                      ^
+tests\CourseRepositoryTest.cpp:138:57: style: Consider using std::find_if algorithm instead of a raw loop. [useStlAlgorithm]
+            if (existingCourse.getCourseCode() == code) {
+                                                        ^
+tests\LatePenaltyPolicyTest.cpp:10:40: style: class member 'LatePenaltyPolicyTest::policy' is never used. [unusedStructMember]
+    ThreeDayGraduatedLatePenaltyPolicy policy;
+                                       ^
+tests\ThreeDayGraduatedLatePenaltyPolicyTest.cpp:10:40: style: class member 'ThreeDayGraduatedLatePenaltyPolicyTest::policy' is never used. [unusedStructMember]
+    ThreeDayGraduatedLatePenaltyPolicy policy;
+                                       ^
